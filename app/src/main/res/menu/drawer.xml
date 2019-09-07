@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group
+        android:id="@+id/info"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_about_us"
+            android:icon="@drawable/about_us"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/nav_core_team"
+            android:icon="@drawable/team"
+            android:title="@string/core_team" />
+    </group>
+
+    <group
+        android:id="@+id/actions"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_donate"
+            android:icon="@drawable/donate"
+            android:title="@string/donate" />
+        <item
+            android:id="@+id/nav_history"
+            android:icon="@drawable/history"
+            android:title="@string/gallery" />
+    </group>
+
+    <group
+        android:id="@+id/you"
+        android:checkableBehavior="none">
+        <item
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/user_profile"
+            android:title="@string/user_profile" />
+    </group>
+</menu>

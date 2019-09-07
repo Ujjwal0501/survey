@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Survey</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <!--drawer menu options-->
+    <string name="donate">New Donation</string>
+    <string name="about_us">About Us</string>
+    <string name="core_team">Our Team</string>
+    <string name="gallery">Your Donations</string>
+    <string name="user_profile">My Profile</string>
+    <!--drawer menu options end-->
+
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
+    <string name="sign_in_facebook">Sign In With Facebook</string>
+    <string name="sign_in_google">Sign In With Google</string>
+    <string name="sign_up_facebook">Register With Facebook</string>
+    <string name="sign_up_google">Register With Google</string>
+    <string name="take_to_sign_up">New member?</string>
+    <string name="take_to_sign_in">Already a member?</string>
+
+    <string name="edit">EDIT</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="unexpected_logout">An unexpeceted logout occurred. Please Login again.</string>
+    <string name="unknown_error">Unknown error. Please try again.</string>
+    <string name="email_updated">E-mail successfully update. Kindly verify your email using the verification link sent on your mail id.</string>
+    <string name="login_to_phoneverify_error">Something went wrong. If your registration was successful, you can are good to login here.</string>
+
+    <string name="default_notification_channel_id">Social India Notification Service</string>
+
+</resources>
