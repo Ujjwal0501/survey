@@ -49,7 +49,7 @@ public class Signup extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_signup, container, false);
-//        getActivity().setTitle("Social India - SignUp");
+//        getActivity().setTitle("Survey - SignUp");
         context = v.getContext();
         fragment = v;
         activity = getActivity();
@@ -107,7 +107,7 @@ public class Signup extends Fragment {
         super.onStart();
         Activity activity = getActivity();
         if (activity != null)
-            activity.setTitle("Social India - SignUp");
+            activity.setTitle("Survey - SignUp");
     }
 
     private void initSignUp(final String email, final String password, final String name, final String phone) {
