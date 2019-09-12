@@ -28,6 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.svnit.civil.survey.fragments.Brief;
 import com.svnit.civil.survey.fragments.Part_a_a;
+import com.svnit.civil.survey.fragments.Part_a_b;
 import com.svnit.civil.survey.fragments.Part_a_c;
 import com.svnit.civil.survey.models.UserAddress;
 
@@ -247,6 +248,11 @@ public class Home extends AppCompatActivity {
     public void part(View v) {
         fragmentManager.popBackStack();
         fragmentManager.beginTransaction().replace(R.id.container, new Part_a_a()).addToBackStack(null).commit();
+    }
+
+    public void partab(View v) {
+        fragmentManager.popBackStack();
+        fragmentManager.beginTransaction().replace(R.id.container, new Part_a_b()).addToBackStack(null).commit();
     }
 
     public void partac(View v) {
