@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="occupation">
+        <item>Occupation</item>
+        <item>Government</item>
+        <item>Semi-Government</item>
+        <item>Private Service</item>
+        <item>Private Business</item>
+        <item>Self</item>
+        <item>Education</item>
+    </array>
+
+    <array name="residence">
+        <item>Residence Type</item>
+        <item>Flat (1 BHK)</item>
+        <item>Flat (2 BHK)</item>
+        <item>Flat (3 BHK)</item>
+        <item>Row House</item>
+        <item>Bungalow</item>
+    </array>
+
+    <array name="income">
+        <item>Monthly Income</item>
+        <item>&lt; 10000</item>
+        <item>10000 - 15000</item>
+        <item>15000 - 20000</item>
+        <item>20000 - 25000</item>
+        <item>25000 - 30000</item>
+        <item>30000 - 35000</item>
+        <item>&gt; 35000</item>
+    </array>
+
+    <array name="boy_child">
+        <item>Son</item>
+        <item>None</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three or more</item>
+    </array>
+
+    <array name="girl_child">
+        <item>Daughter</item>
+        <item>None</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three or more</item>
+    </array>
+
+    <array name="count">
+        <item>Number</item>
+        <item>None</item>
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four or more</item>
+    </array>
+
+    <array name="gbo">
+        <item>Select</item>
+        <item>Good</item>
+        <item>Ok</item>
+        <item>Bad</item>
+    </array>
+</resources>

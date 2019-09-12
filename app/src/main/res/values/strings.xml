@@ -29,5 +29,7 @@
     <string name="login_to_phoneverify_error">Something went wrong. If your registration was successful, you can are good to login here.</string>
 
     <string name="default_notification_channel_id">Social India Notification Service</string>
+    <string name="about_content">Hello guys this is a <i><b>Social India</b> group</i>.
+this group started by Prince Verma along with him team. We started this group at 16/5/2019.In this group we work for nation people. Our aim is work for needed people. We teach the Children and donate many things that can be useful for other person also. We can also work for better future development of students. Anything that can helpful for needed people we are always ready. Without any cost our team work with full efforts and hard work.</string>
 
 </resources>

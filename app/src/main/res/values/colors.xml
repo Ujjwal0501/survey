@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="logoPrimary">#24453E</color>
-    <color name="logoSecondary">#eff2f1</color>
-    <color name="white">#ffffff</color>
+    <color name="logoSecondary">#121D19</color>
+    <color name="white">#8080FF</color>
     <color name="colorGray">#D0D0D0</color>
 </resources>

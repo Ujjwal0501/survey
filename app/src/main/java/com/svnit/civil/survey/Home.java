@@ -26,6 +26,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.svnit.civil.survey.fragments.Brief;
+import com.svnit.civil.survey.fragments.Part_a_a;
+import com.svnit.civil.survey.fragments.Part_a_c;
 import com.svnit.civil.survey.models.UserAddress;
 
 public class Home extends AppCompatActivity {
@@ -156,8 +159,8 @@ public class Home extends AppCompatActivity {
         // check if a fragment was set, and do not replace the old fragment onCreate
         // onCreate is executed on every run of activity (resume, restart, etc)
         if (savedInstanceState == null) {
-//            fragmentManager.beginTransaction().replace(R.id.container, new About()).commit();
-//            navigationView.getMenu().getItem(0).setChecked(true);
+            fragmentManager.beginTransaction().replace(R.id.container, new Brief()).commit();
+            navigationView.getMenu().getItem(0).setChecked(true);
         }
     }
 
@@ -199,6 +202,7 @@ public class Home extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
     private void showPrompt(String msg, final String key) {
         AlertDialog.Builder testDialog = new AlertDialog.Builder(Home.this);
         testDialog.setMessage(msg);
@@ -238,6 +242,16 @@ public class Home extends AppCompatActivity {
 
     public void contactMe(View v) {
         startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + ((TextView) v).getText().toString().trim() )));
+    }
+
+    public void part(View v) {
+        fragmentManager.popBackStack();
+        fragmentManager.beginTransaction().replace(R.id.container, new Part_a_a()).addToBackStack(null).commit();
+    }
+
+    public void partac(View v) {
+        fragmentManager.popBackStack();
+        fragmentManager.beginTransaction().replace(R.id.container, new Part_a_c()).addToBackStack(null).commit();
     }
 }
 
