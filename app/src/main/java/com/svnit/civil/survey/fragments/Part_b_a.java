@@ -14,10 +14,10 @@ import com.svnit.civil.survey.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Part_b extends Fragment {
+public class Part_b_a extends Fragment {
 
 
-    public Part_b() {
+    public Part_b_a() {
         // Required empty public constructor
     }
 
@@ -26,7 +26,7 @@ public class Part_b extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_part_b, container, false);
+        return inflater.inflate(R.layout.fragment_part_b_a, container, false);
     }
 
 }

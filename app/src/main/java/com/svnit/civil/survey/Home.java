@@ -30,6 +30,8 @@ import com.svnit.civil.survey.fragments.Brief;
 import com.svnit.civil.survey.fragments.Part_a_a;
 import com.svnit.civil.survey.fragments.Part_a_b;
 import com.svnit.civil.survey.fragments.Part_a_c;
+import com.svnit.civil.survey.fragments.Part_b_a;
+import com.svnit.civil.survey.fragments.Part_b_b;
 import com.svnit.civil.survey.models.UserAddress;
 
 public class Home extends AppCompatActivity {
@@ -258,6 +260,16 @@ public class Home extends AppCompatActivity {
     public void partac(View v) {
         fragmentManager.popBackStack();
         fragmentManager.beginTransaction().replace(R.id.container, new Part_a_c()).addToBackStack(null).commit();
+    }
+
+    public void partba(View v) {
+        fragmentManager.popBackStack();
+        fragmentManager.beginTransaction().replace(R.id.container, new Part_b_a()).addToBackStack(null).commit();
+    }
+
+    public void partbb(View v) {
+        fragmentManager.popBackStack();
+        fragmentManager.beginTransaction().replace(R.id.container, new Part_b_b()).addToBackStack(null).commit();
     }
 }
 

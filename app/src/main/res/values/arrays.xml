@@ -61,4 +61,14 @@
         <item>Ok</item>
         <item>Bad</item>
     </array>
+
+    <array name="mode">
+        <item>Select</item>
+        <item>Walk</item>
+        <item>3 Wheeler</item>
+        <item>Bus</item>
+        <item>Car</item>
+        <item>Cycle</item>
+        <item>2 Wheeler</item>
+    </array>
 </resources>
