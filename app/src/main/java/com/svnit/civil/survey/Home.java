@@ -1,5 +1,7 @@
 package com.svnit.civil.survey;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -19,6 +21,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -33,6 +36,7 @@ import com.svnit.civil.survey.fragments.Part_a_c;
 import com.svnit.civil.survey.fragments.Part_b_a;
 import com.svnit.civil.survey.fragments.Part_b_b;
 import com.svnit.civil.survey.models.UserAddress;
+import com.svnit.civil.survey.services.AutoService;
 
 public class Home extends AppCompatActivity {
     public static UserAddress userAddress;
@@ -270,6 +274,37 @@ public class Home extends AppCompatActivity {
     public void partbb(View v) {
         fragmentManager.popBackStack();
         fragmentManager.beginTransaction().replace(R.id.container, new Part_b_b()).addToBackStack(null).commit();
+    }
+
+    public void startService(View v) {
+        run();
+    }
+
+
+    private void run() {
+
+        System.out.println(Thread.currentThread().getId());
+        if (!isMyServiceRunning(AutoService.class)) {
+            new Thread() {
+                @Override
+                public void run() {
+                    startService(new Intent(getApplicationContext(), AutoService.class));
+                }
+            }.start();
+            Snackbar.make(navigationView, "Service started successfully.", Snackbar.LENGTH_SHORT).show();
+        } else {
+            Snackbar.make(navigationView, "Service already running.", Snackbar.LENGTH_SHORT).show();
+        }
+    }
+
+    private boolean isMyServiceRunning(Class<?> serviceClass) {
+        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+        for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
+            if (serviceClass.getName().equals(service.service.getClassName())) {
+                return true;
+            }
+        }
+        return false;
     }
 }
 

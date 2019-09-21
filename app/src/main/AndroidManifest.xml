@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.svnit.civil.survey">
 
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_image"
@@ -23,6 +25,10 @@
         <activity android:name=".Home"
             android:theme="@style/DrawerTheme"/>
         <activity android:name=".Phoneverify"/>
+
+        <service android:name=".services.AutoService" />
+
+        <receiver android:name=".receivers.BootReceiver" />
     </application>
 
 </manifest>
