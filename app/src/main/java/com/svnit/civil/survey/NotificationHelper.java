@@ -5,14 +5,11 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.os.Build;
-import android.widget.RemoteViews;
 
 import androidx.core.app.NotificationCompat;
 
 public class NotificationHelper {
-    private static String CHANNEL_ID = "SurveyNotificationChannel"
-            , CHANNEL_NAME = "AUTO SERVICE NOTIFICATION CHANNEL FROM SURVEY"
-            , CHANNEL_DESCRIPTION = "This channel sends notification for the location info used by the app's service.";
+    private static String CHANNEL_ID = "SurveyNotificationChannel", CHANNEL_NAME = "AUTOMATIC ROUTE SURVEY", CHANNEL_DESCRIPTION = "This channel sends notification for the location info used by the app's service.";
 
     public static NotificationCompat.Builder build(Context context) {
         return init(context);
@@ -35,16 +32,16 @@ public class NotificationHelper {
     }
 
     public static NotificationCompat.Builder init(Context context) {
-        createNotificationChannel(context);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setStyle(new NotificationCompat.InboxStyle()
-                        .setSummaryText("Running")
-                        .addLine("Big Text Survey will fetch your travel related info and ask for your confirmation."))
-                .setPriority(NotificationCompat.PRIORITY_MIN)
-                .setOngoing(true);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
+                .setPriority(Notification.PRIORITY_MIN)
+                .setContentTitle("Hello")
+                .setContentText("Service running")
+                .setOngoing(true)
+                .setAutoCancel(false);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            builder.setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
         builder.setShowWhen(false);
         return builder;
     }
