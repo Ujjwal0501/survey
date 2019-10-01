@@ -1,10 +1,14 @@
 package com.svnit.civil.survey;
 
+import android.Manifest;
+import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,6 +20,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
@@ -35,6 +40,7 @@ import com.svnit.civil.survey.fragments.Part_a_b;
 import com.svnit.civil.survey.fragments.Part_a_c;
 import com.svnit.civil.survey.fragments.Part_b_a;
 import com.svnit.civil.survey.fragments.Part_b_b;
+import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.models.UserAddress;
 import com.svnit.civil.survey.services.AutoService;
 
@@ -48,6 +54,7 @@ public class Home extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
+    public LocationHelper locationHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,6 +176,15 @@ public class Home extends AppCompatActivity {
             fragmentManager.beginTransaction().replace(R.id.container, new Brief()).commit();
             navigationView.getMenu().getItem(0).setChecked(true);
         }
+
+        locationHelper = new LocationHelper();
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        if (!locationHelper.checkPermission(this)) locationHelper.reqPermission(Home.this, this);
     }
 
     @Override
@@ -238,19 +254,6 @@ public class Home extends AppCompatActivity {
 
     }
 
-    public void GoToDonate(View view) {
-//        Intent intent = new Intent(this, DonateActivity.class);
-//        startActivity(intent);
-    }
-
-    public void whatsappGroup(View v) {
-        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://chat.whatsapp.com/CLqJ54GdozW1WwFBEwOAPv")));
-    }
-
-    public void contactMe(View v) {
-        startActivity(new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + ((TextView) v).getText().toString().trim() )));
-    }
-
     public void part(View v) {
         fragmentManager.popBackStack();
         fragmentManager.beginTransaction().replace(R.id.container, new Part_a_a()).addToBackStack(null).commit();
@@ -280,8 +283,12 @@ public class Home extends AppCompatActivity {
         run();
     }
 
+    public void run() {
 
-    private void run() {
+        if (!locationHelper.checkPermission(this)) {
+            locationHelper.reqPermission(Home.this, this);
+            return;
+        }
 
         System.out.println(Thread.currentThread().getId());
         if (!isMyServiceRunning(AutoService.class)) {
@@ -305,6 +312,31 @@ public class Home extends AppCompatActivity {
             }
         }
         return false;
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case LocationHelper.LOCATION_RC: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    if (!locationHelper.isEnabled(Home.this)) locationHelper.reqEnable(Home.this);
+
+                    run();
+
+                } else {
+                    // permission denied, boo! Disable the
+                    // functionality that depends on this permission.
+
+                }
+                return;
+            }
+            // other 'case' lines to check for other
+            // permissions this app might request
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
 }
 

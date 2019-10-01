@@ -16,10 +16,10 @@ public class BootReceiver extends BroadcastReceiver {
         Intent serviceIntent = new Intent(context, AutoService.class);
         if (Build.VERSION.SDK_INT >= 26) {
             context.startForegroundService(serviceIntent);
-            Toast.makeText(context, context.getString(R.string.app_name)+" service started successfully!", 100).show();
+            Toast.makeText(context, context.getString(R.string.app_name)+" service started successfully!", Toast.LENGTH_SHORT).show();
             return ;
         }
         context.startService(serviceIntent);
-        Toast.makeText(context, context.getString(R.string.app_name)+" service started successfully!", 100).show();
+        Toast.makeText(context, context.getString(R.string.app_name)+" service started successfully!", Toast.LENGTH_SHORT).show();
     }
 }
