@@ -1,17 +1,14 @@
 package com.svnit.civil.survey;
 
-import android.Manifest;
-import android.app.Activity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,7 +17,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
@@ -50,11 +46,13 @@ public class Home extends AppCompatActivity {
     public static FirebaseAuth mAuth;
     public static FirebaseUser user;
     public static DataSnapshot snapshot;
+    public static int STEP = 0, MAX = 0;
+    public static ImageView backBtn;
+    public LocationHelper locationHelper;
     private DatabaseReference dbRef;
     private FragmentManager fragmentManager;
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
-    public LocationHelper locationHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -204,14 +202,20 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+
         int fragmentCount = fragmentManager.getBackStackEntryCount();
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawers();
+        } else if (STEP > 0) {
+            // call static function inside Fragment
+            if (backBtn != null) backBtn.performClick();
         } else if (fragmentCount == 0) {
             super.onBackPressed();
         } else {
             fragmentManager.popBackStack();
             navigationView.getMenu().getItem(0).setChecked(true);
+            STEP = 0;
+            MAX = 0;
         }
     }
 

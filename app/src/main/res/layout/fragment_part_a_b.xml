@@ -11,23 +11,340 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <LinearLayout
+            android:layout_margin="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimaryDark"
+                    app:cardCornerRadius="16dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/two"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="16dp"/>
+
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step0"
+                app:cardCornerRadius="6dp"
+                android:padding="4dp"
+                app:cardElevation="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Assets" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:text="Monthly Income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Spinner
+                            android:id="@+id/m_income"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/income"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:text="Residence type"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Spinner
+                            android:id="@+id/res_type"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/residence"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:text="Car"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Spinner
+                            android:id="@+id/car_count"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/count"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:text="2 Wheeler"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Spinner
+                            android:id="@+id/twow_count"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/count"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:text="Bicycle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                        <Spinner
+                            android:id="@+id/bicylce_count"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/count"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step1"
+                app:cardCornerRadius="6dp"
+                android:padding="4dp"
+                android:layout_marginBottom="32dp"
+                app:cardElevation="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textSize="20sp"
+                        android:text="Monthly on Vehicle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="EMI (Rs. per month)" />
+
+                        <EditText
+                            android:id="@+id/m_emi"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Fuel Cost (Rs. per month)" />
+
+                        <EditText
+                            android:id="@+id/mfuel_cost"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Maintenance Cost (Rs. per month)" />
+
+                        <EditText
+                            android:id="@+id/m_maint"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Vehicle Registration (Rs.)" />
+
+                        <EditText
+                            android:id="@+id/reg_charge"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Parking Charge (Rs. per month)" />
+
+                        <EditText
+                            android:id="@+id/mpark_cost"
+                            android:layout_weight="1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:hint="Amount"
+                            android:inputType="number" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
 
     </ScrollView>
 
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="right|bottom"
+        android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
-        app:cardCornerRadius="32dp">
+        android:onClick="partab"
+        app:cardCornerRadius="32dp"
+        android:visibility="gone">
 
         <ImageView
+            android:id="@+id/prev"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:padding="14dp"
-            android:src="@drawable/save" />
+            android:src="@drawable/prev" />
 
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="16dp"
+        android:onClick="partab"
+        app:cardCornerRadius="32dp">
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:padding="14dp"
+            android:src="@drawable/next" />
+
+    </androidx.cardview.widget.CardView>
 </FrameLayout>

@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
 
 /**
@@ -29,4 +30,9 @@ public class Brief extends Fragment {
         return inflater.inflate(R.layout.fragment_brief, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Home.backBtn = null;
+    }
 }

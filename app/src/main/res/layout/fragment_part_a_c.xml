@@ -17,24 +17,64 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
+            <LinearLayout
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="City Bus" />
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimaryDark"
+                    app:cardCornerRadius="16dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/two"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="16dp"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/three"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="16dp"/>
+
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/step0"
                 app:cardCornerRadius="6dp"
                 android:padding="4dp"
                 app:cardElevation="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <LinearLayout
-                    android:background="@drawable/border_green"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textSize="20sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="City Bus" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -48,6 +88,7 @@
                             android:text="Nearest Stop Distance (meters)" />
 
                         <EditText
+                            android:id="@+id/bus_distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -67,6 +108,7 @@
                             android:text="Time to reach Bus stop (minutes)" />
 
                         <EditText
+                            android:id="@+id/bus_time_to_reach"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -86,6 +128,7 @@
                             android:text="Average waiting time (minutes)" />
 
                         <EditText
+                            android:id="@+id/bus_wait_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -105,6 +148,7 @@
                             android:text="Usage Frequency (weekly)" />
 
                         <EditText
+                            android:id="@+id/bus_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -124,6 +168,7 @@
                             android:text="Service Reliability" />
 
                         <Spinner
+                            android:id="@+id/bus_reliability"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -143,6 +188,7 @@
                             android:text="Safety" />
 
                         <Spinner
+                            android:id="@+id/bus_safety"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -162,6 +208,7 @@
                             android:text="Fare" />
 
                         <Spinner
+                            android:id="@+id/bus_fare"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -181,6 +228,7 @@
                             android:text="Cleanliness and Comfort" />
 
                         <Spinner
+                            android:id="@+id/bus_comfort"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -189,27 +237,30 @@
                     </LinearLayout>
 
                 </LinearLayout>
+
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                android:text="BRT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
             <androidx.cardview.widget.CardView
+                android:id="@+id/step1"
                 app:cardCornerRadius="6dp"
                 android:padding="4dp"
                 app:cardElevation="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <LinearLayout
-                    android:background="@drawable/border_green"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textSize="20sp"
+                        android:text="BRT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -223,6 +274,7 @@
                             android:text="Nearest Stop Distance (meters)" />
 
                         <EditText
+                            android:id="@+id/brt_distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -242,6 +294,7 @@
                             android:text="Time to reach Bus stop (minutes)" />
 
                         <EditText
+                            android:id="@+id/brt_time_to_reach"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -261,6 +314,7 @@
                             android:text="Average waiting time (minutes)" />
 
                         <EditText
+                            android:id="@+id/brt_wait_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -280,6 +334,7 @@
                             android:text="Usage Frequency (weekly)" />
 
                         <EditText
+                            android:id="@+id/brt_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -299,6 +354,7 @@
                             android:text="Service Reliability" />
 
                         <Spinner
+                            android:id="@+id/brt_reliability"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -318,6 +374,7 @@
                             android:text="Safety" />
 
                         <Spinner
+                            android:id="@+id/brt_safety"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -337,6 +394,7 @@
                             android:text="Fare" />
 
                         <Spinner
+                            android:id="@+id/brt_fare"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -356,6 +414,7 @@
                             android:text="Cleanliness and Comfort" />
 
                         <Spinner
+                            android:id="@+id/brt_comfort"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -367,26 +426,28 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                android:text="Auto"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
             <androidx.cardview.widget.CardView
+                android:id="@+id/step2"
                 app:cardCornerRadius="6dp"
                 android:layout_marginBottom="32dp"
                 android:padding="4dp"
                 app:cardElevation="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <LinearLayout
-                    android:background="@drawable/border_green"
+                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
+
+                    <TextView
+                        android:layout_marginTop="12dp"
+                        android:textSize="20sp"
+                        android:text="Auto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -400,6 +461,7 @@
                             android:text="Nearest Stop Distance (meters)" />
 
                         <EditText
+                            android:id="@+id/auto_distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -419,6 +481,7 @@
                             android:text="Time to reach Bus stop (minutes)" />
 
                         <EditText
+                            android:id="@+id/auto_time_to_reach"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -438,6 +501,7 @@
                             android:text="Average waiting time (minutes)" />
 
                         <EditText
+                            android:id="@+id/auto_wait_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -457,6 +521,7 @@
                             android:text="Usage Frequency (weekly)" />
 
                         <EditText
+                            android:id="@+id/auto_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -476,6 +541,7 @@
                             android:text="Service Reliability" />
 
                         <Spinner
+                            android:id="@+id/auto_reliability"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -495,6 +561,7 @@
                             android:text="Safety" />
 
                         <Spinner
+                            android:id="@+id/auto_safety"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -514,6 +581,7 @@
                             android:text="Fare" />
 
                         <Spinner
+                            android:id="@+id/auto_fare"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -533,6 +601,7 @@
                             android:text="Cleanliness and Comfort" />
 
                         <Spinner
+                            android:id="@+id/auto_comfort"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -549,17 +618,37 @@
     </ScrollView>
 
     <androidx.cardview.widget.CardView
-        android:layout_margin="16dp"
-        app:cardCornerRadius="32dp"
-        android:layout_gravity="right|bottom"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="16dp"
+        android:onClick="partab"
+        app:cardCornerRadius="32dp"
+        android:visibility="gone">
 
         <ImageView
-            android:src="@drawable/save"
-            android:padding="14dp"
+            android:id="@+id/prev"
             android:layout_width="64dp"
-            android:layout_height="64dp"/>
+            android:layout_height="64dp"
+            android:padding="14dp"
+            android:src="@drawable/prev" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="16dp"
+        android:onClick="partab"
+        app:cardCornerRadius="32dp">
+
+        <ImageView
+            android:id="@+id/next"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:padding="14dp"
+            android:src="@drawable/next" />
 
     </androidx.cardview.widget.CardView>
 

@@ -17,255 +17,137 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:textSize="20sp"
-                android:layout_marginTop="12dp"
+            <LinearLayout
+                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your details" />
+                android:layout_margin="8dp"
+                android:orientation="horizontal">
 
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@drawable/border_green"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/one"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimaryDark"
+                    app:cardCornerRadius="16dp"/>
 
-                    <EditText
-                        android:id="@+id/self_age"
-                        android:inputType="number"
-                        android:layout_weight="1"
-                        android:hint="Age"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <Spinner
-                        android:id="@+id/self_ocu"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/occupation" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:textSize="20sp"
-                android:layout_marginTop="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Spouse" />
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
-                    android:background="@drawable/border_green"
-                    android:layout_width="match_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/two"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/logoPrimary"
+                    app:cardCornerRadius="16dp"/>
 
-                    <EditText
-                        android:id="@+id/spouse_age"
-                        android:inputType="number"
-                        android:layout_weight="1"
-                        android:hint="Age"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content" />
-
-                    <Spinner
-                        android:id="@+id/spouse_ocu"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/occupation" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:textSize="20sp"
-                android:layout_marginTop="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Children" />
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/step0"
                 app:cardCornerRadius="6dp"
-                android:padding="4dp"
+                android:padding="8dp"
                 app:cardElevation="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:background="@drawable/border_green"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-                    <Spinner
-                        android:id="@+id/daughters"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/girl_child"
-                        android:minWidth="24dp"
-                        android:minHeight="24dp" />
-
-                    <Spinner
-                        android:id="@+id/sons"
-                        android:layout_margin="4dp"
-                        android:layout_weight="1"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:entries="@array/boy_child"
-                        android:minWidth="24dp"
-                        android:minHeight="24dp" />
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:textSize="20sp"
-                android:layout_marginTop="12dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Assets" />
-
-            <androidx.cardview.widget.CardView
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <LinearLayout
+                    android:padding="8dp"
                     android:orientation="vertical"
-                    android:background="@drawable/border_green"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Your details" />
 
-                        <TextView
-                            android:layout_margin="4dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/self_age"
+                            android:inputType="number"
                             android:layout_weight="1"
-                            android:text="Monthly Income"
+                            android:hint="Age"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                         <Spinner
-                            android:id="@+id/m_income"
-                            android:layout_margin="4dp"
+                            android:id="@+id/self_ocu"
                             android:layout_weight="1"
-                            android:entries="@array/income"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:entries="@array/occupation" />
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Spouse" />
 
-                        <TextView
-                            android:layout_margin="4dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/spouse_age"
+                            android:inputType="number"
                             android:layout_weight="1"
-                            android:text="Residence type"
+                            android:hint="Age"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content" />
 
                         <Spinner
-                            android:id="@+id/res_type"
-                            android:layout_margin="4dp"
+                            android:id="@+id/spouse_ocu"
                             android:layout_weight="1"
-                            android:entries="@array/residence"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:entries="@array/occupation" />
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:text="Car"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                        <Spinner
-                            android:id="@+id/car_count"
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:entries="@array/count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Children" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:text="2 Wheeler"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <Spinner
-                            android:id="@+id/twow_count"
+                            android:id="@+id/daughters"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/count"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <TextView
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:text="Bicycle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:entries="@array/girl_child"
+                            android:minWidth="24dp"
+                            android:minHeight="24dp" />
 
                         <Spinner
-                            android:id="@+id/bicylce_count"
+                            android:id="@+id/sons"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/count"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:entries="@array/boy_child"
+                            android:minWidth="24dp"
+                            android:minHeight="24dp" />
 
                     </LinearLayout>
 
@@ -273,131 +155,75 @@
 
             </androidx.cardview.widget.CardView>
 
-            <TextView
-                android:layout_marginTop="12dp"
-                android:textSize="20sp"
-                android:text="Monthly on Vehicle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
             <androidx.cardview.widget.CardView
+                android:id="@+id/step1"
                 app:cardCornerRadius="6dp"
                 android:padding="4dp"
-                android:layout_marginBottom="32dp"
                 app:cardElevation="4dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone">
 
                 <LinearLayout
-                    android:background="@drawable/border_green"
+                    android:padding="8dp"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Son" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="EMI (Rs. per month)" />
-
                         <EditText
-                            android:id="@+id/m_emi"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="Age"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <Spinner
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:inputType="number" />
+                            android:entries="@array/occupation" />
 
                     </LinearLayout>
+
+                    <TextView
+                        android:textSize="20sp"
+                        android:layout_marginTop="12dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daughter" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Fuel Cost (Rs. per month)" />
-
                         <EditText
-                            android:id="@+id/mfuel_cost"
+                            android:inputType="number"
+                            android:layout_weight="1"
+                            android:hint="Age"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content" />
+
+                        <Spinner
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:inputType="number" />
+                            android:entries="@array/occupation" />
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Maintenance Cost (Rs. per month)" />
-
-                        <EditText
-                            android:id="@+id/m_maint"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:inputType="number" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Vehicle Registration (Rs.)" />
-
-                        <EditText
-                            android:id="@+id/reg_charge"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:inputType="number" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:text="Parking Charge (Rs. per month)" />
-
-                        <EditText
-                            android:id="@+id/mpark_cost"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:hint="Amount"
-                            android:inputType="number" />
-
-                    </LinearLayout>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -409,13 +235,31 @@
     <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="16dp"
+        android:onClick="partab"
+        app:cardCornerRadius="32dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/prev"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:padding="14dp"
+            android:src="@drawable/prev" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
         app:cardCornerRadius="32dp">
 
         <ImageView
-            android:id="@+id/save"
+            android:id="@+id/next"
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:padding="14dp"
