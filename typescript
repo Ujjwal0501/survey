@@ -1,0 +1,378 @@
+Script started on 2019-10-13 10:56:45+05:30 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="192" LINES="45"]
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/
+Display all 261 possibilities? (y or n)
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/
+conf.d/              dispatcher.d/        dnsmasq.d/           dnsmasq-shared.d/    NetworkManager.conf  system-connections/  
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/dn[K[KNetworkManager.conf 
+[?1049h[22;0;0t[?1h=[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+[7m/etc/NetworkManager/NetworkManager.conf (END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/NetworkManager.conf 
+[?1049h[22;0;0t[?1h=[main]
+plugins=ifupdown,keyfile
+
+[ifupdown]
+managed=false
+
+[device]
+wifi.scan-rand-mac-address=no
+[7m/etc/NetworkManager/NetworkManager.conf (END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/NetworkManager.conf [Ksystem-connections/
+A'Did Shafts.nmconnection                      Hotspot.nmconnection                           Micromax Q392.nmconnection                     PG_BOYS_HOSTEL.nmconnection
+antriksh-Inspiron-5567.nmconnection            hrishabh-VivoBook-ASUSLaptop-X41.nmconnection  mrityunjay-HP-Laptop-15-bs1xx.nmconnection     Redmi Note 6 Pr.nmconnection
+Antriksh’s iPhone.nmconnection                 ish.nmconnection                               Mr Robot.nmconnection                          Rishabh&JAY.nmconnection
+CLASS_ROOM.nmconnection                        JioFiber-ko8oC.nmconnection                    New 802-11-wireless connection.nmconnection    Shaft's Laptop.nmconnection
+Computer.nmconnection                          Juststay Ff.nmconnection                       Nokia 6.1 Plus Linux.nmconnection              Wired connection 1.nmconnection
+Honor 9 Lite_220D.nmconnection                 LAPTOP-0CPM73MH 8231.nmconnection              OnePlus 6T.nmconnection                        Wired connection 2.nmconnection
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/system-connections/[K
+conf.d/              dispatcher.d/        dnsmasq.d/           dnsmasq-shared.d/    NetworkManager.conf  system-connections/  
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /etc/NetworkManager/dnsmasq.d/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kdnsmasq-shared.d/
+/etc/NetworkManager/dnsmasq-shared.d/ is a directory
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mlocate lease
+/etc/lsb-release
+/etc/os-release
+/etc/apt/sources.list.d/brave-browser-release-disco.list
+/etc/apt/trusted.gpg.d/brave-browser-release.gpg
+/etc/apt/trusted.gpg.d/brave-browser-release.gpg~
+/etc/update-manager/meta-release
+/etc/update-manager/release-upgrades
+/etc/update-manager/release-upgrades.d
+/etc/update-motd.d/91-release-upgrade
+/etc/vmware/vmnet1/dhcpd/dhcpd.leases
+/etc/vmware/vmnet1/dhcpd/dhcpd.leases~
+/etc/vmware/vmnet8/dhcpd/dhcpd.leases
+/etc/vmware/vmnet8/dhcpd/dhcpd.leases~
+/home/guest/.cache/update-manager-core/meta-release-lts
+/home/ujjwal/.atom/packages/Hydrogen/node_modules/zeromq/build/Release
+/home/ujjwal/.atom/packages/Hydrogen/node_modules/zeromq/build/Release/zmq.node
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/any.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/assert.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/async.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/bind.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/bluebird.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/call_get.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/cancel.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/catch_filter.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/context.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/debuggability.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/direct_resolve.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/each.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/errors.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/es5.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/filter.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/finally.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/generators.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/join.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/map.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/method.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/nodeback.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/nodeify.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/promise.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/promise_array.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/promisify.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/props.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/queue.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/race.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/reduce.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/schedule.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/settle.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/some.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/synchronous_inspection.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/thenables.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/timers.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/using.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/bluebird/js/release/util.js
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/diff/release-notes.md
+/home/ujjwal/.atom/packages/atom-beautify/node_modules/handlebars/release-notes.md
+/home/ujjwal/.atom/packages/platformio-ide-terminal/node_modules/node-pty-prebuilt-multiarch/build/Release
+/home/ujjwal/.atom/packages/platformio-ide-terminal/node_modules/node-pty-prebuilt-multiarch/build/Release/pty.node
+/home/ujjwal/.cache/update-manager-core/meta-release
+/home/ujjwal/.cache/yarn/v4/npm-node-releases-1.1.28-503c3c70d0e4732b84e7aaa2925fbdde10482d4a
+/home/ujjwal/.cache/yarn/v4/npm-@babel-preset-env-7.5.5-bc470b53acaa48df4b8db24a570d6da1fef53c9a/node_modules/@babel/preset-env/data/unreleased-labels.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/any.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/assert.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/async.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/bind.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/bluebird.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/call_get.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/cancel.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/catch_filter.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/context.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/debuggability.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/direct_resolve.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/each.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/errors.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/es5.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/filter.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/finally.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/generators.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/join.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/map.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/method.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/nodeback.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/nodeify.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/promise.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/promise_array.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/promisify.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/props.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/queue.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/race.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/reduce.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/schedule.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/settle.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/some.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/synchronous_inspection.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/thenables.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/timers.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/using.js
+/home/ujjwal/.cache/yarn/v4/npm-bluebird-3.5.5-a8d0afd73251effbbd5fe384a77d73003c17a71f/node_modules/bluebird/js/release/util.js
+^C
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /[K~/Desktop/commands/script 
+[?1049h[22;0;0t[?1h=# modified by romano@rgtti.com from http://wiki.openwrt.org/doc/faq/faq.wireless#how.to.get.a.list.of.connected.clients
+
+echo    "# All connected wifi devices, with IP address,"
+echo    "# hostname (if available), and MAC address."
+printf  "# %-20s %-30s %-20s\n" "IP address" "lease name" "MAC address"
+leasefile=/var/lib/misc/dnsmasq.leases
+# list all wireless network interfaces 
+# (for MAC80211 driver; see wiki article for alternative commands)
+for interface in `iw dev | grep Interface | cut -f 2 -s -d" "`
+do
+  # for each interface, get mac addresses of connected stations/clients
+  maclist=`iw dev $interface station dump | grep Station | cut -f 2 -s -d" "`
+  # for each mac address in that list...
+  for mac in $maclist
+  do
+  # If a DHCP lease has been given out by dnsmasq,
+  # save it.
+     ip="UNKN"
+     host=""
+     ip=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 2 -s -d" "`
+     host=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 3 -s -d" "`
+     # ... show the mac address:
+     printf "  %-20s %-30s %-20s\n" $ip $host $mac
+   done
+done
+
+[7m/home/ujjwal/Desktop/commands/script (END)[27m[K[K...skipping...
+# modified by romano@rgtti.com from http://wiki.openwrt.org/doc/faq/faq.wireless#how.to.get.a.list.of.connected.clients
+
+echo    "# All connected wifi devices, with IP address,"
+echo    "# hostname (if available), and MAC address."
+printf  "# %-20s %-30s %-20s\n" "IP address" "lease name" "MAC address"
+leasefile=/var/lib/misc/dnsmasq.leases
+# list all wireless network interfaces 
+# (for MAC80211 driver; see wiki article for alternative commands)
+for interface in `iw dev | grep Interface | cut -f 2 -s -d" "`
+do
+  # for each interface, get mac addresses of connected stations/clients
+  maclist=`iw dev $interface station dump | grep Station | cut -f 2 -s -d" "`
+  # for each mac address in that list...
+  for mac in $maclist
+  do
+  # If a DHCP lease has been given out by dnsmasq,
+  # save it.
+     ip="UNKN"
+     host=""
+     ip=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 2 -s -d" "`
+     host=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 3 -s -d" "`
+     # ... show the mac address:
+     printf "  %-20s %-30s %-20s\n" $ip $host $mac
+   done
+done
+
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[1m~[0m
+[7m(END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless ~/Desktop/commands/script 
+[?1049h[22;0;0t[?1h=# modified by romano@rgtti.com from http://wiki.openwrt.org/doc/faq/faq.wireless#how.to.get.a.list.of.connected.clients
+
+echo    "# All connected wifi devices, with IP address,"
+echo    "# hostname (if available), and MAC address."
+printf  "# %-20s %-30s %-20s\n" "IP address" "lease name" "MAC address"
+leasefile=/var/lib/misc/dnsmasq.leases
+# list all wireless network interfaces 
+# (for MAC80211 driver; see wiki article for alternative commands)
+for interface in `iw dev | grep Interface | cut -f 2 -s -d" "`
+do
+  # for each interface, get mac addresses of connected stations/clients
+  maclist=`iw dev $interface station dump | grep Station | cut -f 2 -s -d" "`
+  # for each mac address in that list...
+  for mac in $maclist
+  do
+  # If a DHCP lease has been given out by dnsmasq,
+  # save it.
+     ip="UNKN"
+     host=""
+     ip=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 2 -s -d" "`
+     host=`cat $leasefile | cut -f 2,3,4 -s -d" " | grep $mac | cut -f 3 -s -d" "`
+     # ... show the mac address:
+     printf "  %-20s %-30s %-20s\n" $ip $host $mac
+   done
+done
+
+[7m/home/ujjwal/Desktop/commands/script (END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless ~/Desktop/commands/script [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[19Pocate leaseess /etc/NetworkManager/dnsmasq-shared.d/[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cocate lease[K.lease
+/etc/vmware/vmnet1/dhcpd/dhcpd.leases
+/etc/vmware/vmnet1/dhcpd/dhcpd.leases~
+/etc/vmware/vmnet8/dhcpd/dhcpd.leases
+/etc/vmware/vmnet8/dhcpd/dhcpd.leases~
+/usr/share/man/man5/dhclient.leases.5.gz
+/var/lib/NetworkManager/dhclient-00c7a14b-877b-42ff-9972-b320997f62f5-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-05aba7cd-115f-3de3-af23-f193ed3e0051-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-0cedc7c4-0068-3836-ae6c-17f04c2b9f76-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-10270535-c0b8-3049-a46d-4390179cc667-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-10cc422b-8a81-3978-9b16-5e57eb828e47-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-11d47693-62ac-3697-9b1d-23230f91edff-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-13b87a62-076f-3744-b06e-803c8e1ede3e-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-14e93f0c-4351-3f6a-8381-cf38393cbe16-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-166e175f-b90c-3819-9d28-a73adafb9d4b-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-17f40540-f641-383e-833c-e03b3e5a778d-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-18355254-f981-4a9a-8458-4b9b62c19a03-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-1ae86f85-4d72-3660-ad72-f258cc6e71c3-enp0s20f0u2u4.lease
+/var/lib/NetworkManager/dhclient-1cdd1794-fec0-3c9d-8b80-ec5d4e61a42c-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-1e6215bc-8a80-3b9b-b772-1664edb04f37-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-219c74d6-d3d5-3287-8000-79fbb4a275f2-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-2528830c-4999-3da4-aeb4-ea43ce87ba3c-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-2611517c-f79d-47a3-9c13-ed582bcabaed-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-28795ed9-958b-49c7-bd3f-db2490ecf536-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-297328b5-7fac-3080-b188-9713d8bd3306-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-2ef37eb8-e7a6-3b86-b9a1-686cd94f735e-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-2f16862c-07af-40ab-a1ae-995cd79bda36-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-32189281-bd3a-3f2d-922a-8a7005533716-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-32d1f93e-2682-3607-8833-243cfb603d48-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-389d91c0-ee1f-3cb4-a630-0470faee576b-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-3cff3eaa-e857-4d4f-80f8-773cf94cbd2a-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-3f546cb0-54d3-35ab-b6d3-e0df81975e64-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-455a85fe-0540-3b36-8b1b-605f1ae8485d-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-47bad6b3-2ddf-3df2-8e87-ee673a0d7b88-enp0s20f0u2u4.lease
+/var/lib/NetworkManager/dhclient-47fa4cf8-945f-440e-bcdb-59b4fdcc5ca4-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-4b124d2c-1426-3b90-b913-4667bc55205e-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-4b190019-6b05-3362-9966-0d6f98c46485-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-52098510-09f6-3643-9ac0-926df1fd3e23-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-5785e973-488e-3272-a69f-106427c15306-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-57a73a5a-4926-370b-a492-4e0a6bcde644-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-5dffda74-ff22-4349-ba3b-5b6430070340-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-5f3ada0f-e869-31dc-9d69-a262bf8e3050-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-639a7454-66eb-3338-be45-15834fcc758e-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-687ccfa5-7549-3657-ab16-66e88e820bd2-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-6bdcac90-61fc-3372-938c-134dacc4f2f5-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-6c81046e-df89-323d-a0ad-15209af83d7e-enp2s0.lease
+/var/lib/NetworkManager/dhclient-6e05caa9-10ad-3db6-b804-898224388b16-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-6f1c646c-a6fc-3ca4-a828-7633b4fcffc6-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-71b9db99-5c7b-31b7-bae6-20ac1222687a-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-76a86687-800b-3c63-8361-2897f8c4e961-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-78340cca-0d6f-4fab-b15a-e0bf68215313-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-7ab0b436-c165-3ec2-a01c-9bfc38bc40f2-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-819243f9-e206-373c-bbf1-b3306d2055d7-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-833a41cc-03bb-3bd8-b9cb-e34d1206eb9d-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-8770a769-57fd-35d3-a414-d01b0a561d84-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-88fb38ac-26dc-3a15-90c0-e0b26e782615-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-8a87df73-8046-3ae9-a0a1-f0c22bb4468f-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-8baf3050-f3c2-394d-af85-c3bab195a2b1-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-8c8ca5d0-668c-3edb-86b6-b77973fc0688-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-95ce15b4-e308-3c2c-9d88-58acd5d51c9c-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-a4152968-9d71-3ba5-abd5-3778d144b577-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-a489e293-2d2d-3957-85ec-161585fbffee-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-a5976bd6-b3ec-4e84-982d-a283692a4f7a-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-a6994d70-c95d-32f7-b73d-6b0878e3a77f-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-a7546aa6-c3c6-4248-b03b-de70cb17913e-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-ab107eda-89ba-3176-9ab9-f5d9f02c2a89-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-ad33b515-510f-33c6-911b-02cfcea30adc-enx3c18a09c3da7.lease
+/var/lib/NetworkManager/dhclient-b4daa830-857d-39f7-9cc6-c96a547528b5-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-b5721998-a3e6-3f56-863a-690d8f99d09f-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-b7a9202b-ce70-3bca-b4c2-7055ab385c7c-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-b9c84cf6-3ab0-3b1a-94bf-a92d5bd391fc-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-bea6526f-74b7-4e42-ba92-76569cf06bc5-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-bede86dc-a473-3469-b537-46d66957c45f-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-bf3f8484-9709-3c80-a585-f3b1b1fd8033-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-c16a7448-2a6f-3af0-9d43-8dfbf54f2343-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-c262e218-4414-42de-9633-4a8b263fe20b-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-c6833ba7-1e97-319d-b8c2-9833e81cf4b0-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-c93c0898-d490-335c-8958-18b351c0a6c3-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-c9cafef6-82c5-3550-b218-1575d4c1ffd8-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-c9ea3785-f4c6-364a-84fc-98a11b98d368-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-ca8f2af8-251d-4b3d-853b-c1a184c1029d-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-caffb6cb-0dab-3b7b-96ff-b5523aef47ca-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-cc28826f-3858-3712-8bec-9e85028df572-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-cc881bf9-a8a4-31fe-b014-ffcc1ac36473-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-cdae5631-0a02-3138-900f-eb274fe2d0bc-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-d0d99d77-6bb6-327c-998c-2141dd368f0b-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-d8182098-f18b-3427-8f1e-aa3792a48e68-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-d88461ac-7056-3732-a5fe-3d2eb9db58bc-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-d8f1762c-4654-3f7c-b935-696d9d11c3b4-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-d900e6e2-b9b0-339d-88ce-39ed5451c381-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-d951d4ea-de01-3afa-8837-fb651f62044a-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-d9856ca3-6d04-4df2-a5c1-9bce9b9affed-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-da3ce177-2df1-3a34-a984-f1c49868e055-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-dc1fa1af-b53b-3090-b0ad-4c68d2d08530-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-dcc3e9e4-8c48-4284-8a79-33d6afb6772d-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-dcef00e7-1a4e-3c84-95b6-085095c4fb32-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-de5e0ba6-14b2-3f32-8656-37721e7a736b-enx000e09868c66.lease
+/var/lib/NetworkManager/dhclient-dfbafdf2-417b-3ffb-8cd2-033a6d64afd3-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-e6ef1aca-1422-3331-b885-801b6c34431f-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-e70a0937-be66-328e-98b6-2f2c4d55526f-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-e836b1c5-afcb-42ea-a105-b377794822b7-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-ec729b1a-e8a4-3846-b5f7-7e7b1194053e-enp0s20f0u3.lease
+/var/lib/NetworkManager/dhclient-ee86a8fc-596d-34c9-b1a7-3de78de0b542-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-f0154b48-08ed-3e53-a225-1a10c4d758ba-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient-f25e7843-1c81-48e9-8fa9-908a192124aa-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-f75df99a-9662-420a-be28-a78b13512f00-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-f9e9ca00-dceb-4cc7-a551-0733eb1876e8-wlp3s0.lease
+/var/lib/NetworkManager/dhclient-fc9c14bf-b734-3856-a615-1f403d3659c0-enp0s20f0u2u1.lease
+/var/lib/NetworkManager/dhclient-fdbb14ba-e9b0-3f08-a80f-bce93a63e7e8-enp0s20f0u1.lease
+/var/lib/NetworkManager/dhclient6-2f16862c-07af-40ab-a1ae-995cd79bda36-wlp3s0.lease
+/var/lib/NetworkManager/dhclient6-d9856ca3-6d04-4df2-a5c1-9bce9b9affed-wlp3s0.lease
+/var/lib/NetworkManager/dnsmasq-wlp3s0.leases
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless/[K ;;/[K[K[K/var/lib/NetworkManager/dnsmasq-wlp3s0.leases 
+[?1049h[22;0;0t[?1h=1570947403 ac:57:75:5c:d9:ba 10.42.0.148 * 01:ac:57:75:5c:d9:ba
+1570947871 00:08:22:e6:41:00 10.42.0.160 android-adb89e8d45c2e55e *
+[7m/var/lib/NetworkManager/dnsmasq-wlp3s0.leases (END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mclear
+[H[2J[3J[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb connect 10.42.0clear[Kless /var/lib/NetworkManager/dnsmasq-wlp3s0.leases 
+[?1049h[22;0;0t[?1h=1570947403 ac:57:75:5c:d9:ba 10.42.0.148 * 01:ac:57:75:5c:d9:ba
+1570947871 00:08:22:e6:41:00 10.42.0.160 android-adb89e8d45c2e55e *
+[7m/var/lib/NetworkManager/dnsmasq-wlp3s0.leases (END)[27m[K[K[?1l>[?1049l[23;0;0t[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0mless /var/lib/NetworkManager/dnsmasq-wlp3s0.leases [C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Kadb connect 10.42.0.160
+unable to connect to 10.42.0.160:5555: Connection refused
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb connect 10.42.0.160[K148
+unable to connect to 10.42.0.148:5555: Connection refused
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb connect 10.42.0.148 55[K[K[K::[K55555
+connected to 10.42.0.148:55555
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices
+List of devices attached
+
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices
+List of devices attached
+
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices 0[K-l
+List of devices attached
+
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices -l[Kconnect 10.42.0.148:55555
+connected to 10.42.0.148:55555
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb connect 10.42.0.148:55555[15Pdevices -l
+List of devices attached
+10.42.0.148:55555      device product:Dragon_00WW model:Nokia_6_1_Plus device:DRG_sprout transport_id:4
+
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices -l
+List of devices attached
+
+[0;35mujjwal[0;32m (master *)[0;34m Survey $ [0madb devices -l

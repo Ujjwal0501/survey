@@ -166,7 +166,26 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:text="Socio-Economic Details"
+                    android:text="Social Details"
+                    android:textAlignment="center" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="148dp"
+                android:layout_marginTop="16dp"
+                android:onClick="partab"
+                android:padding="16dp"
+                app:cardBackgroundColor="#cfcfff"
+                app:cardCornerRadius="6dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="Economic Details"
                     android:textAlignment="center" />
 
             </androidx.cardview.widget.CardView>

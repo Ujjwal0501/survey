@@ -109,6 +109,7 @@
 
                             <CheckBox
                                 android:id="@+id/public_wait_time_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -120,6 +121,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Minutes" />
 
                         </LinearLayout>
@@ -131,6 +133,7 @@
 
                             <CheckBox
                                 android:id="@+id/public_distance_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -142,6 +145,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Meters" />
 
                         </LinearLayout>
@@ -153,6 +157,7 @@
 
                             <CheckBox
                                 android:id="@+id/public_travel_time_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -164,6 +169,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Minutes" />
 
                         </LinearLayout>
@@ -175,6 +181,7 @@
 
                             <CheckBox
                                 android:id="@+id/public_reliability_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -186,6 +193,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="(%) Percentage" />
 
                         </LinearLayout>
@@ -197,6 +205,7 @@
 
                             <CheckBox
                                 android:id="@+id/public_fare_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -208,6 +217,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Rupees" />
 
                         </LinearLayout>
@@ -250,6 +260,7 @@
 
                             <CheckBox
                                 android:id="@+id/private_travel_time_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -261,6 +272,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Minutes" />
 
                         </LinearLayout>
@@ -271,6 +283,7 @@
 
                             <CheckBox
                                 android:id="@+id/private_cost_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -282,6 +295,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Rupees" />
 
                         </LinearLayout>
@@ -292,6 +306,7 @@
 
                             <CheckBox
                                 android:id="@+id/private_parking_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -303,6 +318,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:inputType="number"
                                 android:hint="Rupees" />
 
                         </LinearLayout>
@@ -313,6 +329,7 @@
 
                             <CheckBox
                                 android:id="@+id/private_sharing_checkbox"
+                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
@@ -358,10 +375,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content">
 
-<!--                            <RadioGroup-->
-<!--                                android:layout_width="wrap_content"-->
-<!--                                android:layout_height="wrap_content">-->
-
                                 <androidx.cardview.widget.CardView
                                     app:contentPadding="6dp"
                                     android:layout_width="match_parent"
@@ -375,6 +388,13 @@
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:orientation="vertical">
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginBottom="6dp"
+                                            android:text="Current Service"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
                                         <TextView
                                             android:layout_width="wrap_content"
@@ -473,6 +493,7 @@
                                             android:backgroundTint="#080808" />
 
                                         <RadioButton
+                                            android:id="@+id/radio_current"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"/>
 
@@ -495,9 +516,16 @@
                                         android:orientation="vertical">
 
                                         <TextView
+                                            android:text="Service Bus A"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Existing walking distance" />
+                                            android:layout_marginBottom="6dp"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                                        <TextView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:text="10 minutes more" />
 
                                         <View
                                             android:layout_width="match_parent"
@@ -521,7 +549,7 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Existing reliability" />
+                                            android:text="On time" />
 
                                         <View
                                             android:layout_width="match_parent"
@@ -533,7 +561,7 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="No shelter, seat, lighting at bus stop" />
+                                            android:text="Bus shelter, seats and lighting available" />
 
                                         <View
                                             android:layout_width="match_parent"
@@ -557,7 +585,7 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="Not fully cleaned" />
+                                            android:text="Clean enough" />
 
                                         <View
                                             android:layout_width="match_parent"
@@ -581,7 +609,7 @@
                                         <TextView
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
-                                            android:text="No timetable, map or delay info" />
+                                            android:text="Timetable, map or delay info available" />
 
                                         <View
                                             android:layout_width="match_parent"
@@ -591,6 +619,7 @@
                                             android:backgroundTint="#080808" />
 
                                         <RadioButton
+                                            android:id="@+id/radio_bus_a"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content" />
 
@@ -613,6 +642,13 @@
                                     android:orientation="vertical">
 
                                     <TextView
+                                        android:text="Service Bus B"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="6dp"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+
+                                    <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:text="Existing walking distance" />
@@ -627,7 +663,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Existing frequency" />
+                                        android:text="Every 10 minutes" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -639,7 +675,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Existing reliability" />
+                                        android:text="On time" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -651,7 +687,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="No shelter, seat, lighting at bus stop" />
+                                        android:text="Shelter, seat, lighting at bus stop" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -663,7 +699,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Crowded" />
+                                        android:text="Not Crowded" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -675,7 +711,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Not fully cleaned" />
+                                        android:text="Clean enough" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -687,7 +723,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="Existing fare" />
+                                        android:text="25% more fare" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -699,7 +735,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="No timetable, map or delay info" />
+                                        android:text="Timetable, map or delay info available" />
 
                                     <View
                                         android:layout_width="match_parent"
@@ -709,14 +745,13 @@
                                         android:backgroundTint="#080808" />
 
                                     <RadioButton
+                                        android:id="@+id/radio_bus_b"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content" />
 
                                 </LinearLayout>
 
                             </androidx.cardview.widget.CardView>
-
-<!--                            </RadioGroup>-->
 
                         </LinearLayout>
 

@@ -50,7 +50,7 @@ public class Home extends AppCompatActivity {
     public static ImageView backBtn;
     public LocationHelper locationHelper;
     private DatabaseReference dbRef;
-    private FragmentManager fragmentManager;
+    public static FragmentManager fragmentManager;
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
 
@@ -326,7 +326,7 @@ public class Home extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-                    if (!locationHelper.isEnabled(Home.this)) locationHelper.reqEnable(Home.this);
+//                    if (!locationHelper.isEnabled(Home.this)) locationHelper.reqEnable(Home.this);
 
                     run();
 

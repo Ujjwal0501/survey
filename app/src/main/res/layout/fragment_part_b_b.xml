@@ -88,9 +88,11 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/congestion"
                             android:hint="Rate"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -108,9 +110,11 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/safety"
                             android:hint="Rate"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -128,9 +132,11 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/air_pollution"
                             android:hint="Rate"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -148,9 +154,11 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/noise_pollution"
                             android:hint="Rate"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -193,21 +201,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/fare_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/fare_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/fare_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -225,21 +239,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/speed_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/speed_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/speed_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -257,21 +277,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/comfort_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/comfort_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/comfort_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -289,21 +315,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/safety_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/safety_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/safety_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -321,21 +353,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/parking_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/parking_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/parking_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -353,21 +391,27 @@
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/other_home"
                             android:hint="Home"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/other_education"
                             android:hint="Edu"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                         <EditText
+                            android:id="@+id/other_social"
                             android:hint="Social"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -399,141 +443,162 @@
                         android:textAlignment="center" />
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Integrated network of Bus and Metro with Integrated Ticket System (Only ticket for bus/ auto/ BRT)"
+                            android:text="1"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_1"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Car Sharing"
+                            android:text="2"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_2"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Electric Mobility"
+                            android:text="3"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_3"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Car/2W free zones in City centers"
+                            android:text="4"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_4"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Extensive network for Cycle and walk"
+                            android:text="5"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_5"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Extensive Parking fees for Cars/Private vehicles"
+                            android:text="6"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_6"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
+                        android:layout_marginTop="12dp"
+                        android:gravity="bottom"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="Transit oriented Development"
+                            android:text="7"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
-                            android:hint="Rate"
-                            android:layout_weight="1"
+                        <Spinner
+                            android:id="@+id/rank_7"
+                            android:entries="@array/ranking"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
+                            android:layout_marginTop="12dp"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>

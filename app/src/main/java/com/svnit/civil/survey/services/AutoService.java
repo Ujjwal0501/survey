@@ -3,9 +3,14 @@ package com.svnit.civil.survey.services;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.icu.util.Calendar;
+import android.location.Location;
 import android.os.Binder;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.os.SystemClock;
+import android.text.format.Time;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -16,14 +21,28 @@ import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.helpers.NotificationHelper;
+import com.svnit.civil.survey.models.LocationInfo;
 
 public class AutoService extends Service {
+
     final int AS_NOTIF_ID = 1111111;
     public IBinder binder = new AutoServiceBinder();
+    private boolean handlerFlag = false;
+
+    Handler handler = new Handler();
+    Runnable runnable;
     LocationHelper locationHelper;
     NotificationCompat.Builder builder;
+
+    FirebaseUser user;
+    DatabaseReference rawRef, routeRef, survey;
+
     long INTERVAL = 180 * 1000, FACTOR = 1;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationRequest locationRequest;
@@ -40,12 +59,26 @@ public class AutoService extends Service {
     public void onCreate() {
         super.onCreate();
 
+        user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {Toast.makeText(context, "unexpected logout", Toast.LENGTH_LONG).show(); stopSelf();}
+        rawRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/raw");
+        routeRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes");
+        survey = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/survey");
+
         // initialise notification channel
         NotificationHelper.createNotificationChannel(this);
         builder = NotificationHelper.build(this);
         context = this;
 
         locationHelper = new LocationHelper();
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                FACTOR = 1;
+                updateFrequency();
+                handlerFlag = false;
+            }
+        };
 
         // initialise location service
         fusedLocationProviderClient = new FusedLocationProviderClient(AutoService.this);
@@ -54,11 +87,19 @@ public class AutoService extends Service {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                Toast.makeText(context, locationResult.getLastLocation().getSpeed() + "", Toast.LENGTH_SHORT).show();
+                Location location = locationResult.getLastLocation();
+                LocationInfo locationInfo = new LocationInfo();
+                locationInfo.LocationInfo(location);
+                rawRef.child(""+ location.getTime()).setValue(locationInfo);
                 if (locationResult.getLastLocation().getSpeed() > 3.0) {
-                    FACTOR = 3;
-                    updateFrequency();
-                } else FACTOR = 1;
+                    if (FACTOR == 1)  { FACTOR = 4; updateFrequency(); }
+                    if (handlerFlag) { handler.removeCallbacks(runnable); handlerFlag = false; }
+                } else {
+                    if (!handlerFlag && FACTOR == 4) {
+                        handler.postDelayed(runnable, 140*1000);
+                        handlerFlag = true;
+                    }
+                }
             }
 
             @Override
@@ -96,7 +137,7 @@ public class AutoService extends Service {
             locationHelper.reqEnable(context);
             Toast.makeText(context, "Location disabled.", Toast.LENGTH_SHORT).show();
 
-            // TODO: schedule the request for later
+            // TODO: schedule the request for later`
         }
 
         startForeground(AS_NOTIF_ID, builder.build());

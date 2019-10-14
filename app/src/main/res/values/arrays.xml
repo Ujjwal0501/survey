@@ -71,4 +71,14 @@
         <item>Cycle</item>
         <item>2 Wheeler</item>
     </array>
+
+    <array name="ranking">
+        <item>Integrated network of Bus and Metro with Integrated Ticket System (Only ticket for bus/ auto/ BRT)</item>
+        <item>Car Sharing</item>
+        <item>Electric Mobility</item>
+        <item>Car/2W free zones in City centers</item>
+        <item>Extensive network for Cycle and walk</item>
+        <item>Extensive Parking fees for Cars/Private vehicles</item>
+        <item>Transit oriented Development</item>
+    </array>
 </resources>

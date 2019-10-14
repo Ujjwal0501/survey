@@ -4,6 +4,7 @@ package com.svnit.civil.survey.fragments;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
@@ -13,25 +14,37 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
+import com.svnit.civil.survey.models.PublicTransport;
+import com.svnit.civil.survey.models.TransportDetails;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class Part_a_c extends Fragment {
-    EditText busDistance, busWaitTime, busReachTime, busFrequency,
+
+    PublicTransport publicTransport = new PublicTransport();
+    private EditText busDistance, busWaitTime, busReachTime, busFrequency,
              brtDistance, brtWaitTime, brtReachTime, brtFrequency,
              autoDistance, autoWaitTime, autoReachTime, autoFrequency;
-    Spinner busReliability, busSafety, busFare, busComfort,
+    private Spinner busReliability, busSafety, busFare, busComfort,
             brtReliability, brtSafety, brtFare, brtComfort,
             autoReliability, autoSafety, autoFare, autoComfort;
-    View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne;
-    CardView step0, step1, step2, one, two, three;
-    ImageView next, prev;
-    Context context;
-    View v;
+    private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne;
+    private CardView step0, step1, step2, one, two, three;
+    private ImageView next, prev;
+    private Context context;
+    private View v;
 
 
 
@@ -85,7 +98,7 @@ public class Part_a_c extends Fragment {
         oneToTwo = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (verifyForm() && Home.STEP<Home.MAX) {
+                if (verifyStep0() && Home.STEP<Home.MAX) {
                     // proceed to save
                     step0.setVisibility(View.GONE);
                     step1.setVisibility(View.VISIBLE);
@@ -102,7 +115,7 @@ public class Part_a_c extends Fragment {
         twoToThree = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (verifyForm() && Home.STEP<Home.MAX) {
+                if (verifyStep1() && Home.STEP<Home.MAX) {
                     // proceed to save
                     step1.setVisibility(View.GONE);
                     step2.setVisibility(View.VISIBLE);
@@ -112,7 +125,11 @@ public class Part_a_c extends Fragment {
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
                     two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                    Home.STEP += 1;
+                    Home.STEP += 1;;
+;
+;
+;
+;
                 }
             }
         };
@@ -151,6 +168,8 @@ public class Part_a_c extends Fragment {
             @Override
             public void onClick(View view) {
                 // save to firebase
+                if (!verifyStep2()) return;
+                updateFirebase();
             }
         };
 
@@ -167,7 +186,99 @@ public class Part_a_c extends Fragment {
         Home.backBtn = null;
     }
 
-    private boolean verifyForm() {
+    private void updateFirebase() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(user.getUid());
+        dbRef.child("public_transport_survey").setValue(publicTransport).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isCanceled()) {
+                    // was cancelled
+                    // do something
+                    Toast.makeText(context, "Cancelled\n" + task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                } else if (task.isSuccessful()) {
+                    // success, do something
+                    Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show();
+                    Home.fragmentManager.popBackStack();
+                } else {
+                    // failed, do something
+                    Toast.makeText(context, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+    }
+
+    private boolean verifyStep0() {
+        if (busDistance.getText().toString().equals("")) { busDistance.setError("Required."); return false; }
+        if (busReachTime.getText().toString().equals("")) { busReachTime.setError("Required."); return false; }
+        if (busWaitTime.getText().toString().equals("")) { busWaitTime.setError("Required."); return false; }
+        if (busFrequency.getText().toString().equals("")) { busFrequency.setError("Required."); return false; }
+        if (busReliability.getSelectedItemPosition() == 0) { ((TextView) busReliability.getSelectedView()).setError("Select option"); return false; }
+        if (busSafety.getSelectedItemPosition() == 0) { ((TextView) busSafety.getSelectedView()).setError("Select option"); return false; }
+        if (busFare.getSelectedItemPosition() == 0) { ((TextView) busFare.getSelectedView()).setError("Select option"); return false; }
+        if (busComfort.getSelectedItemPosition() == 0) { ((TextView) busComfort.getSelectedView()).setError("Select option"); return false; }
+
+        TransportDetails cityBus = new TransportDetails();
+        cityBus.setStop_distance(busDistance.getText().toString());
+        cityBus.setTime_to_stoppage(busReachTime.getText().toString());
+        cityBus.setAverage_wait_time(busWaitTime.getText().toString());
+        cityBus.setUsage_frequency(busFrequency.getText().toString());
+        cityBus.setService_reliability(busReliability.getSelectedItem().toString());
+        cityBus.setSafety(busSafety.getSelectedItem().toString());
+        cityBus.setFare(busFare.getSelectedItem().toString());
+        cityBus.setCleanliness_and_comfort(busComfort.getSelectedItem().toString());
+
+        publicTransport.setCityBus(cityBus);
+
+        return true;
+    }
+
+    private boolean verifyStep1() {
+        if (brtDistance.getText().toString().equals("")) { brtDistance.setError("Required."); return false; }
+        if (brtReachTime.getText().toString().equals("")) { brtReachTime.setError("Required."); return false; }
+        if (brtWaitTime.getText().toString().equals("")) { brtWaitTime.setError("Required."); return false; }
+        if (brtFrequency.getText().toString().equals("")) { brtFrequency.setError("Required."); return false; }
+        if (brtReliability.getSelectedItemPosition() == 0) { ((TextView) brtReliability.getSelectedView()).setError("Select option"); return false; }
+        if (brtSafety.getSelectedItemPosition() == 0) { ((TextView) brtSafety.getSelectedView()).setError("Select option"); return false; }
+        if (brtFare.getSelectedItemPosition() == 0) { ((TextView) brtFare.getSelectedView()).setError("Select option"); return false; }
+        if (brtComfort.getSelectedItemPosition() == 0) { ((TextView) brtComfort.getSelectedView()).setError("Select option"); return false; }
+
+        TransportDetails brt = new TransportDetails();
+        brt.setStop_distance(busDistance.getText().toString());
+        brt.setTime_to_stoppage(busReachTime.getText().toString());
+        brt.setAverage_wait_time(busWaitTime.getText().toString());
+        brt.setUsage_frequency(busFrequency.getText().toString());
+        brt.setService_reliability(busReliability.getSelectedItem().toString());
+        brt.setSafety(busSafety.getSelectedItem().toString());
+        brt.setFare(busFare.getSelectedItem().toString());
+        brt.setCleanliness_and_comfort(busComfort.getSelectedItem().toString());
+
+        publicTransport.setBrt(brt);
+
+        return true;
+    }
+
+    private boolean verifyStep2() {
+        if (autoDistance.getText().toString().equals("")) { autoDistance.setError("Required."); return false; }
+        if (autoReachTime.getText().toString().equals("")) { autoReachTime.setError("Required."); return false; }
+        if (autoWaitTime.getText().toString().equals("")) { autoWaitTime.setError("Required."); return false; }
+        if (autoFrequency.getText().toString().equals("")) { autoFrequency.setError("Required."); return false; }
+        if (autoReliability.getSelectedItemPosition() == 0) { ((TextView) autoReliability.getSelectedView()).setError("Select option"); return false; }
+        if (autoSafety.getSelectedItemPosition() == 0) { ((TextView) autoSafety.getSelectedView()).setError("Select option"); return false; }
+        if (autoFare.getSelectedItemPosition() == 0) { ((TextView) autoFare.getSelectedView()).setError("Select option"); return false; }
+        if (autoComfort.getSelectedItemPosition() == 0) { ((TextView) autoComfort.getSelectedView()).setError("Select option"); return false; }
+
+        TransportDetails auto = new TransportDetails();
+        auto.setStop_distance(busDistance.getText().toString());
+        auto.setTime_to_stoppage(busReachTime.getText().toString());
+        auto.setAverage_wait_time(busWaitTime.getText().toString());
+        auto.setUsage_frequency(busFrequency.getText().toString());
+        auto.setService_reliability(busReliability.getSelectedItem().toString());
+        auto.setSafety(busSafety.getSelectedItem().toString());
+        auto.setFare(busFare.getSelectedItem().toString());
+        auto.setCleanliness_and_comfort(busComfort.getSelectedItem().toString());
+
+        publicTransport.setAuto(auto);
 
         return true;
     }

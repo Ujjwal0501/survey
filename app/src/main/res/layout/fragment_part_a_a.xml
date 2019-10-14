@@ -64,7 +64,7 @@
                         android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Your details" />
+                        android:text="You" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -169,60 +169,6 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-
-                    <TextView
-                        android:textSize="20sp"
-                        android:layout_marginTop="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Son" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <EditText
-                            android:inputType="number"
-                            android:layout_weight="1"
-                            android:hint="Age"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                        <Spinner
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/occupation" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:textSize="20sp"
-                        android:layout_marginTop="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Daughter" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <EditText
-                            android:inputType="number"
-                            android:layout_weight="1"
-                            android:hint="Age"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                        <Spinner
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:entries="@array/occupation" />
-
-                    </LinearLayout>
 
                 </LinearLayout>
 
