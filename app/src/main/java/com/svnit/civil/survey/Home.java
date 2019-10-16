@@ -82,32 +82,32 @@ public class Home extends AppCompatActivity {
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
                     .putExtra("reason", "unexpected logout"));
         }
-        dbRef = db.getReference("users").child(user.getUid());
+        dbRef = db.getReference(user.getUid());
         // keep data synced even when not required, only for provided reference
         dbRef.keepSynced(true);
         dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 // do some stuff once
-                userAddress = snapshot.child("address").getValue(UserAddress.class);
-                Home.snapshot = snapshot;
-//                Userinfo.updateInfo();
-                if (userAddress != null) {
-                    if (userAddress.getCity().equals("") || userAddress.getState().equals("") || userAddress.getPincode().equals("")) {
-                        // show dialog to update address
-                        showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
-
-                    } else if (userAddress.getLocality().equals("")) {
-                        // show dialog to update address
-                        showPrompt("Your address is incomplete. Do you want to update your locality now?", "locality");
-
-                    }
-                } else {
-                    // address is null
-                    // initialise for smooth working
-                    userAddress = new UserAddress();
-                    showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
-                }
+//                userAddress = snapshot.child("address").getValue(UserAddress.class);
+//                Home.snapshot = snapshot;
+////                Userinfo.updateInfo();
+//                if (userAddress != null) {
+//                    if (userAddress.getCity().equals("") || userAddress.getState().equals("") || userAddress.getPincode().equals("")) {
+//                        // show dialog to update address
+//                        showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
+//
+//                    } else if (userAddress.getLocality().equals("")) {
+//                        // show dialog to update address
+//                        showPrompt("Your address is incomplete. Do you want to update your locality now?", "locality");
+//
+//                    }
+//                } else {
+//                    // address is null
+//                    // initialise for smooth working
+//                    userAddress = new UserAddress();
+//                    showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
+//                }
             }
 
             @Override
@@ -281,6 +281,14 @@ public class Home extends AppCompatActivity {
     public void partbb(View v) {
         fragmentManager.popBackStack();
         fragmentManager.beginTransaction().replace(R.id.container, new Part_b_b()).addToBackStack(null).commit();
+    }
+
+    public void mark(View v) {
+        Part_b_a.mark(v);
+    }
+
+    public void markself(View v) {
+        Part_b_a.markself(v);
     }
 
     public void startService(View v) {

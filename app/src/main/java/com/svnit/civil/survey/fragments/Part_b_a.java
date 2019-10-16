@@ -15,12 +15,15 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -43,6 +46,7 @@ public class Part_b_a extends Fragment {
     private EditText publicWaitTimeValue, publicDistanceValue, publicTravelValue, publicReliabilityValue, publicFareValue,
              privateTravelValue, privateCostValue, privateParkingValue;
     private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne;
+    private static RadioButton currentService, serviceA, serviceB;
     private CardView step0, step1, step2, one, two, three;
     private ImageView next, prev;
     private Context context;
@@ -60,6 +64,7 @@ public class Part_b_a extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_part_b_a, container, false);
         context = v.getContext();
+        getActivity().setTitle("Preference");
 
         publicWaitTime = v.findViewById(R.id.public_wait_time_checkbox);
         publicWaitTimeValue = v.findViewById(R.id.public_wait_time_edittext);
@@ -79,6 +84,9 @@ public class Part_b_a extends Fragment {
         privateParkingValue = v.findViewById(R.id.private_parking_edittext);
         vehicleSharing = v.findViewById(R.id.private_sharing_checkbox);
         modeChange = v.findViewById(R.id.mode_change);
+        currentService = v.findViewById(R.id.radio_current);
+        serviceA = v.findViewById(R.id.radio_bus_a);
+        serviceB = v.findViewById(R.id.radio_bus_b);
 
         step0 = v.findViewById(R.id.step0);
         step1 = v.findViewById(R.id.step1);
@@ -232,6 +240,9 @@ public class Part_b_a extends Fragment {
     public void onDestroy() {
         super.onDestroy();
         Home.backBtn = null;
+        currentService = null;
+        serviceA = null;
+        serviceB = null;
     }
 
     private void updateFirebase() {
@@ -254,6 +265,20 @@ public class Part_b_a extends Fragment {
                 }
             }
         });
+    }
+
+    public static void mark(View v) {
+        currentService.setChecked(false);
+        serviceA.setChecked(false);
+        serviceB.setChecked(false);
+        ( (RadioButton) ( (LinearLayout) v).getChildAt(17)).setChecked(true);
+    }
+
+    public static void markself(View v) {
+        currentService.setChecked(false);
+        serviceA.setChecked(false);
+        serviceB.setChecked(false);
+        ( (RadioButton) v).setChecked(true);
     }
 
     private boolean verifyStep0() {
@@ -322,6 +347,10 @@ public class Part_b_a extends Fragment {
     }
 
     private boolean verifyStep2() {
+        if (!currentService.isChecked() && !serviceB.isChecked() && !serviceA.isChecked()) { Snackbar.make(step2, "Please indicate your choice", Snackbar.LENGTH_LONG).show(); return false; }
+        if (currentService.isChecked()) preference.setSituation_switch_to_public_transport("Current Service");
+        else if (serviceA.isChecked()) preference.setSituation_switch_to_public_transport("Service A");
+        else if (serviceB.isChecked()) preference.setSituation_switch_to_public_transport("Service B");
         return true;
     }
 

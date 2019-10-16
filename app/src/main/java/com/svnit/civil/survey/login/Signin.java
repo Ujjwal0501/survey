@@ -88,7 +88,7 @@ public class Signin extends Fragment {
         super.onStart();
         Activity activity = getActivity();
         if (activity != null)
-            activity.setTitle("Survey - SignIn");
+            activity.setTitle("SignIn");
     }
 
     private void initSignin(String email, String password) {

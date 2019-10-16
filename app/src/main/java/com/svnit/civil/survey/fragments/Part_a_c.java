@@ -59,6 +59,7 @@ public class Part_a_c extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_part_a_c, container, false);
         context = v.getContext();
+        getActivity().setTitle("Public Transport");
 
         busDistance = v.findViewById(R.id.bus_distance);
         busWaitTime = v.findViewById(R.id.bus_wait_time);

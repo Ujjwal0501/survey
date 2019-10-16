@@ -384,6 +384,8 @@
                                     app:cardElevation="8dp">
 
                                     <LinearLayout
+                                        android:id="@+id/current_service"
+                                        android:onClick="mark"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -494,6 +496,7 @@
 
                                         <RadioButton
                                             android:id="@+id/radio_current"
+                                            android:onClick="markself"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"/>
 
@@ -510,6 +513,8 @@
                                     app:cardElevation="6dp">
 
                                     <LinearLayout
+                                        android:id="@+id/service_a"
+                                        android:onClick="mark"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
@@ -620,6 +625,7 @@
 
                                         <RadioButton
                                             android:id="@+id/radio_bus_a"
+                                            android:onClick="markself"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content" />
 
@@ -635,11 +641,13 @@
                                 app:cardCornerRadius="6dp"
                                 app:cardElevation="6dp">
 
-                                <LinearLayout
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:gravity="center"
-                                    android:orientation="vertical">
+                                    <LinearLayout
+                                        android:id="@+id/service_b"
+                                        android:onClick="mark"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="center"
+                                        android:orientation="vertical">
 
                                     <TextView
                                         android:text="Service Bus B"
@@ -746,6 +754,7 @@
 
                                     <RadioButton
                                         android:id="@+id/radio_bus_b"
+                                        android:onClick="markself"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content" />
 

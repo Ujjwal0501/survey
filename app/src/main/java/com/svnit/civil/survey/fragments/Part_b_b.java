@@ -65,6 +65,7 @@ public class Part_b_b extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_part_b_b, container, false);
         context = v.getContext();
+        getActivity().setTitle("Rated Preference");
 
         congestion = v.findViewById(R.id.congestion);
         safety = v.findViewById(R.id.safety);

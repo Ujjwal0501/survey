@@ -53,6 +53,7 @@ public class Part_a_b extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_part_a_b, container, false);
         context = v.getContext();
+        getActivity().setTitle("Economic Details");
 
         monthlyEMI = v.findViewById(R.id.m_emi);
         monthlyFuelCost = v.findViewById(R.id.mfuel_cost);

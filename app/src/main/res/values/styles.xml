@@ -24,7 +24,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!--home activity theme-->
-    <style name="DrawerTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+    <style name="DrawerTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">#19C71E</item>
         <item name="colorPrimaryDark">#19C71E</item>
         <item name="colorAccent">@color/colorAccent</item>

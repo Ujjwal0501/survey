@@ -57,6 +57,7 @@ public class Part_a_a extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_part_a_a, container, false);
         context = v.getContext();
+        getActivity().setTitle("Social Details");
 
         selfAge = v.findViewById(R.id.self_age);
         spouseAge = v.findViewById(R.id.spouse_age);

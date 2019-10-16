@@ -107,7 +107,7 @@ public class Signup extends Fragment {
         super.onStart();
         Activity activity = getActivity();
         if (activity != null)
-            activity.setTitle("Survey - SignUp");
+            activity.setTitle("SignUp");
     }
 
     private void initSignUp(final String email, final String password, final String name, final String phone) {
