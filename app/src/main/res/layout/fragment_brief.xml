@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#b8b8ff">
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,6 +32,7 @@
                     <ProgressBar
                         android:id="@+id/progress"
                         style="?android:attr/progressBarStyleHorizontal"
+                        android:background="@color/colorPrimary"
                         android:layout_width="match_parent"
                         android:layout_height="6dp"
                         android:layout_centerVertical="true"
@@ -57,7 +58,7 @@
                                 android:layout_height="wrap_content"
                                 android:minWidth="32dp"
                                 android:minHeight="32dp"
-                                app:cardBackgroundColor="#5050ff"
+                                app:cardBackgroundColor="@color/colorPrimary"
                                 app:cardCornerRadius="16dp">
 
                                 <TextView
@@ -85,7 +86,7 @@
                                 android:minWidth="32dp"
                                 android:minHeight="32dp"
                                 android:onClick="part"
-                                app:cardBackgroundColor="#5050ff"
+                                app:cardBackgroundColor="@color/colorPrimary"
                                 app:cardCornerRadius="16dp">
 
                                 <TextView
@@ -111,7 +112,7 @@
                                 android:layout_height="wrap_content"
                                 android:minWidth="32dp"
                                 android:minHeight="32dp"
-                                app:cardBackgroundColor="#5050ff"
+                                app:cardBackgroundColor="@color/colorPrimary"
                                 app:cardCornerRadius="16dp">
 
                                 <TextView
@@ -138,7 +139,7 @@
                                 android:layout_height="wrap_content"
                                 android:minWidth="32dp"
                                 android:minHeight="32dp"
-                                app:cardBackgroundColor="#5050ff"
+                                app:cardBackgroundColor="@color/colorPrimary"
                                 app:cardCornerRadius="16dp">
 
                                 <TextView
@@ -164,7 +165,7 @@
                                 android:layout_height="wrap_content"
                                 android:minWidth="32dp"
                                 android:minHeight="32dp"
-                                app:cardBackgroundColor="#5050ff"
+                                app:cardBackgroundColor="@color/colorPrimary"
                                 app:cardCornerRadius="16dp">
 
                                 <TextView
@@ -189,16 +190,30 @@
                 android:layout_marginTop="16dp"
                 android:onClick="part"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Social Details"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/fam"
+                        android:alpha="0.2"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Social Details"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -208,16 +223,30 @@
                 android:layout_marginTop="16dp"
                 android:onClick="partab"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Economic Details"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/mon"
+                        android:gravity="center"
+                        android:alpha="0.2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Economic Details"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -227,16 +256,30 @@
                 android:layout_marginTop="16dp"
                 android:onClick="partac"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                    android:background="@drawable/pub"
+                    android:alpha="0.2"
                     android:gravity="center"
-                    android:text="Public Transport Details"
-                    android:textAlignment="center" />
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Public Transport Details"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -246,16 +289,30 @@
                 android:layout_marginTop="16dp"
                 android:onClick="partba"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Preference Survey"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/pref"
+                        android:alpha="0.2"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Preference Survey"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -265,16 +322,29 @@
                 android:layout_marginTop="16dp"
                 android:onClick="partbb"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Rated Preference Survey"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/rpref"
+                        android:alpha="0.2"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Rated Preference Survey"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -284,16 +354,30 @@
                 android:layout_marginTop="16dp"
                 android:onClick="startService"
                 android:padding="16dp"
-                app:cardBackgroundColor="#cfcfff"
+                app:cardBackgroundColor="#FFFFFF"
                 app:cardCornerRadius="6dp">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:text="Start Journey Survey"
-                    android:textAlignment="center" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/rout"
+                        android:alpha="0.2"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Start Journey Survey"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 

@@ -149,6 +149,11 @@ public class Home extends AppCompatActivity {
                     // set item as selected to persist highlight
                     menuItem.setChecked(false);
 //                    startActivity(new Intent(getApplicationContext(), Userinfo.class));
+                } else if (title.equals("Logout")) {
+                    // set item as selected to persist highlight
+                    FirebaseAuth.getInstance().signOut();
+                    finish();
+//                    startActivity(new Intent(getApplicationContext(), Userinfo.class));
                 }
 
                 return true;
