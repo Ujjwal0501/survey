@@ -210,6 +210,7 @@ public class Part_b_b extends Fragment {
                     Toast.makeText(context, "Cancelled\n" + task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 } else if (task.isSuccessful()) {
                     // success, do something
+                    updatePref();
                     Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show();
                     Home.fragmentManager.popBackStack();
                 } else {
@@ -312,6 +313,11 @@ public class Part_b_b extends Fragment {
         ratedPreference.setAppropriate_policy_rank_for_better_transport(temp);
 
         return true;
+    }
+
+    private void updatePref() {
+        Home.PARTBB = 1;
+        Home.sharedPref.edit().putInt("partbb", 1).apply();
     }
 
 }

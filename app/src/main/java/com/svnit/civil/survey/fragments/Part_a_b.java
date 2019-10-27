@@ -141,6 +141,7 @@ public class Part_a_b extends Fragment {
                     Toast.makeText(context, "Cancelled\n" + task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 } else if (task.isSuccessful()) {
                     // success, do something
+                    updatePref();
                     Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show();
                     Home.fragmentManager.popBackStack();
                 } else {
@@ -181,6 +182,11 @@ public class Part_a_b extends Fragment {
         economic.setMonthly_maintenance_cost(monthlyMaintenance.getText().toString());
 
         return true;
+    }
+
+    private void updatePref() {
+        Home.PARTAB = 1;
+        Home.sharedPref.edit().putInt("partab", 1).apply();
     }
 
 }

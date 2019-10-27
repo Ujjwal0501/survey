@@ -4,6 +4,7 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -40,19 +41,23 @@ import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.models.UserAddress;
 import com.svnit.civil.survey.services.AutoService;
 
+import static android.preference.PreferenceManager.getDefaultSharedPreferences;
+
 public class Home extends AppCompatActivity {
     public static UserAddress userAddress;
     public static FirebaseDatabase db;
     public static FirebaseAuth mAuth;
     public static FirebaseUser user;
     public static DataSnapshot snapshot;
-    public static int STEP = 0, MAX = 0;
+    public static int STEP = 0, MAX = 0, PARTAA = 0,
+            PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0;
     public static ImageView backBtn;
     public LocationHelper locationHelper;
     private DatabaseReference dbRef;
     public static FragmentManager fragmentManager;
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
+    public static SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,6 +186,12 @@ public class Home extends AppCompatActivity {
         }
 
         locationHelper = new LocationHelper();
+        sharedPref = getDefaultSharedPreferences(this);
+        PARTAA = sharedPref.getInt("partaa", 0);
+        PARTAB = sharedPref.getInt("partab", 0);
+        PARTAC = sharedPref.getInt("partac", 0);
+        PARTBA = sharedPref.getInt("partba", 0);
+        PARTBB = sharedPref.getInt("partbb", 0);
     }
 
     @Override

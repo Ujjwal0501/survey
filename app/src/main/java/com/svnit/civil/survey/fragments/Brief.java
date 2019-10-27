@@ -14,6 +14,12 @@ import android.widget.ProgressBar;
 import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
 
+import static com.svnit.civil.survey.Home.PARTAA;
+import static com.svnit.civil.survey.Home.PARTAB;
+import static com.svnit.civil.survey.Home.PARTAC;
+import static com.svnit.civil.survey.Home.PARTBA;
+import static com.svnit.civil.survey.Home.PARTBB;
+
 /**
  * A simple {@link Fragment} subclass.
  */
@@ -48,5 +54,29 @@ public class Brief extends Fragment {
     public void onResume() {
         super.onResume();
         Home.backBtn = null;
+        updateProgress(PARTAA+PARTAB+PARTAC+PARTBA+PARTBB);
+    }
+
+    private void updateProgress(int n) {
+        if (n > 0) progress.setProgress(5);
+        switch(n) {
+            case 5:
+                progress.incrementProgressBy(25);
+                five.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+            case 4:
+                progress.incrementProgressBy(25);
+                four.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+            case 3:
+                progress.incrementProgressBy(25);
+                three.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+            case 2:
+                progress.incrementProgressBy(25);
+                two.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+            case 1:
+                one.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+            default:
+        }
+
+        return;
     }
 }

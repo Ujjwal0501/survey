@@ -179,6 +179,7 @@ public class Part_a_a extends Fragment {
                     Toast.makeText(context, "Cancelled\n" + task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 } else if (task.isSuccessful()) {
                     // success, do something
+                    updatePref();
                     Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show();
                     Home.fragmentManager.popBackStack();
                 } else {
@@ -248,6 +249,11 @@ public class Part_a_a extends Fragment {
 
         social.setChildren(temp);
         return true;
+    }
+
+    private void updatePref() {
+        Home.PARTAA = 1;
+        Home.sharedPref.edit().putInt("partaa", 1).apply();
     }
 
 }

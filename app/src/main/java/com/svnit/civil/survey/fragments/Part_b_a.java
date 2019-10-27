@@ -257,6 +257,7 @@ public class Part_b_a extends Fragment {
                     Toast.makeText(context, "Cancelled\n" + task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 } else if (task.isSuccessful()) {
                     // success, do something
+                    updatePref();
                     Toast.makeText(context, "Successful", Toast.LENGTH_LONG).show();
                     Home.fragmentManager.popBackStack();
                 } else {
@@ -352,6 +353,11 @@ public class Part_b_a extends Fragment {
         else if (serviceA.isChecked()) preference.setSituation_switch_to_public_transport("Service A");
         else if (serviceB.isChecked()) preference.setSituation_switch_to_public_transport("Service B");
         return true;
+    }
+
+    private void updatePref() {
+        Home.PARTBA = 1;
+        Home.sharedPref.edit().putInt("partba", 1).apply();
     }
 
 }
