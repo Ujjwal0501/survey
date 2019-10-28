@@ -216,8 +216,7 @@ public class Home extends AppCompatActivity {
             JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
             jobScheduler.schedule(new JobInfo.Builder(11111, component)
                     .setPersisted(true)
-                    .setPeriodic(1*4*60*60*1000)
-                    .setOverrideDeadline(1*2*60*60*1000).build());
+                    .setPeriodic(1*4*60*60*1000).build());
         } else {
             // do using alarmManager
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
