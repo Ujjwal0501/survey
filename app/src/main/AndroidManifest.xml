@@ -49,12 +49,19 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".receivers.ReminderReceiver"
+            android:enabled="true"
+            android:exported="true" />
+
         <service
             android:name=".services.AutoService"
             android:enabled="true"
             android:exported="false"
             android:foregroundServiceType="dataSync|location"
             tools:targetApi="q" />
+
+        <service android:name=".services.ReminderService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
     </application>
 
 </manifest>

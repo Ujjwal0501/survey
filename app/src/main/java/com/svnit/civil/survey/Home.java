@@ -1,11 +1,19 @@
 package com.svnit.civil.survey;
 
+import android.annotation.TargetApi;
 import android.app.ActivityManager;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.icu.util.Calendar;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,7 +26,10 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.AlarmManagerCompat;
+import androidx.core.app.ComponentActivity;
 import androidx.core.view.GravityCompat;
+import androidx.core.view.KeyEventDispatcher;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
@@ -39,7 +50,11 @@ import com.svnit.civil.survey.fragments.Part_b_a;
 import com.svnit.civil.survey.fragments.Part_b_b;
 import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.models.UserAddress;
+import com.svnit.civil.survey.receivers.ReminderReceiver;
 import com.svnit.civil.survey.services.AutoService;
+import com.svnit.civil.survey.services.ReminderService;
+
+import java.util.Date;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
@@ -58,6 +73,7 @@ public class Home extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
     public static SharedPreferences sharedPref;
+    private String TAG = "Home";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -192,6 +208,22 @@ public class Home extends AppCompatActivity {
         PARTAC = sharedPref.getInt("partac", 0);
         PARTBA = sharedPref.getInt("partba", 0);
         PARTBB = sharedPref.getInt("partbb", 0);
+
+        // periodically remind for survey
+        if (Build.VERSION.SDK_INT > 20) {
+            // start the jobService
+            ComponentName component = new ComponentName(this, ReminderService.class);
+            JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+            jobScheduler.schedule(new JobInfo.Builder(11111, component)
+                    .setPersisted(true)
+                    .setPeriodic(1*4*60*60*1000)
+                    .setOverrideDeadline(1*2*60*60*1000).build());
+        } else {
+            // do using alarmManager
+            AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+            alarmManager.setRepeating(AlarmManager.RTC, (new Date()).getTime(), AlarmManager.INTERVAL_DAY,
+                    PendingIntent.getBroadcast(this, 0, new Intent(this, ReminderReceiver.class), 0));
+        }
     }
 
     @Override
