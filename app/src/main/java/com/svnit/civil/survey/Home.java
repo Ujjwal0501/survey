@@ -15,6 +15,7 @@ import android.content.pm.PackageManager;
 import android.icu.util.Calendar;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -216,12 +217,13 @@ public class Home extends AppCompatActivity {
             JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
             jobScheduler.schedule(new JobInfo.Builder(11111, component)
                     .setPersisted(true)
-                    .setPeriodic(1*4*60*60*1000).build());
+                    .setPeriodic(2*24*60*60*1000).build());
         } else {
             // do using alarmManager
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC, (new Date()).getTime(), AlarmManager.INTERVAL_DAY,
+            alarmManager.setRepeating(AlarmManager.RTC, (new Date()).getTime(), 2*AlarmManager.INTERVAL_DAY,
                     PendingIntent.getBroadcast(this, 0, new Intent(this, ReminderReceiver.class), 0));
+            Log.d(TAG, "Alarm Manager set");
         }
     }
 
