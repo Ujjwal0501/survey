@@ -8,11 +8,13 @@ import android.app.job.JobScheduler;
 import android.app.job.JobService;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
 import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
+import com.svnit.civil.survey.helpers.NotificationHelper;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
@@ -44,16 +46,19 @@ public class ReminderService extends JobService {
 
         if (SUM < 5) {
             // Notify the user
+            Log.d(TAG, "Survey incomplete!");
+            NotificationHelper.createNotificationChannel(this);
             NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "SurveyNotificationChannel")
                     .setContentTitle("Survey Reminder")
-                    .setContentText("You have left the survey incomplete. Tap here to complete.")
                     .setSmallIcon(R.drawable.logo)
-                    .setContentIntent(PendingIntent.getService(this, 0, new Intent(this, Home.class), 0))
+                    .setContentText("You have left the survey incomplete.\nTap here to complete.")
+                    .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, Home.class), 0))
                     .setAutoCancel(true);
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.notify(66666, builder.build());
 
         } else {
+            Log.d(TAG, "Completed Survey!");
             JobScheduler scheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
             scheduler.cancel(11111);
         }
