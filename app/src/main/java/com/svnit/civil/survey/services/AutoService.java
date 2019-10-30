@@ -41,9 +41,9 @@ public class AutoService extends Service {
     NotificationCompat.Builder builder;
 
     FirebaseUser user;
-    DatabaseReference rawRef, routeRef, survey;
+    DatabaseReference rawRef, processRef, confirmRef;
 
-    long INTERVAL = 180 * 1000, FACTOR = 1;
+    long INTERVAL = 60 * 1000, FACTOR = 1;
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
@@ -62,8 +62,8 @@ public class AutoService extends Service {
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {Toast.makeText(context, "unexpected logout", Toast.LENGTH_LONG).show(); stopSelf();}
         rawRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/raw");
-        routeRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes");
-        survey = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/survey");
+        processRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes");
+        confirmRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes_confirmed");
 
         // initialise notification channel
         NotificationHelper.createNotificationChannel(this);
@@ -82,20 +82,25 @@ public class AutoService extends Service {
 
         // initialise location service
         fusedLocationProviderClient = new FusedLocationProviderClient(AutoService.this);
-        locationRequest = new LocationRequest().setInterval(INTERVAL / FACTOR);
+        locationRequest = new LocationRequest()
+                .setFastestInterval(5*1000)
+                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setInterval(INTERVAL / FACTOR);
         locationCallback = new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
+                Toast.makeText(context, locationResult.getLastLocation().getSpeed()+"", Toast.LENGTH_LONG).show();
+
                 Location location = locationResult.getLastLocation();
                 LocationInfo locationInfo = new LocationInfo();
                 locationInfo.LocationInfo(location);
                 rawRef.child(""+ location.getTime()).setValue(locationInfo);
                 if (locationResult.getLastLocation().getSpeed() > 3.0) {
-                    if (FACTOR == 1)  { FACTOR = 4; updateFrequency(); }
+                    if (FACTOR == 1)  { FACTOR = 10; updateFrequency(); }
                     if (handlerFlag) { handler.removeCallbacks(runnable); handlerFlag = false; }
                 } else {
-                    if (!handlerFlag && FACTOR == 4) {
+                    if (!handlerFlag && FACTOR == 10) {
                         handler.postDelayed(runnable, 140*1000);
                         handlerFlag = true;
                     }
@@ -155,7 +160,11 @@ public class AutoService extends Service {
     }
 
     void updateFrequency() {
-        locationRequest = new LocationRequest().setInterval(INTERVAL / FACTOR);
+        locationRequest = new LocationRequest()
+                .setFastestInterval(5*1000)
+                .setInterval(INTERVAL / FACTOR);
+        if (FACTOR == 1) locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        else locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
         stopLocationUpdate();
         startLocationUpdate();
     }
