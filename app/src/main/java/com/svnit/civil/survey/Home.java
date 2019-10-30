@@ -53,6 +53,7 @@ import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.models.UserAddress;
 import com.svnit.civil.survey.receivers.ReminderReceiver;
 import com.svnit.civil.survey.services.AutoService;
+import com.svnit.civil.survey.services.ProcessRouteService;
 import com.svnit.civil.survey.services.ReminderService;
 
 import java.util.Date;
@@ -213,11 +214,22 @@ public class Home extends AppCompatActivity {
         // periodically remind for survey
         if (Build.VERSION.SDK_INT > 20) {
             // start the jobService
-            ComponentName component = new ComponentName(this, ReminderService.class);
+            boolean a = false, b = false;
             JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
-            jobScheduler.schedule(new JobInfo.Builder(11111, component)
+            for (JobInfo jobInfo: jobScheduler.getAllPendingJobs()) {
+                if (jobInfo.getId() == 11111) a = true;
+                else if (jobInfo.getId() == 22222) b = true;
+            }
+
+            ComponentName component = new ComponentName(this, ReminderService.class);
+            if (!a) jobScheduler.schedule(new JobInfo.Builder(11111, component)
                     .setPersisted(true)
                     .setPeriodic(2*24*60*60*1000).build());
+
+//            component = new ComponentName(this, ProcessRouteService.class);
+//            if (!b) jobScheduler.schedule(new JobInfo.Builder(22222, component)
+//                    .setPersisted(true)
+//                    .setPeriodic(25*60*1000).build());
         } else {
             // do using alarmManager
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
