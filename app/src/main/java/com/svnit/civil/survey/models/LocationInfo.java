@@ -115,4 +115,15 @@ public class LocationInfo {
     public Long getTime() { return time; }
 
     public void setTime(Long time) { this.time = time; }
+
+    @Override
+    public String toString() {
+        String str = "";
+        str += "time:"+time.toString()+"\n";
+        str += "longitude:"+longitude.toString()+"\n";
+        str += "latitude:"+latitude.toString()+"\n";
+        str += "speed:"+speed.toString()+"\n";
+        str += "locationAccuracy:"+locationAccuracy.toString()+"\n";
+        return str;
+    }
 }
