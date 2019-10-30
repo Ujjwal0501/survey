@@ -135,7 +135,7 @@ public class Signup extends Fragment {
 
                             // connect to firebase database
                             FirebaseDatabase database = FirebaseDatabase.getInstance();
-                            DatabaseReference userRef = database.getReference("users").child(user.getUid());
+                            DatabaseReference userRef = database.getReference(user.getUid() + "/account");
 
                             // store user info to firebase database
                             userRef.child("name").setValue(name);

@@ -30,7 +30,7 @@ import com.svnit.civil.survey.Splash;
  * A simple {@link Fragment} subclass.
  */
 public class Signin extends Fragment {
-    private String TAG = "SC";
+    private String TAG = "SignIn";
     private Context context;
     private View fragment;
     private Activity activity;

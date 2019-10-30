@@ -126,7 +126,7 @@ public class Phoneverify extends AppCompatActivity {
 
                                     // save info to firebae database
                                     FirebaseDatabase db = FirebaseDatabase.getInstance();
-                                    DatabaseReference userRef = db.getReference("users").child(user.getUid());
+                                    DatabaseReference userRef = db.getReference(user.getUid() + "/account");
 
                                     // update info in firebase database
                                     userRef.child("phone").child("value").setValue(newPhone);
