@@ -237,6 +237,9 @@ public class Home extends AppCompatActivity {
                     PendingIntent.getBroadcast(this, 0, new Intent(this, ReminderReceiver.class), 0));
             Log.d(TAG, "Alarm Manager set");
         }
+
+        // prompt if route are processed
+        checkForProcessedRoute();
     }
 
     @Override
@@ -290,6 +293,30 @@ public class Home extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    private void checkForProcessedRoute() {
+        DatabaseReference processed = FirebaseDatabase.getInstance().getReference(user.getUid() + "/travel_details/routes/");
+        processed.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.hasChildren()) {
+                    final Snackbar snackbar = Snackbar.make(findViewById(R.id.container), "Routes available for confirmation.", Snackbar.LENGTH_INDEFINITE);
+                    snackbar.setAction("View", new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            snackbar.dismiss();
+                            Toast.makeText(Home.this, "hi", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    snackbar.show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+    }
 
     private void showPrompt(String msg, final String key) {
         AlertDialog.Builder testDialog = new AlertDialog.Builder(Home.this);
