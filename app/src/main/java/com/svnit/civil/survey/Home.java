@@ -216,6 +216,7 @@ public class Home extends AppCompatActivity {
             // start the jobService
             boolean a = false, b = false;
             JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
+            if (jobScheduler == null) return;
             for (JobInfo jobInfo: jobScheduler.getAllPendingJobs()) {
                 if (jobInfo.getId() == 11111) a = true;
                 else if (jobInfo.getId() == 22222) b = true;
@@ -226,10 +227,9 @@ public class Home extends AppCompatActivity {
                     .setPersisted(true)
                     .setPeriodic(2*24*60*60*1000).build());
 
-//            component = new ComponentName(this, ProcessRouteService.class);
-//            if (!b) jobScheduler.schedule(new JobInfo.Builder(22222, component)
-//                    .setPersisted(true)
-//                    .setPeriodic(25*60*1000).build());
+            if (!b) jobScheduler.schedule(new JobInfo.Builder(22222, new ComponentName(this, ProcessRouteService.class))
+                    .setPersisted(true)
+                    .setPeriodic(25*60*1000).build());
         } else {
             // do using alarmManager
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);

@@ -81,4 +81,12 @@
         <item>Extensive Parking fees for Cars/Private vehicles</item>
         <item>Transit oriented Development</item>
     </array>
+
+    <array name="purpose">
+        <item>Work</item>
+        <item>Education</item>
+        <item>Shopping</item>
+        <item>Recreation</item>
+        <item>Social</item>
+    </array>
 </resources>
