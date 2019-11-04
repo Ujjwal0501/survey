@@ -175,6 +175,7 @@ public class Home extends AppCompatActivity {
                 } else if (title.equals("Logout")) {
                     // set item as selected to persist highlight
                     FirebaseAuth.getInstance().signOut();
+                    startActivity(new Intent(Home.this, Splash.class));
                     finish();
 //                    startActivity(new Intent(getApplicationContext(), Userinfo.class));
                 }
