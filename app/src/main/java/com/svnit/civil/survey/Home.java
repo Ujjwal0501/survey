@@ -305,7 +305,8 @@ public class Home extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             snackbar.dismiss();
-                            Toast.makeText(Home.this, "hi", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(Home.this, ProcessedRoutes.class));
+//                            Toast.makeText(Home.this, "hi", Toast.LENGTH_SHORT).show();
                         }
                     });
                     snackbar.show();
