@@ -61,13 +61,12 @@ import java.util.Date;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class Home extends AppCompatActivity {
-    public static UserAddress userAddress;
     public static FirebaseDatabase db;
     public static FirebaseAuth mAuth;
     public static FirebaseUser user;
     public static DataSnapshot snapshot;
-    public static int STEP = 0, MAX = 0, PARTAA = 0,
-            PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0;
+    public static int STEP = 0, MAX = 0, PARTAA = 0, FIRST_RUN = 1,
+            PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0, MANUAL = 1;
     public static ImageView backBtn;
     public LocationHelper locationHelper;
     private DatabaseReference dbRef;
@@ -211,6 +210,8 @@ public class Home extends AppCompatActivity {
         PARTAC = sharedPref.getInt("partac", 0);
         PARTBA = sharedPref.getInt("partba", 0);
         PARTBB = sharedPref.getInt("partbb", 0);
+        FIRST_RUN = sharedPref.getInt("firstrun", 1);
+        MANUAL = sharedPref.getInt("manual", 1);
 
         // periodically remind for survey
         if (Build.VERSION.SDK_INT > 20) {
@@ -263,6 +264,8 @@ public class Home extends AppCompatActivity {
 //                startActivity(new Intent(getApplicationContext(), Userinfo.class));
             }
         });
+
+        if (FIRST_RUN == 1) showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
     }
 
     @Override
@@ -320,25 +323,29 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    private void showPrompt(String msg, final String key) {
+    private void showPrompt(String msg) {
+        sharedPref.edit().putInt("firstrun", 0).apply();
+        FIRST_RUN = 0;
         AlertDialog.Builder testDialog = new AlertDialog.Builder(Home.this);
         testDialog.setMessage(msg);
         testDialog.setCancelable(true);
 
         testDialog.setPositiveButton(
-                "Yes",
+                "Manual",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         // sign out current user
 //                        startActivity(new Intent(getApplicationContext(), Userinfo.class).putExtra(key, "show"));
+                        sharedPref.edit().putInt("manual", 1).apply();
                         dialog.dismiss();
                     }
                 });
 
         testDialog.setNegativeButton(
-                "No",
+                "Automatic",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        sharedPref.edit().putInt("manual", 0).apply();
                         dialog.cancel();
                     }
                 });
@@ -382,7 +389,11 @@ public class Home extends AppCompatActivity {
     }
 
     public void startService(View v) {
-        run();
+        if (sharedPref.contains("manual"))
+            if (MANUAL == 0) run();
+            //else // TODO
+        else
+            showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
     }
 
     public void run() {
