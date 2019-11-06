@@ -34,7 +34,8 @@ public class Part_a_b extends Fragment {
 
     private Economic economic = new Economic();
     private EditText  monthlyEMI, monthlyFuelCost, monthlyMaintenance, monthlyParkingCost, registration;
-    private Spinner monthlyIncome, residenceType, carCount, twoWheelerCount, bicycleCount;
+    private Spinner monthlyIncome, residenceType, carCount, twoWheelerCount, bicycleCount,
+            carMileage, carAge, carFuel, twoWheelerAge, twoWheelerFuel, twoWheelerMileage, bicycleAge;
     private View.OnClickListener nextStep, saveStep, backStep;
     private CardView step0, step1, one, two;
     private ImageView next, prev;
@@ -65,6 +66,13 @@ public class Part_a_b extends Fragment {
         carCount = v.findViewById(R.id.car_count);
         twoWheelerCount = v.findViewById(R.id.twow_count);
         bicycleCount = v.findViewById(R.id.bicylce_count);
+        carMileage = v.findViewById(R.id.car_mileage);
+        carAge = v.findViewById(R.id.car_age);
+        carFuel = v.findViewById(R.id.car_fuel);
+        twoWheelerAge = v.findViewById(R.id.twow_age);
+        twoWheelerFuel = v.findViewById(R.id.twow_fuel);
+        twoWheelerMileage = v.findViewById(R.id.twow_milage);
+        bicycleAge = v.findViewById(R.id.bicylce_age);
 
         step0 = v.findViewById(R.id.step0);
         step1 = v.findViewById(R.id.step1);
@@ -158,12 +166,26 @@ public class Part_a_b extends Fragment {
         if (carCount.getSelectedItemPosition() == 0) { ( (TextView) carCount.getSelectedView()).setError("Select choice"); return false;}
         if (twoWheelerCount.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerCount.getSelectedView()).setError("Select choice"); return false;}
         if (bicycleCount.getSelectedItemPosition() == 0) { ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;}
+        if (bicycleCount.getSelectedItemPosition() == 0) { ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;}
+        if (carMileage.getSelectedItemPosition() == 0) { ( (TextView) carMileage.getSelectedView()).setError("Select choice"); return false;}
+        if (carAge.getSelectedItemPosition() == 0) { ( (TextView) carAge.getSelectedView()).setError("Select choice"); return false;}
+        if (carFuel.getSelectedItemPosition() == 0) { ( (TextView) carFuel.getSelectedView()).setError("Select choice"); return false;}
+        if (twoWheelerAge.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerAge.getSelectedView()).setError("Select choice"); return false;}
+        if (twoWheelerFuel.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerFuel.getSelectedView()).setError("Select choice"); return false;}
+        if (twoWheelerMileage.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerMileage.getSelectedView()).setError("Select choice"); return false;}
 
         economic.setBicycle(bicycleCount.getSelectedItemPosition() - 1 + "");
         economic.setCar(carCount.getSelectedItemPosition() - 1 + "");
         economic.setTwo_wheeler(twoWheelerCount.getSelectedItemPosition() - 1 + "");
         economic.setMonthly_income(monthlyIncome.getSelectedItem().toString());
         economic.setResidence_type(residenceType.getSelectedItem().toString());
+        economic.setCar_mileage(bicycleCount.getSelectedItem().toString());
+        economic.setCar_age(carMileage.getSelectedItem().toString());
+        economic.setCar_fuel(carAge.getSelectedItem().toString());
+        economic.setTwow_age(carFuel.getSelectedItem().toString());
+        economic.setTwow_fuel(twoWheelerAge.getSelectedItem().toString());
+        economic.setTwow_milage(twoWheelerFuel.getSelectedItem().toString());
+        economic.setBicylce_age(twoWheelerMileage.getSelectedItem().toString());
 
         return true;
     }

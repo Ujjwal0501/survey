@@ -53,6 +53,16 @@
                     app:cardBackgroundColor="@color/colorPrimary"
                     app:cardCornerRadius="16dp"/>
 
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/four"
+                    android:layout_marginLeft="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minWidth="8dp"
+                    android:minHeight="8dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    app:cardCornerRadius="16dp"/>
+
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
@@ -68,8 +78,15 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="State the mode which you will shift if 1st mode is not available"
+                        android:textAlignment="center" />
+
                     <LinearLayout
-                        android:layout_marginBottom="16dp"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -78,18 +95,112 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="State the mode which you will shift if 1st mode is not available"
-                            android:textAlignment="center" />
+                            android:text="Self"
+                            android:paddingLeft="16dp"
+                            android:textAlignment="viewStart" />
 
                         <Spinner
-                            android:id="@+id/mode_change"
-                            android:entries="@array/mode"
+                            android:id="@+id/mode_change_self"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            android:layout_height="36dp"
                             android:layout_gravity="center"
-                            android:layout_weight="1" />
+                            android:layout_weight="1"
+                            android:entries="@array/mode" />
 
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Spouse"
+                            android:paddingLeft="16dp"
+                            android:textAlignment="viewStart" />
+
+                        <Spinner
+                            android:id="@+id/mode_change_spouse"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:entries="@array/mode" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Son/Daughter"
+                            android:paddingLeft="16dp"
+                            android:textAlignment="viewStart" />
+
+                        <Spinner
+                            android:id="@+id/mode_change_son"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:entries="@array/mode" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Other"
+                            android:paddingLeft="16dp"
+                            android:textAlignment="viewStart" />
+
+                        <Spinner
+                            android:id="@+id/mode_change_other"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:entries="@array/mode" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/step1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                app:contentPadding="6dp"
+                android:visibility="gone"
+                app:cardCornerRadius="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -230,7 +341,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/step1"
+                android:id="@+id/step2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -345,7 +456,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/step2"
+                android:id="@+id/step3"
                 android:layout_marginBottom="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

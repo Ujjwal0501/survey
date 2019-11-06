@@ -40,14 +40,14 @@ import java.util.Map;
  */
 public class Part_b_a extends Fragment {
     private Preference preference = new Preference();
-    private Spinner modeChange;
+    private Spinner modeChangeSelf, modeChangeSpouse, modeChangeSD, modeChangeOther;
     private CheckBox publicWaitTime, publicDistance, publicTravel, publicReliability, publicFare,
              privateTravel, privateCost, privateParking, vehicleSharing;
     private EditText publicWaitTimeValue, publicDistanceValue, publicTravelValue, publicReliabilityValue, publicFareValue,
              privateTravelValue, privateCostValue, privateParkingValue;
-    private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne;
+    private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne, threeToFour, fourToThree;
     private static RadioButton currentService, serviceA, serviceB;
-    private CardView step0, step1, step2, one, two, three;
+    private CardView step0, step1, step2, step3, one, two, three, four;
     private ImageView next, prev;
     private Context context;
     private View v;
@@ -83,7 +83,10 @@ public class Part_b_a extends Fragment {
         privateParking = v.findViewById(R.id.private_parking_checkbox);
         privateParkingValue = v.findViewById(R.id.private_parking_edittext);
         vehicleSharing = v.findViewById(R.id.private_sharing_checkbox);
-        modeChange = v.findViewById(R.id.mode_change);
+        modeChangeSelf = v.findViewById(R.id.mode_change_self);
+        modeChangeSpouse = v.findViewById(R.id.mode_change_spouse);
+        modeChangeSD = v.findViewById(R.id.mode_change_son);
+        modeChangeOther = v.findViewById(R.id.mode_change_other);
         currentService = v.findViewById(R.id.radio_current);
         serviceA = v.findViewById(R.id.radio_bus_a);
         serviceB = v.findViewById(R.id.radio_bus_b);
@@ -91,11 +94,13 @@ public class Part_b_a extends Fragment {
         step0 = v.findViewById(R.id.step0);
         step1 = v.findViewById(R.id.step1);
         step2 = v.findViewById(R.id.step2);
+        step3 = v.findViewById(R.id.step3);
         next = v.findViewById(R.id.next);
         prev = v.findViewById(R.id.prev);
         one = v.findViewById(R.id.one);
         two = v.findViewById(R.id.two);
         three = v.findViewById(R.id.three);
+        four = v.findViewById(R.id.four);
 
 
         publicDistance.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
@@ -175,18 +180,36 @@ public class Part_b_a extends Fragment {
         twoToThree = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            if (verifyStep1() && Home.STEP<Home.MAX) {
-                // proceed to save
-                step1.setVisibility(View.GONE);
-                step2.setVisibility(View.VISIBLE);
-                ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
-                next.setOnClickListener(saveStep);
-                prev.setOnClickListener(threeToTwo);
-                next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                Home.STEP += 1;
+                if (verifyStep1() && Home.STEP<Home.MAX) {
+                    // proceed to save
+                    step1.setVisibility(View.GONE);
+                    step2.setVisibility(View.VISIBLE);
+                    ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
+                    next.setOnClickListener(threeToFour);
+                    prev.setOnClickListener(threeToTwo);
+                    next.setImageDrawable(getResources().getDrawable(R.drawable.save));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    Home.STEP += 1;
+                }
             }
+        };
+
+        threeToFour = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (verifyStep2() && Home.STEP<Home.MAX) {
+                    // proceed to save
+                    step2.setVisibility(View.GONE);
+                    step3.setVisibility(View.VISIBLE);
+                    ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
+                    next.setOnClickListener(saveStep);
+                    prev.setOnClickListener(fourToThree);
+                    next.setImageDrawable(getResources().getDrawable(R.drawable.save));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    Home.STEP += 1;
+                }
             }
         };
 
@@ -220,11 +243,26 @@ public class Part_b_a extends Fragment {
             }
         };
 
+        fourToThree = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (Home.STEP<1) return;
+                step2.setVisibility(View.GONE);
+                step1.setVisibility(View.VISIBLE);
+                next.setOnClickListener(twoToThree);
+                prev.setOnClickListener(twoToOne);
+                next.setImageDrawable(getResources().getDrawable(R.drawable.next));
+                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                Home.STEP -= 1;
+            }
+        };
+
         saveStep = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // save to firebase
-                if (!verifyStep2()) return;
+                if (!verifyStep3()) return;
                 updateFirebase();
             }
         };
@@ -283,14 +321,25 @@ public class Part_b_a extends Fragment {
     }
 
     private boolean verifyStep0() {
-        if (modeChange.getSelectedItemPosition() == 0) { ( (TextView) modeChange.getSelectedView()).setError("Required"); return false; }
+        if (modeChangeSelf.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSelf.getSelectedView()).setError("Required"); return false; }
+        if (modeChangeSpouse.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSpouse.getSelectedView()).setError("Required"); return false; }
+        if (modeChangeSD.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSD.getSelectedView()).setError("Required"); return false; }
+        if (modeChangeOther.getSelectedItemPosition() == 0) { ( (TextView) modeChangeOther.getSelectedView()).setError("Required"); return false; }
+
+        preference.setChange_when_first_mode_not_available(modeChangeSelf.getSelectedItem().toString());
+        preference.setChange_when_first_mode_not_available_spouse(modeChangeSpouse.getSelectedItem().toString());
+        preference.setChange_when_first_mode_not_available_sd(modeChangeSD.getSelectedItem().toString());
+        preference.setChange_when_first_mode_not_available_other(modeChangeOther.getSelectedItem().toString());
+        return true;
+    }
+
+    private boolean verifyStep1() {
         if (publicWaitTime.isChecked() && publicWaitTimeValue.getText().toString().equals("")) { publicWaitTimeValue.setError("Required"); return false;}
         if (publicDistance.isChecked() && publicDistanceValue.getText().toString().equals("")) { publicDistanceValue.setError("Required"); return false;}
         if (publicTravel.isChecked() && publicTravelValue.getText().toString().equals("")) { publicTravelValue.setError("Required"); return false;}
         if (publicReliability.isChecked() && publicReliabilityValue.getText().toString().equals("")) { publicReliabilityValue.setError("Required"); return false;}
         if (publicFare.isChecked() && publicFareValue.getText().toString().equals("")) { publicFareValue.setError("Required"); return false;}
 
-        preference.setChange_when_first_mode_not_available(modeChange.getSelectedItem().toString());
         Map<String, String> temp = new HashMap<String, String>();
 
         if (publicDistance.isChecked()) {
@@ -318,12 +367,12 @@ public class Part_b_a extends Fragment {
         return true;
     }
 
-    private boolean verifyStep1() {
+    private boolean verifyStep2() {
         if (privateTravel.isChecked() && privateTravelValue.getText().toString().equals("")) { privateTravelValue.setError("Required"); return false;}
         if (privateCost.isChecked() && privateCostValue.getText().toString().equals("")) { privateCostValue.setError("Required"); return false;}
         if (privateParking.isChecked() && privateParkingValue.getText().toString().equals("")) { privateParkingValue.setError("Required"); return false;}
 
-        preference.setChange_when_first_mode_not_available(modeChange.getSelectedItem().toString());
+        preference.setChange_when_first_mode_not_available(modeChangeSelf.getSelectedItem().toString());
         Map<String, String> temp = new HashMap<String, String>();
 
         if (privateTravel.isChecked()) {
@@ -347,7 +396,7 @@ public class Part_b_a extends Fragment {
         return true;
     }
 
-    private boolean verifyStep2() {
+    private boolean verifyStep3() {
         if (!currentService.isChecked() && !serviceB.isChecked() && !serviceA.isChecked()) { Snackbar.make(step2, "Please indicate your choice", Snackbar.LENGTH_LONG).show(); return false; }
         if (currentService.isChecked()) preference.setSituation_switch_to_public_transport("Current Service");
         else if (serviceA.isChecked()) preference.setSituation_switch_to_public_transport("Service A");

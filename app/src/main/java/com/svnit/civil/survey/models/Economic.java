@@ -11,6 +11,13 @@ public class Economic {
     private String monthly_maintenance_cost;
     private String vehicle_registration;
     private String monthly_parking_charges;
+    private String car_mileage;
+    private String car_age;
+    private String car_fuel;
+    private String twow_age;
+    private String twow_fuel;
+    private String twow_milage;
+    private String bicylce_age;
 
     public void Economic() {
         this.setMonthly_income("");
@@ -23,10 +30,18 @@ public class Economic {
         this.setMonthly_maintenance_cost("");
         this.setVehicle_registration("");
         this.setMonthly_parking_charges("");
+        this.setCar_mileage("");
+        this.setCar_age("");
+        this.setCar_fuel("");
+        this.setTwow_age("");
+        this.setTwow_fuel("");
+        this.setTwow_milage("");
+        this.setBicylce_age("");
     }
 
-    public void Economic(String monthly_income, String residence_type, String car, String two_wheeler, String bicycle, String
-                         monthly_emi, String monthly_fuel_cost, String monthly_maintenance_cost, String vehicle_registration, String monthly_parking_charges) {
+    public void Economic(String monthly_income, String residence_type, String car, String two_wheeler, String bicycle, String monthly_emi,
+                         String monthly_fuel_cost, String monthly_maintenance_cost, String vehicle_registration, String monthly_parking_charges,
+                         String car_mileage, String car_age, String car_fuel, String twow_age, String twow_fuel, String twow_milage, String bicylce_age) {
         this.setMonthly_income(monthly_income);
         this.setResidence_type(residence_type);
         this.setCar(car);
@@ -37,6 +52,13 @@ public class Economic {
         this.setMonthly_maintenance_cost(monthly_maintenance_cost);
         this.setVehicle_registration(vehicle_registration);
         this.setMonthly_parking_charges(monthly_parking_charges);
+        this.setCar_mileage(car_mileage);
+        this.setCar_age(car_age);
+        this.setCar_fuel(car_fuel);
+        this.setTwow_age(twow_age);
+        this.setTwow_fuel(twow_fuel);
+        this.setTwow_milage(twow_milage);
+        this.setBicylce_age(bicylce_age);
     }
 
     public String getMonthly_income() {
@@ -117,5 +139,61 @@ public class Economic {
 
     public void setMonthly_parking_charges(String monthly_parking_charges) {
         this.monthly_parking_charges = monthly_parking_charges;
+    }
+
+    public String getCar_mileage() {
+        return car_mileage;
+    }
+
+    public void setCar_mileage(String car_mileage) {
+        this.car_mileage = car_mileage;
+    }
+
+    public String getCar_age() {
+        return car_age;
+    }
+
+    public void setCar_age(String car_age) {
+        this.car_age = car_age;
+    }
+
+    public String getCar_fuel() {
+        return car_fuel;
+    }
+
+    public void setCar_fuel(String car_fuel) {
+        this.car_fuel = car_fuel;
+    }
+
+    public String getTwow_age() {
+        return twow_age;
+    }
+
+    public void setTwow_age(String twow_age) {
+        this.twow_age = twow_age;
+    }
+
+    public String getTwow_fuel() {
+        return twow_fuel;
+    }
+
+    public void setTwow_fuel(String twow_fuel) {
+        this.twow_fuel = twow_fuel;
+    }
+
+    public String getTwow_milage() {
+        return twow_milage;
+    }
+
+    public void setTwow_milage(String twow_milage) {
+        this.twow_milage = twow_milage;
+    }
+
+    public String getBicylce_age() {
+        return bicylce_age;
+    }
+
+    public void setBicylce_age(String bicylce_age) {
+        this.bicylce_age = bicylce_age;
     }
 }

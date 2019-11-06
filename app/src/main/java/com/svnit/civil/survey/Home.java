@@ -328,7 +328,7 @@ public class Home extends AppCompatActivity {
         FIRST_RUN = 0;
         AlertDialog.Builder testDialog = new AlertDialog.Builder(Home.this);
         testDialog.setMessage(msg);
-        testDialog.setCancelable(true);
+        testDialog.setCancelable(false);
 
         testDialog.setPositiveButton(
                 "Manual",
@@ -337,6 +337,7 @@ public class Home extends AppCompatActivity {
                         // sign out current user
 //                        startActivity(new Intent(getApplicationContext(), Userinfo.class).putExtra(key, "show"));
                         sharedPref.edit().putInt("manual", 1).apply();
+                        MANUAL = 1;
                         dialog.dismiss();
                     }
                 });
@@ -346,6 +347,7 @@ public class Home extends AppCompatActivity {
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
                         sharedPref.edit().putInt("manual", 0).apply();
+                        MANUAL = 0;
                         dialog.cancel();
                     }
                 });
@@ -391,7 +393,10 @@ public class Home extends AppCompatActivity {
     public void startService(View v) {
         if (sharedPref.contains("manual"))
             if (MANUAL == 0) run();
-            //else // TODO
+            else {
+                fragmentManager.popBackStack();
+                fragmentManager.beginTransaction().replace(R.id.container, new Part_b_b()).addToBackStack(null).commit();
+            }
         else
             showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
     }

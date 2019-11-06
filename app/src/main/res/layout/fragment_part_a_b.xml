@@ -66,6 +66,7 @@
                         android:text="Assets" />
 
                     <LinearLayout
+                        android:layout_marginTop="12dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -79,15 +80,16 @@
 
                         <Spinner
                             android:id="@+id/m_income"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/income"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:entries="@array/income" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_marginTop="12dp"
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
@@ -101,33 +103,43 @@
 
                         <Spinner
                             android:id="@+id/res_type"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/residence"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:entries="@array/residence" />
 
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="Car"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
 
                     <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <Spinner
+                            android:id="@+id/car_mileage"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:text="Car"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:entries="@array/mileage" />
 
                         <Spinner
                             android:id="@+id/car_count"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:entries="@array/count" />
 
                     </LinearLayout>
 
@@ -136,20 +148,53 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <Spinner
+                            android:id="@+id/car_age"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:text="2 Wheeler"
+                            android:entries="@array/age" />
+
+                        <Spinner
+                            android:id="@+id/car_fuel"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/fuel" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="2 Wheeler"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/twow_milage"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/mileage" />
 
                         <Spinner
                             android:id="@+id/twow_count"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:entries="@array/count" />
 
                     </LinearLayout>
 
@@ -158,20 +203,54 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <TextView
+                        <Spinner
+                            android:id="@+id/twow_age"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:text="Bicycle"
+                            android:entries="@array/age" />
+
+                        <Spinner
+                            android:id="@+id/twow_fuel"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/fuel" />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:text="Bicycle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
 
                         <Spinner
                             android:id="@+id/bicylce_count"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/count"
+                            android:entries="@array/count" />
+
+                        <Spinner
+                            android:id="@+id/bicylce_age"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/age" />
 
                     </LinearLayout>
 

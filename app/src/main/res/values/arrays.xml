@@ -83,10 +83,40 @@
     </array>
 
     <array name="purpose">
+        <item>Purpose</item>
         <item>Work</item>
         <item>Education</item>
         <item>Shopping</item>
         <item>Recreation</item>
         <item>Social</item>
+    </array>
+
+    <array name="fuel">
+        <item>Fuel</item>
+        <item>Petrol</item>
+        <item>Diesel</item>
+        <item>CNG</item>
+        <item>Other</item>
+    </array>
+
+    <array name="mileage">
+        <item>Mileage</item>
+        <item>"10-15"</item>
+        <item>"20-25"</item>
+        <item>"30-35"</item>
+        <item>"40-45"</item>
+        <item>"50-55"</item>
+        <item>"60-65"</item>
+    </array>
+
+    <array name="age">
+        <item>Age</item>
+        <item>"1-3"</item>
+        <item>"4-6"</item>
+        <item>"7-9"</item>
+        <item>"10-12"</item>
+        <item>"13-15"</item>
+        <item>"16-18"</item>
+        <item>"> 18"</item>
     </array>
 </resources>
