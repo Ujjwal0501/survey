@@ -206,8 +206,8 @@ public class Part_b_a extends Fragment {
                     next.setOnClickListener(saveStep);
                     prev.setOnClickListener(fourToThree);
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                    four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -252,8 +252,8 @@ public class Part_b_a extends Fragment {
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
                 Home.STEP -= 1;
             }
         };
@@ -267,7 +267,7 @@ public class Part_b_a extends Fragment {
             }
         };
 
-        Home.STEP = 0; Home.MAX = 2;
+        Home.STEP = 0; Home.MAX = 4;
         Home.backBtn = prev;
         next.setOnClickListener(oneToTwo);
 

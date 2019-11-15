@@ -101,22 +101,128 @@
 
     <array name="mileage">
         <item>Mileage</item>
-        <item>"10-15"</item>
-        <item>"20-25"</item>
-        <item>"30-35"</item>
-        <item>"40-45"</item>
-        <item>"50-55"</item>
-        <item>"60-65"</item>
+        <item>"10-15 km"</item>
+        <item>"20-25 km"</item>
+        <item>"30-35 km"</item>
+        <item>"40-45 km"</item>
+        <item>"50-55 km"</item>
+        <item>"60-65 km"</item>
     </array>
 
     <array name="age">
         <item>Age</item>
-        <item>"1-3"</item>
-        <item>"4-6"</item>
-        <item>"7-9"</item>
-        <item>"10-12"</item>
-        <item>"13-15"</item>
-        <item>"16-18"</item>
-        <item>"> 18"</item>
+        <item>"1-3 yrs"</item>
+        <item>"4-6 yrs"</item>
+        <item>"7-9 yrs"</item>
+        <item>"10-12 yrs"</item>
+        <item>"13-15 yrs"</item>
+        <item>"16-18 yrs"</item>
+        <item>">Above 18 yrs"</item>
+    </array>
+
+    <array name="purpose_hw">
+        <item>Purpose</item>
+        <item>Home</item>
+        <item>Work</item>
+    </array>
+
+    <array name="mode_hw">
+        <item>Mode</item>
+        <item>Bus</item>
+        <item>Auto</item>
+        <item>Private Car</item>
+        <item>Motorbike</item>
+        <item>Bicycle</item>
+    </array>
+
+    <array name="vehicle_time">
+        <item>Vehicle time</item>
+        <item>"Upto 5 min"</item>
+        <item>"5-10 min"</item>
+        <item>"10-15 min"</item>
+        <item>"15-20 min"</item>
+        <item>"20-25 min"</item>
+        <item>"25-30 min"</item>
+        <item>"30-35 min"</item>
+        <item>"35-40 min"</item>
+        <item>"40-45 min"</item>
+        <item>Above 45 min</item>
+    </array>
+
+    <array name="wait_time">
+        <item>Wait time</item>
+        <item>"Upto 5 min"</item>
+        <item>"5-10 min"</item>
+        <item>"10-15 min"</item>
+        <item>"15-20 min"</item>
+        <item>"20-25 min"</item>
+        <item>"25-30 min"</item>
+        <item>"30-35 min"</item>
+        <item>"35-40 min"</item>
+        <item>"40-45 min"</item>
+        <item>Above 45 min</item>
+    </array>
+
+    <array name="travel_time">
+        <item>Travel time</item>
+        <item>"Upto 5 min"</item>
+        <item>"5-10 min"</item>
+        <item>"10-15 min"</item>
+        <item>"15-20 min"</item>
+        <item>"20-25 min"</item>
+        <item>"25-30 min"</item>
+        <item>"30-35 min"</item>
+        <item>"35-40 min"</item>
+        <item>"40-45 min"</item>
+        <item>Above 45 min</item>
+    </array>
+
+    <array name="frequency">
+        <item>Weekly frequency</item>
+        <item>"Upto 2"</item>
+        <item>"3-5"</item>
+        <item>"6-8"</item>
+        <item>"9-11"</item>
+        <item>"12-14"</item>
+        <item>"15-17"</item>
+        <item>"18-20"</item>
+        <item>"21-23"</item>
+        <item>Above 23</item>
+    </array>
+
+    <array name="cost">
+        <item>Fare/Parking</item>
+        <item>"Upto 5 rs"</item>
+        <item>"5-10 rs"</item>
+        <item>"10-15 rs"</item>
+        <item>"15-20 rs"</item>
+        <item>"20-25 rs"</item>
+        <item>"25-30 rs"</item>
+        <item>"30-35 rs"</item>
+        <item>"35-40 rs"</item>
+        <item>"40-45 rs"</item>
+        <item>Above 45 rs</item>
+    </array>
+
+    <array name="distance">
+        <item>Distance</item>
+        <item>"Upto 3 km"</item>
+        <item>"4-6 km"</item>
+        <item>"7-9 km"</item>
+        <item>"10-12 km"</item>
+        <item>"13-15 km"</item>
+        <item>"16-18 km"</item>
+        <item>"19-21 km"</item>
+        <item>"22-24 km"</item>
+        <item>Above 24 km</item>
+    </array>
+
+    <array name="member">
+        <item>Member</item>
+        <item>Self</item>
+        <item>Spouse</item>
+        <item>Son</item>
+        <item>Daughter</item>
+        <item>Other</item>
     </array>
 </resources>

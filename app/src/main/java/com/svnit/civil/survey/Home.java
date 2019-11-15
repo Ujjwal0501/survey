@@ -49,6 +49,7 @@ import com.svnit.civil.survey.fragments.Part_a_b;
 import com.svnit.civil.survey.fragments.Part_a_c;
 import com.svnit.civil.survey.fragments.Part_b_a;
 import com.svnit.civil.survey.fragments.Part_b_b;
+import com.svnit.civil.survey.fragments.RouteSurvey;
 import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.models.UserAddress;
 import com.svnit.civil.survey.receivers.ReminderReceiver;
@@ -395,7 +396,7 @@ public class Home extends AppCompatActivity {
             if (MANUAL == 0) run();
             else {
                 fragmentManager.popBackStack();
-                fragmentManager.beginTransaction().replace(R.id.container, new Part_b_b()).addToBackStack(null).commit();
+                fragmentManager.beginTransaction().replace(R.id.container, new RouteSurvey()).addToBackStack(null).commit();
             }
         else
             showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
