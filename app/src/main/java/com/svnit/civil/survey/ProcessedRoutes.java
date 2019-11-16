@@ -41,8 +41,8 @@ public class ProcessedRoutes extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
         user = FirebaseAuth.getInstance().getCurrentUser();
-        processed = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes");
-        confirmed = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes_confirmed");
+        processed = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes");
+        confirmed = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes_confirmed");
         initAndSetAdapter();
     }
 

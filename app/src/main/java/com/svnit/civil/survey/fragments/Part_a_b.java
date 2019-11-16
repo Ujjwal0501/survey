@@ -139,7 +139,7 @@ public class Part_a_b extends Fragment {
 
     private void updateFirebase() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(user.getUid());
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid());
         dbRef.child("economic_info").setValue(economic).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -177,15 +177,15 @@ public class Part_a_b extends Fragment {
         economic.setBicycle(bicycleCount.getSelectedItemPosition() - 1 + "");
         economic.setCar(carCount.getSelectedItemPosition() - 1 + "");
         economic.setTwo_wheeler(twoWheelerCount.getSelectedItemPosition() - 1 + "");
-        economic.setMonthly_income(monthlyIncome.getSelectedItem().toString());
-        economic.setResidence_type(residenceType.getSelectedItem().toString());
+        economic.setMonthly_income(monthlyIncome.getSelectedItemPosition() + "");
+        economic.setResidence_type(residenceType.getSelectedItemPosition() + "");
         economic.setCar_mileage(bicycleCount.getSelectedItem().toString());
         economic.setCar_age(carMileage.getSelectedItem().toString());
         economic.setCar_fuel(carAge.getSelectedItem().toString());
-        economic.setTwow_age(carFuel.getSelectedItem().toString());
-        economic.setTwow_fuel(twoWheelerAge.getSelectedItem().toString());
-        economic.setTwow_milage(twoWheelerFuel.getSelectedItem().toString());
-        economic.setBicylce_age(twoWheelerMileage.getSelectedItem().toString());
+        economic.setTwow_age(twoWheelerAge.getSelectedItem().toString());
+        economic.setTwow_fuel(twoWheelerFuel.getSelectedItem().toString());
+        economic.setTwow_milage(twoWheelerMileage.getSelectedItem().toString());
+        economic.setBicylce_age(bicycleAge.getSelectedItem().toString());
 
         return true;
     }

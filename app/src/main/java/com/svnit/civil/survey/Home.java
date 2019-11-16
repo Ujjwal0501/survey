@@ -105,39 +105,9 @@ public class Home extends AppCompatActivity {
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
                     .putExtra("reason", "unexpected logout"));
         }
-        dbRef = db.getReference(user.getUid());
+        dbRef = db.getReference("user/" + user.getUid());
         // keep data synced even when not required, only for provided reference
         dbRef.keepSynced(true);
-        dbRef.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                // do some stuff once
-//                userAddress = snapshot.child("address").getValue(UserAddress.class);
-//                Home.snapshot = snapshot;
-////                Userinfo.updateInfo();
-//                if (userAddress != null) {
-//                    if (userAddress.getCity().equals("") || userAddress.getState().equals("") || userAddress.getPincode().equals("")) {
-//                        // show dialog to update address
-//                        showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
-//
-//                    } else if (userAddress.getLocality().equals("")) {
-//                        // show dialog to update address
-//                        showPrompt("Your address is incomplete. Do you want to update your locality now?", "locality");
-//
-//                    }
-//                } else {
-//                    // address is null
-//                    // initialise for smooth working
-//                    userAddress = new UserAddress();
-//                    showPrompt("Your address is incomplete. Do you want to update your city now?", "city");
-//                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -299,7 +269,7 @@ public class Home extends AppCompatActivity {
     }
 
     private void checkForProcessedRoute() {
-        DatabaseReference processed = FirebaseDatabase.getInstance().getReference(user.getUid() + "/travel_details/routes/");
+        DatabaseReference processed = FirebaseDatabase.getInstance().getReference("location/" + user.getUid() + "/travel_details/routes/");
         processed.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

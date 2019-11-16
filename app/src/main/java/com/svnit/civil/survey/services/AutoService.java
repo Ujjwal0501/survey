@@ -61,9 +61,9 @@ public class AutoService extends Service {
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         if (user == null) {Toast.makeText(context, "unexpected logout", Toast.LENGTH_LONG).show(); stopSelf();}
-        rawRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/raw");
-        processRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes");
-        confirmRef = FirebaseDatabase.getInstance().getReference(user.getUid()+"/travel_details/routes_confirmed");
+        rawRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/raw");
+        processRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes");
+        confirmRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes_confirmed");
 
         // initialise notification channel
         NotificationHelper.createNotificationChannel(this);

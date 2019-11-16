@@ -189,7 +189,7 @@ public class Part_a_c extends Fragment {
 
     private void updateFirebase() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(user.getUid());
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid());
         dbRef.child("public_transport_survey").setValue(publicTransport).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {

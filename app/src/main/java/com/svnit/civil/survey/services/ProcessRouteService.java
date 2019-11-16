@@ -48,9 +48,9 @@ public class ProcessRouteService extends JobService {
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         if (user != null) {
-            raw = FirebaseDatabase.getInstance().getReference(user.getUid()+ ROOT_TRAVEL + LOCATION);
-            processed = FirebaseDatabase.getInstance().getReference(user.getUid()+ ROOT_TRAVEL + PROCESSED);
-            confirmed = FirebaseDatabase.getInstance().getReference(user.getUid()+ ROOT_TRAVEL + CONFIRMED);
+            raw = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+ ROOT_TRAVEL + LOCATION);
+            processed = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+ ROOT_TRAVEL + PROCESSED);
+            confirmed = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+ ROOT_TRAVEL + CONFIRMED);
         } else {
             // TODO: notify to login again at later time
         }

@@ -39,12 +39,12 @@ public class Part_b_b extends Fragment {
 
     private RatedPreference ratedPreference = new RatedPreference();
     private EditText congestion, safety, airPollution, noisePollution,
-            fareHome, fareEducation, fareSocial,
-            speedHome, speedEducatin, speedSocial,
-            comfortHome, comfortEducation, comfortSocial,
-            safetyHome, safetyEducation, safetySocial,
-            parkingHome, parkingEducation, parkingSocial,
-            otherHome, otherEducation, otherSocial;
+            fareWork, fareEducation, fareSocial,
+            speedWork, speedEducatin, speedSocial,
+            comfortWork, comfortEducation, comfortSocial,
+            safetyWork, safetyEducation, safetySocial,
+            parkingWork, parkingEducation, parkingSocial,
+            otherWork, otherEducation, otherSocial;
     private Spinner rank1, rank2, rank3, rank4, rank5, rank6, rank7;
     private int[] option = {0, 0, 0, 0, 0, 0, 0, 0};
     private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne;
@@ -72,22 +72,22 @@ public class Part_b_b extends Fragment {
         airPollution = v.findViewById(R.id.air_pollution);
         noisePollution = v.findViewById(R.id.noise_pollution);
 
-        fareHome = v.findViewById(R.id.fare_home);
+        fareWork = v.findViewById(R.id.fare_home);
         fareEducation = v.findViewById(R.id.fare_education);
         fareSocial = v.findViewById(R.id.fare_social);
-        speedHome = v.findViewById(R.id.speed_home);
+        speedWork = v.findViewById(R.id.speed_home);
         speedEducatin = v.findViewById(R.id.speed_education);
         speedSocial = v.findViewById(R.id.speed_social);
-        comfortHome = v.findViewById(R.id.comfort_home);
+        comfortWork = v.findViewById(R.id.comfort_home);
         comfortEducation = v.findViewById(R.id.comfort_education);
         comfortSocial = v.findViewById(R.id.comfort_social);
-        safetyHome = v.findViewById(R.id.safety_home);
+        safetyWork = v.findViewById(R.id.safety_home);
         safetyEducation = v.findViewById(R.id.safety_education);
         safetySocial = v.findViewById(R.id.safety_social);
-        parkingHome = v.findViewById(R.id.parking_home);
+        parkingWork = v.findViewById(R.id.parking_home);
         parkingEducation = v.findViewById(R.id.parking_education);
         parkingSocial = v.findViewById(R.id.parking_social);
-        otherHome = v.findViewById(R.id.other_home);
+        otherWork = v.findViewById(R.id.other_home);
         otherEducation = v.findViewById(R.id.other_education);
         otherSocial = v.findViewById(R.id.other_social);
 
@@ -200,7 +200,7 @@ public class Part_b_b extends Fragment {
 
     private void updateFirebase() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference(user.getUid());
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid());
         dbRef.child("rated_preference_survey").setValue(ratedPreference).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
@@ -234,58 +234,58 @@ public class Part_b_b extends Fragment {
         temp.put("air pollution", airPollution.getText().toString());
         temp.put("noise pollution", noisePollution.getText().toString());
 
-        ratedPreference.setMajor_issue_of_transport_system(temp);
+        ratedPreference.setMajor_issue(temp);
 
         return true;
     }
 
     private boolean verifyStep1() {
-        if (fareHome.getText().toString().equals("")) { fareHome.setError("Required"); return false;}
+        if (fareWork.getText().toString().equals("")) { fareWork.setError("Required"); return false;}
         if (fareEducation.getText().toString().equals("")) { fareEducation.setError("Required"); return false;}
         if (fareSocial.getText().toString().equals("")) { fareSocial.setError("Required"); return false;}
-        if (speedHome.getText().toString().equals("")) { speedHome.setError("Required"); return false;}
+        if (speedWork.getText().toString().equals("")) { speedWork.setError("Required"); return false;}
         if (speedEducatin.getText().toString().equals("")) { speedEducatin.setError("Required"); return false;}
         if (speedSocial.getText().toString().equals("")) { speedSocial.setError("Required"); return false;}
-        if (comfortHome.getText().toString().equals("")) { comfortHome.setError("Required"); return false;}
+        if (comfortWork.getText().toString().equals("")) { comfortWork.setError("Required"); return false;}
         if (comfortEducation.getText().toString().equals("")) { comfortEducation.setError("Required"); return false;}
         if (comfortSocial.getText().toString().equals("")) { comfortSocial.setError("Required"); return false;}
-        if (safetyHome.getText().toString().equals("")) { safetyHome.setError("Required"); return false;}
+        if (safetyWork.getText().toString().equals("")) { safetyWork.setError("Required"); return false;}
         if (safetyEducation.getText().toString().equals("")) { safetyEducation.setError("Required"); return false;}
         if (safetySocial.getText().toString().equals("")) { safetySocial.setError("Required"); return false;}
-        if (parkingHome.getText().toString().equals("")) { parkingHome.setError("Required"); return false;}
+        if (parkingWork.getText().toString().equals("")) { parkingWork.setError("Required"); return false;}
         if (parkingEducation.getText().toString().equals("")) { parkingEducation.setError("Required"); return false;}
         if (parkingSocial.getText().toString().equals("")) { parkingSocial.setError("Required"); return false;}
-        if (otherHome.getText().toString().equals("")) { otherHome.setError("Required"); return false;}
+        if (otherWork.getText().toString().equals("")) { otherWork.setError("Required"); return false;}
         if (otherEducation.getText().toString().equals("")) { otherEducation.setError("Required"); return false;}
         if (otherSocial.getText().toString().equals("")) { otherSocial.setError("Required"); return false;}
 
         Map<String, String> temp = new HashMap<String, String>();
 
-        temp.put("fare_for_home", fareHome.getText().toString());
-        temp.put("fare_education", fareEducation.getText().toString());
-        temp.put("fare_event", fareSocial.getText().toString());
+        temp.put("fare_work", fareWork.getText().toString());
+        temp.put("fare_edu", fareEducation.getText().toString());
+        temp.put("fare_other", fareSocial.getText().toString());
 
-        temp.put("speed_for_home", speedHome.getText().toString());
-        temp.put("speed_education", speedEducatin.getText().toString());
-        temp.put("speed_event", speedSocial.getText().toString());
+        temp.put("speed_work", speedWork.getText().toString());
+        temp.put("speed_edu", speedEducatin.getText().toString());
+        temp.put("speed_other", speedSocial.getText().toString());
 
-        temp.put("comfort_for_home", comfortHome.getText().toString());
-        temp.put("comfort_education", comfortEducation.getText().toString());
-        temp.put("comfort_event", comfortSocial.getText().toString());
+        temp.put("comfort_work", comfortWork.getText().toString());
+        temp.put("comfort_edu", comfortEducation.getText().toString());
+        temp.put("comfort_other", comfortSocial.getText().toString());
 
-        temp.put("safety_for_home", safetyHome.getText().toString());
-        temp.put("safety_education", safetyEducation.getText().toString());
-        temp.put("safety_event", safetySocial.getText().toString());
+        temp.put("safety_work", safetyWork.getText().toString());
+        temp.put("safety_edu", safetyEducation.getText().toString());
+        temp.put("safety_other", safetySocial.getText().toString());
 
-        temp.put("parking_for_home", parkingHome.getText().toString());
-        temp.put("parking_education", parkingEducation.getText().toString());
-        temp.put("parking_event", parkingSocial.getText().toString());
+        temp.put("parking_work", parkingWork.getText().toString());
+        temp.put("parking_edu", parkingEducation.getText().toString());
+        temp.put("parking_other", parkingSocial.getText().toString());
 
-        temp.put("other_for_home", otherHome.getText().toString());
-        temp.put("other_education", otherEducation.getText().toString());
-        temp.put("other_event", otherSocial.getText().toString());
+        temp.put("other_work", otherWork.getText().toString());
+        temp.put("other_edu", otherEducation.getText().toString());
+        temp.put("other_other", otherSocial.getText().toString());
 
-        ratedPreference.setImportant_attribute_for_choosing_transport(temp);
+        ratedPreference.setImportant_attributes(temp);
 
         return true;
     }
@@ -302,15 +302,15 @@ public class Part_b_b extends Fragment {
 
         Map<String, String> temp = new HashMap<String, String>();
 
-        temp.put("rank_1", rank1.getSelectedItem().toString());
-        temp.put("rank_2", rank2.getSelectedItem().toString());
-        temp.put("rank_3", rank3.getSelectedItem().toString());
-        temp.put("rank_4", rank4.getSelectedItem().toString());
-        temp.put("rank_5", rank5.getSelectedItem().toString());
-        temp.put("rank_6", rank6.getSelectedItem().toString());
-        temp.put("rank_7", rank7.getSelectedItem().toString());
+        temp.put("integrated_network", rank1.getSelectedItem().toString());
+        temp.put("car_sharing", rank2.getSelectedItem().toString());
+        temp.put("electric_mobility", rank3.getSelectedItem().toString());
+        temp.put("free_zones", rank4.getSelectedItem().toString());
+        temp.put("extensive_network", rank5.getSelectedItem().toString());
+        temp.put("extensive_parking", rank6.getSelectedItem().toString());
+        temp.put("transit_oriented", rank7.getSelectedItem().toString());
 
-        ratedPreference.setAppropriate_policy_rank_for_better_transport(temp);
+        ratedPreference.setPolicy_rank(temp);
 
         return true;
     }
