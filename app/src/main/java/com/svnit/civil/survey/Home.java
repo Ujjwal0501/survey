@@ -236,7 +236,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        if (FIRST_RUN == 1) showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
+        if (FIRST_RUN == 1) showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.", this);
     }
 
     @Override
@@ -294,10 +294,10 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    private void showPrompt(String msg) {
+    public static void showPrompt(String msg, Context context) {
         sharedPref.edit().putInt("firstrun", 0).apply();
         FIRST_RUN = 0;
-        AlertDialog.Builder testDialog = new AlertDialog.Builder(Home.this);
+        AlertDialog.Builder testDialog = new AlertDialog.Builder(context);
         testDialog.setMessage(msg);
         testDialog.setCancelable(false);
 
@@ -362,6 +362,7 @@ public class Home extends AppCompatActivity {
     }
 
     public void startService(View v) {
+        Log.d(TAG, "start service called");
         if (sharedPref.contains("manual"))
             if (MANUAL == 0) run();
             else {
@@ -369,7 +370,7 @@ public class Home extends AppCompatActivity {
                 fragmentManager.beginTransaction().replace(R.id.container, new RouteSurvey()).addToBackStack(null).commit();
             }
         else
-            showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.");
+            showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.", this);
     }
 
     public void run() {

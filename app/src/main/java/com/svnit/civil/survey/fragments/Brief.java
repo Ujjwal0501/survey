@@ -1,6 +1,7 @@
 package com.svnit.civil.survey.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -24,8 +25,9 @@ import static com.svnit.civil.survey.Home.PARTBB;
  * A simple {@link Fragment} subclass.
  */
 public class Brief extends Fragment {
-    CardView one, two, three, four, five;
+    CardView one, two, three, four, five, locSurvey;
     ProgressBar progress;
+    Context context;
 
 
     public Brief() {
@@ -39,14 +41,23 @@ public class Brief extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_brief, container, false);
         getActivity().setTitle("Transport survey");
+        context = v.getContext();
 
         one = v.findViewById(R.id.one);
         two = v.findViewById(R.id.two);
         three = v.findViewById(R.id.three);
         four= v.findViewById(R.id.four);
         five= v.findViewById(R.id.five);
+        locSurvey = v.findViewById(R.id.loc_survey);
         progress = v.findViewById(R.id.progress);
 
+        locSurvey.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                Home.showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.", context);
+                return false;
+            }
+        });
         return v;
     }
 

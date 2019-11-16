@@ -21,6 +21,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
@@ -123,6 +124,11 @@ public class Splash extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid());
+                            try { if (task.getResult().getAdditionalUserInfo().isNewUser()) {
+                                dbRef.child("email").setValue(user.getEmail());
+                                dbRef.child("name").setValue(user.getDisplayName());
+                            } } catch (Exception e) { Log.d(TAG, e.getLocalizedMessage()); }
                             startActivity(new Intent(Splash.this, Home.class));
                             finish();
                         } else {
