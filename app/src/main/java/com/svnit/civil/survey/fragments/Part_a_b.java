@@ -177,8 +177,8 @@ public class Part_a_b extends Fragment {
         economic.setBicycle(bicycleCount.getSelectedItemPosition() - 1 + "");
         economic.setCar(carCount.getSelectedItemPosition() - 1 + "");
         economic.setTwo_wheeler(twoWheelerCount.getSelectedItemPosition() - 1 + "");
-        economic.setMonthly_income(monthlyIncome.getSelectedItemPosition() + "");
-        economic.setResidence_type(residenceType.getSelectedItemPosition() + "");
+        economic.setMonthly_income(monthlyIncome.getSelectedItem().toString());
+        economic.setResidence_type(residenceType.getSelectedItem().toString());
         economic.setCar_mileage(bicycleCount.getSelectedItem().toString());
         economic.setCar_age(carMileage.getSelectedItem().toString());
         economic.setCar_fuel(carAge.getSelectedItem().toString());

@@ -70,7 +70,7 @@ public class Home extends AppCompatActivity {
             PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0, MANUAL = 1;
     public static ImageView backBtn;
     public LocationHelper locationHelper;
-    private DatabaseReference dbRef;
+    // private DatabaseReference dbRef;
     public static FragmentManager fragmentManager;
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
@@ -105,9 +105,9 @@ public class Home extends AppCompatActivity {
                     .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK)
                     .putExtra("reason", "unexpected logout"));
         }
-        dbRef = db.getReference("user/" + user.getUid());
+        // dbRef = db.getReference("user/" + user.getUid());
         // keep data synced even when not required, only for provided reference
-        dbRef.keepSynced(true);
+        // dbRef.keepSynced(true);
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
