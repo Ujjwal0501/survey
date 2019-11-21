@@ -1,6 +1,7 @@
 package com.svnit.civil.survey;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -152,8 +154,8 @@ public class Splash extends AppCompatActivity {
 
     private void updateUI(FirebaseUser user) {
         final SharedPreferences preferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
-
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/"+user.getUid()+"/loginInstance");
+
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -170,8 +172,37 @@ public class Splash extends AppCompatActivity {
                     startActivity(new Intent(Splash.this, Home.class));
                     finish();
                 } else {
-                    Toast.makeText(Splash.this, "Multiple device login with same account is not allowed.", Toast.LENGTH_LONG).show();
-                    finish();
+
+                    AlertDialog.Builder testDialog = new AlertDialog.Builder(Splash.this);
+                    testDialog.setMessage("Old session found.\nIf you proceed your other session will be invalid.");
+                    testDialog.setCancelable(false);
+
+                    testDialog.setPositiveButton(
+                            "PROCEED ANYWAY",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+
+                                    String uuid = UUID.randomUUID().toString();
+                                    preferences.edit().putString("uuid", uuid).apply();
+                                    reference.setValue(uuid);
+
+                                    startActivity(new Intent(Splash.this, Home.class));
+                                    finish();
+                                }
+                            });
+
+                    testDialog.setNegativeButton(
+                            "DIFFERENT ACCOUNT",
+                            new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int id) {
+                                    dialog.dismiss();
+                                    signIn();
+                                }
+                            });
+
+                    AlertDialog alert11 = testDialog.create();
+                    alert11.show();
                 }
             }
 
@@ -180,6 +211,10 @@ public class Splash extends AppCompatActivity {
                 Toast.makeText(Splash.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    public void showPrompt() {
+
     }
 
 }

@@ -389,9 +389,9 @@ public class Home extends AppCompatActivity {
                     startService(new Intent(getApplicationContext(), AutoService.class));
                 }
             }.start();
-//            Snackbar.make(navigationView, "Service started successfully.", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(navigationView, "Starting.", Snackbar.LENGTH_SHORT).show();
         } else {
-//            Snackbar.make(navigationView, "Service already running.", Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(navigationView, "Started.", Snackbar.LENGTH_SHORT).show();
         }
     }
 
