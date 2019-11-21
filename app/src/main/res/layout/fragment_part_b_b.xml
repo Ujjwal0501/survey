@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -71,7 +72,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="Which is the major issue of transport system in the city? Rank the issues on the scale 1 to 4 (1= high; 4= low)"
+                        android:text="Which is the major issue of transport system in the city? Rank the issues on the scale 1 to 5 (1= high; 5= low)"
                         android:textAlignment="center" />
 
                     <LinearLayout
@@ -86,11 +87,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/congestion"
                             android:hint="Rate"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:nextFocusDown="@id/safety"
+                            android:nextFocusForward="@id/safety"
+                            android:nextFocusRight="@id/safety"
                             android:inputType="number"
                             android:layout_height="wrap_content"/>
 
@@ -108,9 +112,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/safety"
                             android:hint="Rate"
+                            android:nextFocusUp="@id/congestion"
+                            android:nextFocusLeft="@id/congestion"
+                            android:nextFocusDown="@id/air_pollution"
+                            android:nextFocusForward="@id/air_pollution"
+                            android:nextFocusRight="@id/air_pollution"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -130,9 +139,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/air_pollution"
                             android:hint="Rate"
+                            android:nextFocusUp="@id/safety"
+                            android:nextFocusLeft="@id/safety"
+                            android:nextFocusDown="@id/noise_pollution"
+                            android:nextFocusForward="@id/noise_pollution"
+                            android:nextFocusRight="@id/noise_pollution"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -152,9 +166,14 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/noise_pollution"
                             android:hint="Rate"
+                            android:nextFocusUp="@id/air_pollution"
+                            android:nextFocusLeft="@id/air_pollution"
+                            android:nextFocusDown="@id/next"
+                            android:nextFocusForward="@id/next"
+                            android:nextFocusRight="@id/next"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -171,9 +190,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
+                android:visibility="gone"
                 app:cardCornerRadius="6dp"
-                android:visibility="gone">
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -188,238 +207,314 @@
                         android:textAlignment="center" />
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Fare (travel cost)"
-                            android:layout_weight="2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Fare (travel cost)" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/fare_home"
-                            android:hint="H"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="H"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/prev"
+                            android:nextFocusRight="@id/fare_education"
+                            android:nextFocusDown="@id/fare_education"
+                            android:nextFocusForward="@id/fare_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/fare_education"
-                            android:hint="E"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="E"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/fare_home"
+                            android:nextFocusRight="@id/fare_social"
+                            android:nextFocusDown="@id/fare_social"
+                            android:nextFocusForward="@id/fare_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/fare_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/fare_home"
+                            android:nextFocusRight="@id/speed_home"
+                            android:nextFocusDown="@id/speed_home"
+                            android:nextFocusForward="@id/speed_home" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Speed"
-                            android:layout_weight="2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Speed" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/speed_home"
-                            android:hint="H"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="H"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/fare_social"
+                            android:nextFocusRight="@id/speed_education"
+                            android:nextFocusUp="@id/fare_home"
+                            android:nextFocusDown="@id/speed_education"
+                            android:nextFocusForward="@id/speed_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/speed_education"
-                            android:hint="E"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="E"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/speed_home"
+                            android:nextFocusRight="@id/speed_social"
+                            android:nextFocusUp="@id/fare_education"
+                            android:nextFocusDown="@id/speed_social"
+                            android:nextFocusForward="@id/speed_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/speed_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/speed_education"
+                            android:nextFocusRight="@id/comfort_home"
+                            android:nextFocusUp="@id/fare_social"
+                            android:nextFocusDown="@id/comfort_home"
+                            android:nextFocusForward="@id/comfort_home" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Comfort (door to door)"
-                            android:layout_weight="2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Comfort (door to door)" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_home"
-                            android:hint="H"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="H"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/speed_social"
+                            android:nextFocusRight="@id/comfort_education"
+                            android:nextFocusUp="@id/speed_home"
+                            android:nextFocusDown="@id/comfort_education"
+                            android:nextFocusForward="@id/comfort_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_education"
-                            android:hint="E"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="E"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/comfort_home"
+                            android:nextFocusRight="@id/comfort_social"
+                            android:nextFocusUp="@id/speed_education"
+                            android:nextFocusDown="@id/comfort_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/comfort_education"
+                            android:nextFocusRight="@id/safety_home"
+                            android:nextFocusUp="@id/speed_social"
+                            android:nextFocusDown="@id/safety_home" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Safety"
-                            android:layout_weight="2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Safety" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/safety_home"
-                            android:hint="H"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="H"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/comfort_social"
+                            android:nextFocusRight="@id/safety_education"
+                            android:nextFocusUp="@id/comfort_home"
+                            android:nextFocusDown="@id/safety_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/safety_education"
-                            android:hint="E"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="E"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/safety_home"
+                            android:nextFocusRight="@id/safety_social"
+                            android:nextFocusUp="@id/comfort_education"
+                            android:nextFocusDown="@id/safety_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/safety_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/safety_education"
+                            android:nextFocusRight="@id/parking_home"
+                            android:nextFocusUp="@id/comfort_social"
+                            android:nextFocusDown="@id/parking_home" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Parking Cost"
-                            android:layout_weight="2"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:text="Parking Cost" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/parking_home"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="H"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/safety_social"
+                            android:nextFocusRight="@id/parking_education"
+                            android:nextFocusUp="@id/safety_home"
+                            android:nextFocusDown="@id/parking_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/parking_education"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="E"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/parking_home"
+                            android:nextFocusRight="@id/parking_social"
+                            android:nextFocusUp="@id/safety_education"
+                            android:nextFocusDown="@id/parking_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/parking_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/parking_education"
+                            android:nextFocusRight="@id/other_home"
+                            android:nextFocusUp="@id/safety_social"
+                            android:nextFocusDown="@id/other_home" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Other cost"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="2"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:text="Other cost" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/other_home"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="H"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/parking_social"
+                            android:nextFocusRight="@id/other_education"
+                            android:nextFocusUp="@id/parking_home"
+                            android:nextFocusDown="@id/other_education" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/other_education"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="E"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/other_home"
+                            android:nextFocusRight="@id/other_social"
+                            android:nextFocusUp="@id/parking_education"
+                            android:nextFocusDown="@id/other_social" />
 
-                        <EditText
+                        <com.svnit.civil.survey.helpers.WatchedEditText
                             android:id="@+id/other_social"
-                            android:hint="O"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="O"
                             android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:nextFocusLeft="@id/other_education"
+                            android:nextFocusRight="@id/next"
+                            android:nextFocusUp="@id/parking_social"
+                            android:nextFocusDown="@id/next" />
 
                     </LinearLayout>
 
                     <TextView
-                        android:layout_marginTop="16dp"
-                        android:text="H = Home\nE = Education\nO = Social/Recreational/Other"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="H = Home\nE = Education\nO = Social/Recreational/Other" />
 
                 </LinearLayout>
 

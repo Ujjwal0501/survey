@@ -13,7 +13,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.NumberPicker;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +26,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
+import com.svnit.civil.survey.helpers.WatchedEditText;
 import com.svnit.civil.survey.models.RatedPreference;
 
 import java.util.HashMap;
@@ -38,7 +38,7 @@ import java.util.Map;
 public class Part_b_b extends Fragment {
 
     private RatedPreference ratedPreference = new RatedPreference();
-    private EditText congestion, safety, airPollution, noisePollution,
+    private WatchedEditText congestion, safety, airPollution, noisePollution,
             fareWork, fareEducation, fareSocial,
             speedWork, speedEducatin, speedSocial,
             comfortWork, comfortEducation, comfortSocial,
