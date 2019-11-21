@@ -226,11 +226,11 @@ public class Part_a_a extends Fragment {
 
         if (boyCount > 0 || girlCount > 0) {
 
-            if (spouse.getAge().equals("")) {
+            if (spouseAge.getText().toString().equals("")) {
                 spouseAge.setError("Age required.");
                 return false;
             }
-            if (spouse.getOccupation().equals("Occupation")) {
+            if (spouseOccupation.getSelectedItemPosition() == 0) {
                 ((TextView) spouseOccupation.getSelectedView()).setError("Choose occupation");
                 return false;
             }
@@ -241,11 +241,11 @@ public class Part_a_a extends Fragment {
 
         if (!spouseAge.getText().toString().equals("") || spouseOccupation.getSelectedItemPosition() > 0) {
 
-            if (spouse.getAge().equals("")) {
+            if (spouseAge.getText().toString().equals("")) {
                 spouseAge.setError("Age required.");
                 return false;
             }
-            if (spouse.getOccupation().equals("Occupation")) {
+            if (spouseOccupation.getSelectedItemPosition() == 0) {
                 ((TextView) spouseOccupation.getSelectedView()).setError("Choose occupation");
                 return false;
             }

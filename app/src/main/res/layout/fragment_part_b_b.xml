@@ -14,7 +14,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -59,7 +58,7 @@
                 android:id="@+id/step0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
 
@@ -171,7 +170,7 @@
                 android:id="@+id/step1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp"
                 android:visibility="gone">
@@ -202,7 +201,7 @@
 
                         <EditText
                             android:id="@+id/fare_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -210,7 +209,7 @@
 
                         <EditText
                             android:id="@+id/fare_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -218,7 +217,7 @@
 
                         <EditText
                             android:id="@+id/fare_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -240,7 +239,7 @@
 
                         <EditText
                             android:id="@+id/speed_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -248,7 +247,7 @@
 
                         <EditText
                             android:id="@+id/speed_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -256,7 +255,7 @@
 
                         <EditText
                             android:id="@+id/speed_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -278,7 +277,7 @@
 
                         <EditText
                             android:id="@+id/comfort_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -286,7 +285,7 @@
 
                         <EditText
                             android:id="@+id/comfort_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -294,7 +293,7 @@
 
                         <EditText
                             android:id="@+id/comfort_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -316,7 +315,7 @@
 
                         <EditText
                             android:id="@+id/safety_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -324,7 +323,7 @@
 
                         <EditText
                             android:id="@+id/safety_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -332,7 +331,7 @@
 
                         <EditText
                             android:id="@+id/safety_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -354,7 +353,7 @@
 
                         <EditText
                             android:id="@+id/parking_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -362,7 +361,7 @@
 
                         <EditText
                             android:id="@+id/parking_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -370,7 +369,7 @@
 
                         <EditText
                             android:id="@+id/parking_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -392,7 +391,7 @@
 
                         <EditText
                             android:id="@+id/other_home"
-                            android:hint="Home"
+                            android:hint="H"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -400,7 +399,7 @@
 
                         <EditText
                             android:id="@+id/other_education"
-                            android:hint="Edu"
+                            android:hint="E"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
@@ -408,13 +407,19 @@
 
                         <EditText
                             android:id="@+id/other_social"
-                            android:hint="Social"
+                            android:hint="O"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:inputType="number"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
+
+                    <TextView
+                        android:layout_marginTop="16dp"
+                        android:text="H = Home\nE = Education\nO = Social/Recreational/Other"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -424,7 +429,7 @@
                 android:id="@+id/step2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 android:layout_marginBottom="32dp"
                 app:cardCornerRadius="6dp"
@@ -450,17 +455,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="1"
-                            android:layout_weight="1"
+                            android:text="@string/policy1"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_1"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -473,17 +477,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="2"
-                            android:layout_weight="1"
+                            android:text="@string/policy2"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_2"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -496,17 +499,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="3"
-                            android:layout_weight="1"
+                            android:text="@string/policy3"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_3"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -519,17 +521,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="4"
-                            android:layout_weight="1"
+                            android:text="@string/policy4"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_4"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -542,17 +543,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="5"
-                            android:layout_weight="1"
+                            android:text="@string/policy5"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_5"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -565,17 +565,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="6"
-                            android:layout_weight="1"
+                            android:text="@string/policy6"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_6"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>
@@ -588,17 +587,16 @@
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:text="7"
-                            android:layout_weight="1"
+                            android:text="@string/policy7"
+                            android:layout_weight="5"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
                         <Spinner
                             android:id="@+id/rank_7"
                             android:entries="@array/ranking"
-                            android:layout_weight="5"
-                            android:layout_width="0dp"
                             android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"/>
 
                     </LinearLayout>

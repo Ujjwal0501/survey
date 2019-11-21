@@ -29,4 +29,11 @@
     <string name="login_to_phoneverify_error">Something went wrong. If your registration was successful, you can are good to login here.</string>
     <string name="getidtoken">190636756951-of5mm7c6u6hkc15sea1b4pt7apmig0d9.apps.googleusercontent.com</string>
 
+    <string name="policy1">Integrated network of Bus ana Metro with Integrated Ticket System</string>
+    <string name="policy2">Car sharing</string>
+    <string name="policy3">Electric mobility</string>
+    <string name="policy4">Car/2W Free Zones in City Centers</string>
+    <string name="policy5">Extensive network for cycle and walk</string>
+    <string name="policy6">Extensive parking fees for Cars/Private vehicles</string>
+    <string name="policy7">Transit oriented development</string>
 </resources>

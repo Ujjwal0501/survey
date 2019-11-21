@@ -14,7 +14,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -69,7 +68,7 @@
                 android:id="@+id/step0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
 
@@ -192,7 +191,7 @@
                 android:id="@+id/step1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 android:visibility="gone"
                 app:cardCornerRadius="6dp">
@@ -344,7 +343,7 @@
                 android:id="@+id/step2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp"
                 android:visibility="gone">
@@ -460,7 +459,7 @@
                 android:layout_marginBottom="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:padding="4dp"
                 app:cardCornerRadius="6dp"
                 android:visibility="gone">
