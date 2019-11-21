@@ -101,7 +101,7 @@ public class AutoService extends Service {
         fusedLocationProviderClient = new FusedLocationProviderClient(AutoService.this);
         locationRequest = new LocationRequest()
                 .setFastestInterval(5*1000)
-                .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
+                .setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY)
                 .setInterval(INTERVAL / FACTOR);
         locationCallback = new LocationCallback() {
             @Override
@@ -223,8 +223,8 @@ public class AutoService extends Service {
         locationRequest = new LocationRequest()
                 .setFastestInterval(5*1000)
                 .setInterval(INTERVAL / FACTOR);
-        if (FACTOR == 1) locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
-        else locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+        if (FACTOR == 1) locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+        else locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
         stopLocationUpdate();
         startLocationUpdate();
     }
