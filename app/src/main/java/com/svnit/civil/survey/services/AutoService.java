@@ -11,8 +11,10 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.SystemClock;
 import android.text.format.Time;
+import android.util.Log;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
 
@@ -21,6 +23,8 @@ import com.google.android.gms.location.LocationAvailability;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -29,9 +33,13 @@ import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.helpers.NotificationHelper;
 import com.svnit.civil.survey.models.LocationInfo;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class AutoService extends Service {
 
     final int AS_NOTIF_ID = 1111111;
+    private final String TAG = "AutoService";
     public IBinder binder = new AutoServiceBinder();
     private boolean handlerFlag = false;
 
@@ -47,6 +55,7 @@ public class AutoService extends Service {
     private FusedLocationProviderClient fusedLocationProviderClient;
     private LocationRequest locationRequest;
     private LocationCallback locationCallback;
+    private Map<String, LocationInfo> locationList;
     private Context context;
 
     @Nullable
@@ -70,6 +79,7 @@ public class AutoService extends Service {
         builder = NotificationHelper.build(this);
         context = this;
 
+        locationList = new HashMap<>();
         locationHelper = new LocationHelper();
         runnable = new Runnable() {
             @Override
@@ -90,12 +100,17 @@ public class AutoService extends Service {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                Toast.makeText(context, locationResult.getLastLocation().getSpeed()+"", Toast.LENGTH_LONG).show();
+                // Toast.makeText(context, locationResult.getLastLocation().getSpeed()+"", Toast.LENGTH_LONG).show();
 
                 Location location = locationResult.getLastLocation();
                 LocationInfo locationInfo = new LocationInfo();
                 locationInfo.LocationInfo(location);
-                rawRef.child(""+ location.getTime()).setValue(locationInfo);
+
+                // rawRef.child(""+ location.getTime()).setValue(locationInfo);
+                locationList.put(location.getTime()+"", locationInfo);
+                if (locationList.size() > 100) {
+                    sendLocations();
+                }
                 if (locationResult.getLastLocation().getSpeed() > 3.0) {
                     if (FACTOR == 1)  { FACTOR = 10; updateFrequency(); }
                     if (handlerFlag) { handler.removeCallbacks(runnable); handlerFlag = false; }
@@ -112,12 +127,24 @@ public class AutoService extends Service {
                 super.onLocationAvailability(locationAvailability);
                 if (!locationAvailability.isLocationAvailable()) {
                     locationHelper.reqEnable(context);
-                } else {
-                    Toast.makeText(context, "Location is available now.", Toast.LENGTH_SHORT).show();
                 }
             }
         };
 
+    }
+
+    private void sendLocations() {
+        rawRef.setValue(locationList).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                locationList.clear();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d(TAG, ""+e.getLocalizedMessage());
+            }
+        });
     }
 
     @Override

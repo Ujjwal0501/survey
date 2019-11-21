@@ -234,7 +234,6 @@ public class Home extends AppCompatActivity {
             public void onClick(View view) {
                 // close drawer when item is tapped
                 mDrawerLayout.closeDrawers();
-//                startActivity(new Intent(getApplicationContext(), Userinfo.class));
             }
         });
 
@@ -390,9 +389,9 @@ public class Home extends AppCompatActivity {
                     startService(new Intent(getApplicationContext(), AutoService.class));
                 }
             }.start();
-            Snackbar.make(navigationView, "Service started successfully.", Snackbar.LENGTH_SHORT).show();
+//            Snackbar.make(navigationView, "Service started successfully.", Snackbar.LENGTH_SHORT).show();
         } else {
-            Snackbar.make(navigationView, "Service already running.", Snackbar.LENGTH_SHORT).show();
+//            Snackbar.make(navigationView, "Service already running.", Snackbar.LENGTH_SHORT).show();
         }
     }
 
@@ -414,19 +413,11 @@ public class Home extends AppCompatActivity {
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
-//                    if (!locationHelper.isEnabled(Home.this)) locationHelper.reqEnable(Home.this);
-
                     run();
-
-                } else {
-                    // permission denied, boo! Disable the
-                    // functionality that depends on this permission.
 
                 }
                 return;
             }
-            // other 'case' lines to check for other
-            // permissions this app might request
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
