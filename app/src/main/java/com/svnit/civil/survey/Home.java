@@ -66,6 +66,7 @@ public class Home extends AppCompatActivity {
     public static FirebaseAuth mAuth;
     public static FirebaseUser user;
     public static DataSnapshot snapshot;
+    public static SharedPreferences preferences;
     public static int STEP = 0, MAX = 0, PARTAA = 0, FIRST_RUN = 1,
             PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0, MANUAL = 1;
     public static ImageView backBtn;
@@ -97,6 +98,7 @@ public class Home extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
+        preferences = getSharedPreferences("formLocal", Context.MODE_PRIVATE);
 
         user = mAuth.getCurrentUser();
         if (user == null) {

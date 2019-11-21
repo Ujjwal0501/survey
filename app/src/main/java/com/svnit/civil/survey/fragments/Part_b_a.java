@@ -187,7 +187,6 @@ public class Part_b_a extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(threeToFour);
                     prev.setOnClickListener(threeToTwo);
-                    next.setImageDrawable(getResources().getDrawable(R.drawable.save));
                     two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
                     three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                     Home.STEP += 1;
@@ -247,8 +246,8 @@ public class Part_b_a extends Fragment {
             @Override
             public void onClick(View view) {
                 if (Home.STEP<1) return;
-                step2.setVisibility(View.GONE);
-                step1.setVisibility(View.VISIBLE);
+                step3.setVisibility(View.GONE);
+                step2.setVisibility(View.VISIBLE);
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
@@ -267,7 +266,7 @@ public class Part_b_a extends Fragment {
             }
         };
 
-        Home.STEP = 0; Home.MAX = 4;
+        Home.STEP = 0; Home.MAX = 3;
         Home.backBtn = prev;
         next.setOnClickListener(oneToTwo);
 
@@ -322,9 +321,10 @@ public class Part_b_a extends Fragment {
 
     private boolean verifyStep0() {
         if (modeChangeSelf.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSelf.getSelectedView()).setError("Required"); return false; }
-        if (modeChangeSpouse.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSpouse.getSelectedView()).setError("Required"); return false; }
-        if (modeChangeSD.getSelectedItemPosition() == 0) { ( (TextView) modeChangeSD.getSelectedView()).setError("Required"); return false; }
-        if (modeChangeOther.getSelectedItemPosition() == 0) { ( (TextView) modeChangeOther.getSelectedView()).setError("Required"); return false; }
+        if (!Home.preferences.getString("spouseAge", "").equals("") && modeChangeSpouse.getSelectedItemPosition() == 0) {
+            ( (TextView) modeChangeSpouse.getSelectedView()).setError("Required"); return false; }
+        if (Home.preferences.getInt("children", 0) > 0 && modeChangeSD.getSelectedItemPosition() == 0) {
+            ( (TextView) modeChangeSD.getSelectedView()).setError("Required"); return false; }
 
         preference.setChange_when_first_mode_not_available(modeChangeSelf.getSelectedItem().toString());
         preference.setChange_when_first_mode_not_available_spouse(modeChangeSpouse.getSelectedItem().toString());

@@ -167,6 +167,13 @@ public class Part_a_a extends Fragment {
     }
 
     private void updateFirebase() {
+        Home.preferences.edit().putString("", "")
+                .putString("selfAge", social.getSelf().getAge())
+                .putString("spouseAge", social.getSpouse().getAge())
+                .putString("selfOccupation", social.getSelf().getOccupation())
+                .putString("spouseOccupation", social.getSpouse().getOccupation())
+                .putInt("children", social.getChildren().size()).apply();
+
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
         DatabaseReference dbRef = firebaseDatabase.getReference("user/" + user.getUid());
@@ -195,8 +202,6 @@ public class Part_a_a extends Fragment {
 
         self.setAge(selfAge.getText().toString());
         self.setOccupation(selfOccupation.getSelectedItem().toString());
-        spouse.setAge(spouseAge.getText().toString());
-        spouse.setOccupation(spouseOccupation.getSelectedItem().toString());
 
         boyCount = son.getSelectedItemPosition() - 1;
         girlCount = daughter.getSelectedItemPosition() - 1;
@@ -209,14 +214,7 @@ public class Part_a_a extends Fragment {
             ((TextView) selfOccupation.getSelectedView()).setError("Choose occupation");
             return false;
         }
-        if (spouse.getAge().equals("")) {
-            spouseAge.setError("Age required.");
-            return false;
-        }
-        if (spouse.getOccupation().equals("Occupation")) {
-            ((TextView) spouseOccupation.getSelectedView()).setError("Choose occupation");
-            return false;
-        }
+
         if (girlCount < 0) {
             ((TextView) daughter.getSelectedView()).setError("Your Daughters");
             return false;
@@ -224,6 +222,36 @@ public class Part_a_a extends Fragment {
         if (boyCount < 0) {
             ((TextView) son.getSelectedView()).setError("Your Sons");
             return false;
+        }
+
+        if (boyCount > 0 || girlCount > 0) {
+
+            if (spouse.getAge().equals("")) {
+                spouseAge.setError("Age required.");
+                return false;
+            }
+            if (spouse.getOccupation().equals("Occupation")) {
+                ((TextView) spouseOccupation.getSelectedView()).setError("Choose occupation");
+                return false;
+            }
+
+            spouse.setAge(spouseAge.getText().toString());
+            spouse.setOccupation(spouseOccupation.getSelectedItem().toString());
+        }
+
+        if (!spouseAge.getText().toString().equals("") || spouseOccupation.getSelectedItemPosition() > 0) {
+
+            if (spouse.getAge().equals("")) {
+                spouseAge.setError("Age required.");
+                return false;
+            }
+            if (spouse.getOccupation().equals("Occupation")) {
+                ((TextView) spouseOccupation.getSelectedView()).setError("Choose occupation");
+                return false;
+            }
+
+            spouse.setAge(spouseAge.getText().toString());
+            spouse.setOccupation(spouseOccupation.getSelectedItem().toString());
         }
 
         social.setSelf(self);

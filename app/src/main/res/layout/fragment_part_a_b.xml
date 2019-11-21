@@ -126,20 +126,20 @@
                         android:layout_height="wrap_content">
 
                         <Spinner
-                            android:id="@+id/car_mileage"
-                            android:layout_width="0dp"
-                            android:layout_height="36dp"
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:entries="@array/mileage" />
-
-                        <Spinner
                             android:id="@+id/car_count"
                             android:layout_width="0dp"
                             android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:entries="@array/count" />
+
+                        <Spinner
+                            android:id="@+id/car_age"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/age" />
 
                     </LinearLayout>
 
@@ -149,12 +149,12 @@
                         android:layout_height="wrap_content">
 
                         <Spinner
-                            android:id="@+id/car_age"
+                            android:id="@+id/car_mileage"
                             android:layout_width="0dp"
                             android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/age" />
+                            android:entries="@array/mileage" />
 
                         <Spinner
                             android:id="@+id/car_fuel"
@@ -181,20 +181,20 @@
                         android:layout_height="wrap_content">
 
                         <Spinner
-                            android:id="@+id/twow_milage"
-                            android:layout_width="0dp"
-                            android:layout_height="36dp"
-                            android:layout_margin="4dp"
-                            android:layout_weight="1"
-                            android:entries="@array/mileage" />
-
-                        <Spinner
                             android:id="@+id/twow_count"
                             android:layout_width="0dp"
                             android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:entries="@array/count" />
+
+                        <Spinner
+                            android:id="@+id/twow_age"
+                            android:layout_width="0dp"
+                            android:layout_height="36dp"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:entries="@array/age" />
 
                     </LinearLayout>
 
@@ -204,12 +204,12 @@
                         android:layout_height="wrap_content">
 
                         <Spinner
-                            android:id="@+id/twow_age"
+                            android:id="@+id/twow_milage"
                             android:layout_width="0dp"
                             android:layout_height="36dp"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
-                            android:entries="@array/age" />
+                            android:entries="@array/mileage" />
 
                         <Spinner
                             android:id="@+id/twow_fuel"

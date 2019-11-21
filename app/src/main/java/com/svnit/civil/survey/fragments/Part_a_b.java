@@ -163,29 +163,44 @@ public class Part_a_b extends Fragment {
     private boolean verifyStep0() {
         if (monthlyIncome.getSelectedItemPosition() == 0) { ( (TextView) monthlyIncome.getSelectedView()).setError("Select choice"); return false;}
         if (residenceType.getSelectedItemPosition() == 0) { ( (TextView) residenceType.getSelectedView()).setError("Select choice"); return false;}
-        if (carCount.getSelectedItemPosition() == 0) { ( (TextView) carCount.getSelectedView()).setError("Select choice"); return false;}
-        if (twoWheelerCount.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerCount.getSelectedView()).setError("Select choice"); return false;}
-        if (bicycleCount.getSelectedItemPosition() == 0) { ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;}
-        if (bicycleCount.getSelectedItemPosition() == 0) { ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;}
-        if (carMileage.getSelectedItemPosition() == 0) { ( (TextView) carMileage.getSelectedView()).setError("Select choice"); return false;}
-        if (carAge.getSelectedItemPosition() == 0) { ( (TextView) carAge.getSelectedView()).setError("Select choice"); return false;}
-        if (carFuel.getSelectedItemPosition() == 0) { ( (TextView) carFuel.getSelectedView()).setError("Select choice"); return false;}
-        if (twoWheelerAge.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerAge.getSelectedView()).setError("Select choice"); return false;}
-        if (twoWheelerFuel.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerFuel.getSelectedView()).setError("Select choice"); return false;}
-        if (twoWheelerMileage.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerMileage.getSelectedView()).setError("Select choice"); return false;}
+
+        if (carCount.getSelectedItemPosition() == 0) {
+            ( (TextView) carCount.getSelectedView()).setError("Select choice"); return false;
+        } else if (carCount.getSelectedItemPosition() > 1) {
+            if (carMileage.getSelectedItemPosition() == 0) { ( (TextView) carMileage.getSelectedView()).setError("Select choice"); return false;}
+            if (carAge.getSelectedItemPosition() == 0) { ( (TextView) carAge.getSelectedView()).setError("Select choice"); return false;}
+            if (carFuel.getSelectedItemPosition() == 0) { ( (TextView) carFuel.getSelectedView()).setError("Select choice"); return false;}
+
+            economic.setCar_mileage(carMileage.getSelectedItem().toString());
+            economic.setCar_age(carAge.getSelectedItem().toString());
+            economic.setCar_fuel(carFuel.getSelectedItem().toString());
+        }
+
+        if (twoWheelerCount.getSelectedItemPosition() == 0) {
+            ( (TextView) twoWheelerCount.getSelectedView()).setError("Select choice"); return false;
+        } else if (twoWheelerCount.getSelectedItemPosition() > 1) {
+            if (twoWheelerAge.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerAge.getSelectedView()).setError("Select choice"); return false;}
+            if (twoWheelerFuel.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerFuel.getSelectedView()).setError("Select choice"); return false;}
+            if (twoWheelerMileage.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerMileage.getSelectedView()).setError("Select choice"); return false;}
+
+            economic.setTwow_age(twoWheelerAge.getSelectedItem().toString());
+            economic.setTwow_fuel(twoWheelerFuel.getSelectedItem().toString());
+            economic.setTwow_milage(twoWheelerMileage.getSelectedItem().toString());
+        }
+
+        if (bicycleCount.getSelectedItemPosition() == 0) {
+            ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;
+        } else if (bicycleCount.getSelectedItemPosition() > 1) {
+            if (bicycleCount.getSelectedItemPosition() == 0) { ( (TextView) bicycleCount.getSelectedView()).setError("Select choice"); return false;}
+
+            economic.setBicylce_age(bicycleAge.getSelectedItem().toString());
+        }
 
         economic.setBicycle(bicycleCount.getSelectedItemPosition() - 1 + "");
         economic.setCar(carCount.getSelectedItemPosition() - 1 + "");
         economic.setTwo_wheeler(twoWheelerCount.getSelectedItemPosition() - 1 + "");
         economic.setMonthly_income(monthlyIncome.getSelectedItem().toString());
         economic.setResidence_type(residenceType.getSelectedItem().toString());
-        economic.setCar_mileage(bicycleCount.getSelectedItem().toString());
-        economic.setCar_age(carMileage.getSelectedItem().toString());
-        economic.setCar_fuel(carAge.getSelectedItem().toString());
-        economic.setTwow_age(twoWheelerAge.getSelectedItem().toString());
-        economic.setTwow_fuel(twoWheelerFuel.getSelectedItem().toString());
-        economic.setTwow_milage(twoWheelerMileage.getSelectedItem().toString());
-        economic.setBicylce_age(bicycleAge.getSelectedItem().toString());
 
         return true;
     }

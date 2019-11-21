@@ -154,6 +154,7 @@
                             android:id="@+id/bus_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:hint="Frequency" />
@@ -173,6 +174,7 @@
 
                         <Spinner
                             android:id="@+id/bus_reliability"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -193,6 +195,7 @@
 
                         <Spinner
                             android:id="@+id/bus_safety"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -213,6 +216,7 @@
 
                         <Spinner
                             android:id="@+id/bus_fare"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -233,6 +237,7 @@
 
                         <Spinner
                             android:id="@+id/bus_comfort"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -344,6 +349,7 @@
                             android:id="@+id/brt_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:hint="Frequency" />
@@ -363,6 +369,7 @@
 
                         <Spinner
                             android:id="@+id/brt_reliability"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -383,6 +390,7 @@
 
                         <Spinner
                             android:id="@+id/brt_safety"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -403,6 +411,7 @@
 
                         <Spinner
                             android:id="@+id/brt_fare"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -423,6 +432,7 @@
 
                         <Spinner
                             android:id="@+id/brt_comfort"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -535,6 +545,7 @@
                             android:id="@+id/auto_frequency"
                             android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
                             android:inputType="number"
                             android:hint="Frequency" />
@@ -554,6 +565,7 @@
 
                         <Spinner
                             android:id="@+id/auto_reliability"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -574,6 +586,7 @@
 
                         <Spinner
                             android:id="@+id/auto_safety"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -594,6 +607,7 @@
 
                         <Spinner
                             android:id="@+id/auto_fare"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -614,6 +628,7 @@
 
                         <Spinner
                             android:id="@+id/auto_comfort"
+                            android:padding="8dp"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
