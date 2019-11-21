@@ -1,6 +1,8 @@
 package com.svnit.civil.survey;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
@@ -21,8 +23,13 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.UUID;
 
 /**
  * This activity shows Launch Screen
@@ -71,8 +78,8 @@ public class Splash extends AppCompatActivity {
             // ask user to sign in again
             FirebaseAuth.getInstance().signOut();
             signIn();
-        }  else {
-            startActivity(new Intent(this, Home.class));
+        } else {
+            updateUI(user);
         }
 
     }
@@ -80,8 +87,6 @@ public class Splash extends AppCompatActivity {
     public void signIn() {
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
-//        startActivity(new Intent(this, Login.class));
-//        this.finish();
     }
 
     @Override
@@ -124,13 +129,15 @@ public class Splash extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid());
+                            if (user == null) return;
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("user/" + user.getUid() + "/account");
+
                             try { if (task.getResult().getAdditionalUserInfo().isNewUser()) {
                                 dbRef.child("email").setValue(user.getEmail());
                                 dbRef.child("name").setValue(user.getDisplayName());
-                            } } catch (Exception e) { Log.d(TAG, e.getLocalizedMessage()); }
-                            startActivity(new Intent(Splash.this, Home.class));
-                            finish();
+                            } } catch (Exception e) { Log.d(TAG, "" + e.getLocalizedMessage()); }
+
+                            updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -141,6 +148,38 @@ public class Splash extends AppCompatActivity {
                         // ...
                     }
                 });
+    }
+
+    private void updateUI(FirebaseUser user) {
+        final SharedPreferences preferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/"+user.getUid()+"/loginInstance");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String uuid = dataSnapshot.getValue(String.class);
+                if (uuid == null || uuid.equals("")) {
+                    uuid = UUID.randomUUID().toString();
+                    preferences.edit().putString("uuid", uuid).apply();
+                    reference.setValue(uuid);
+
+                    startActivity(new Intent(Splash.this, Home.class));
+                    finish();
+                } else if (uuid.equals(preferences.getString("uuid", ""))) {
+
+                    startActivity(new Intent(Splash.this, Home.class));
+                    finish();
+                } else {
+                    Toast.makeText(Splash.this, "Multiple device login with same account is not allowed.", Toast.LENGTH_LONG).show();
+                    finish();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(Splash.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

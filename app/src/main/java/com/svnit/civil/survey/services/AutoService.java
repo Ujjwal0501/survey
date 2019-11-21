@@ -3,6 +3,7 @@ package com.svnit.civil.survey.services;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.util.Calendar;
 import android.location.Location;
 import android.os.Binder;
@@ -27,14 +28,20 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.svnit.civil.survey.Home;
+import com.svnit.civil.survey.Splash;
 import com.svnit.civil.survey.helpers.LocationHelper;
 import com.svnit.civil.survey.helpers.NotificationHelper;
 import com.svnit.civil.survey.models.LocationInfo;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class AutoService extends Service {
 
@@ -159,7 +166,7 @@ public class AutoService extends Service {
         super.onStartCommand(intent, flags, startId);
 
         if (!locationHelper.checkPermission(context)) {
-            Toast.makeText(context, "Location permission unavailable.", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(context, "Location permission unavailable.", Toast.LENGTH_SHORT).show();
             locationHelper.reqPermission(null, context);
             stopSelf();
         }
@@ -167,11 +174,12 @@ public class AutoService extends Service {
         if (!locationHelper.isEnabled(context)) {
             // request enabling location service
             locationHelper.reqEnable(context);
-            Toast.makeText(context, "Location disabled.", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(context, "Location disabled.", Toast.LENGTH_SHORT).show();
 
             // TODO: schedule the request for later`
         }
 
+        verifySession();
         startForeground(AS_NOTIF_ID, builder.build());
         startLocationUpdate();
 
@@ -184,6 +192,31 @@ public class AutoService extends Service {
 
     private void stopLocationUpdate() {
         fusedLocationProviderClient.removeLocationUpdates(locationCallback);
+    }
+
+    private void verifySession() {
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        final SharedPreferences preferences = getSharedPreferences("Login", Context.MODE_PRIVATE);
+
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user/"+user.getUid()+"/loginInstance");
+        reference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String uuid = dataSnapshot.getValue(String.class);
+                if (uuid == null || uuid.equals("")) {
+
+                    stopSelf();
+                } else if (!uuid.equals(preferences.getString("uuid", ""))) {
+
+                    stopSelf();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     void updateFrequency() {
