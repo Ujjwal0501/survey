@@ -10,10 +10,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.svnit.civil.survey.Home;
 import com.svnit.civil.survey.R;
+import com.svnit.civil.survey.helpers.TimeButton;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -22,6 +24,11 @@ public class RouteSurvey extends Fragment {
     private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne, threeToFour, fourToThree, fourToFive, fiveToSix, sixToFive, fiveToFour;
     View v;
     Context context;
+    TimeButton   selfStartTime, selfEndTime, spouseStartTime, spouseEndTime, childrenStartTime, childrenEndTime
+               , recreationStartTime, recreationEndTime, socialStartTime, socialEndTime, shoppingStartTime, shoppingEndTime;
+    Button selfStartLocation, selfEndLocation, spouseStartLocation, spouseEndLocation,
+            childrenStartLocation, childrenEndLocation,recreationStartLocation, recreationEndLocation,socialStartLocation,
+            socialEndLocation, shoppingStartLocation, shoppingEndLocation;
     private CardView step0, step1, step2, step3, step4, step5, one, two, three, four, five, six;
     private ImageView next, prev;
 
@@ -53,6 +60,37 @@ public class RouteSurvey extends Fragment {
         four = v.findViewById(R.id.four);
         five = v.findViewById(R.id.five);
         six = v.findViewById(R.id.six);
+
+
+        selfStartLocation = v.findViewById(R.id.start_self);
+        selfEndLocation = v.findViewById(R.id.end_self);
+        selfStartTime = v.findViewById(R.id.start_time_self);
+        selfEndTime = v.findViewById(R.id.end_time_self);
+
+        spouseStartLocation = v.findViewById(R.id.start_spouse);
+        spouseEndLocation = v.findViewById(R.id.end_spouse);
+        spouseStartTime = v.findViewById(R.id.start_time_spouse);
+        spouseEndTime = v.findViewById(R.id.end_time_spouse);
+
+        childrenStartLocation = v.findViewById(R.id.start_sd);
+        childrenEndLocation = v.findViewById(R.id.end_sd);
+        childrenStartTime = v.findViewById(R.id.start_time_sd);
+        childrenEndTime = v.findViewById(R.id.end_time_sd);
+
+        recreationStartLocation = v.findViewById(R.id.start_recreation);
+        recreationEndLocation = v.findViewById(R.id.end_recreation);
+        recreationStartTime = v.findViewById(R.id.start_time_recreation);
+        recreationEndTime = v.findViewById(R.id.end_time_recreation);
+
+        socialStartLocation = v.findViewById(R.id.start_social);
+        socialEndLocation = v.findViewById(R.id.end_social);
+        socialStartTime = v.findViewById(R.id.start_time_social);
+        socialEndTime = v.findViewById(R.id.end_time_social);
+
+        shoppingStartLocation = v.findViewById(R.id.start_shopping);
+        shoppingEndLocation = v.findViewById(R.id.end_shopping);
+        shoppingStartTime = v.findViewById(R.id.start_time_shopping);
+        shoppingEndTime = v.findViewById(R.id.end_time_shopping);
 
         oneToTwo = new View.OnClickListener() {
             @Override

@@ -189,26 +189,26 @@ public class Home extends AppCompatActivity {
         // periodically remind for survey
         if (Build.VERSION.SDK_INT > 20) {
             // start the jobService
-            boolean a = false, b = false;
+            boolean a = false;//, b = false;
             JobScheduler jobScheduler = (JobScheduler) getSystemService(JOB_SCHEDULER_SERVICE);
             if (jobScheduler == null) return;
             for (JobInfo jobInfo: jobScheduler.getAllPendingJobs()) {
                 if (jobInfo.getId() == 11111) a = true;
-                else if (jobInfo.getId() == 22222) b = true;
+                // else if (jobInfo.getId() == 22222) b = true;
             }
 
             ComponentName component = new ComponentName(this, ReminderService.class);
             if (!a) jobScheduler.schedule(new JobInfo.Builder(11111, component)
                     .setPersisted(true)
-                    .setPeriodic(2*24*60*60*1000).build());
+                    .setPeriodic(3*AlarmManager.INTERVAL_DAY).build());
 
-            if (!b) jobScheduler.schedule(new JobInfo.Builder(22222, new ComponentName(this, ProcessRouteService.class))
-                    .setPersisted(true)
-                    .setPeriodic(25*60*1000).build());
+//            if (!b) jobScheduler.schedule(new JobInfo.Builder(22222, new ComponentName(this, ProcessRouteService.class))
+//                    .setPersisted(true)
+//                    .setPeriodic(25*60*1000).build());
         } else {
             // do using alarmManager
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
-            alarmManager.setRepeating(AlarmManager.RTC, (new Date()).getTime(), 2*AlarmManager.INTERVAL_DAY,
+            alarmManager.setRepeating(AlarmManager.RTC, (new Date()).getTime(), 3*AlarmManager.INTERVAL_DAY,
                     PendingIntent.getBroadcast(this, 0, new Intent(this, ReminderReceiver.class), 0));
             Log.d(TAG, "Alarm Manager set");
         }

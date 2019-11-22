@@ -14,7 +14,6 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
             android:orientation="vertical">
 
             <LinearLayout
@@ -89,7 +88,7 @@
                 android:id="@+id/step0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
 
@@ -118,27 +117,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_self"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nLocation"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="48dp"/>
+                            android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_self"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nLocation"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="48dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -148,10 +147,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_self"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -159,10 +159,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_self"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
@@ -268,7 +269,7 @@
                 android:id="@+id/step1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:visibility="gone"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
@@ -298,9 +299,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_spouse"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -309,9 +310,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_spouse"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -328,10 +329,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_spouse"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -339,10 +341,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_spouse"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
@@ -448,7 +451,7 @@
                 android:id="@+id/step2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:visibility="gone"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
@@ -478,9 +481,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_sd"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -489,9 +492,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_sd"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -508,10 +511,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_sd"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -519,10 +523,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_sd"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
@@ -628,7 +633,7 @@
                 android:id="@+id/step3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:visibility="gone"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
@@ -658,9 +663,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_recreation"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -669,9 +674,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_recreation"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -688,10 +693,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_recreation"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -699,10 +705,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_recreation"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
@@ -808,7 +815,7 @@
                 android:id="@+id/step4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:visibility="gone"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
@@ -838,9 +845,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_social"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -849,9 +856,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_social"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -868,10 +875,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_social"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -879,10 +887,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_social"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
@@ -988,7 +997,7 @@
                 android:id="@+id/step5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:visibility="gone"
                 app:contentPadding="6dp"
                 app:cardCornerRadius="6dp">
@@ -1018,9 +1027,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/start_shopping"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -1029,9 +1038,9 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.PlaceButton
                             android:id="@+id/end_shopping"
-                            android:drawableLeft="@drawable/location"
+                            android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
@@ -1048,10 +1057,11 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/start_time_shopping"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="Start\nTime"
@@ -1059,10 +1069,11 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <Button
+                        <com.svnit.civil.survey.helpers.TimeButton
                             android:id="@+id/end_time_shopping"
-                            android:drawableLeft="@drawable/time"
+                            android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
+                            android:layout_marginBottom="12dp"
                             android:textAlignment="viewStart"
                             android:textSize="8sp"
                             android:text="End\nTime"
