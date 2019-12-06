@@ -23,7 +23,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/E:/program%20files/Androi%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/device/ic_access_time_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/ujjwal/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_search_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -33,8 +33,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="time" />
-                            <entry key="sourceFile" value="C:\Users\gamer" />
+                            <entry key="outputName" value="search" />
+                            <entry key="sourceFile" value="$USER_HOME$/C:\Users\gamer" />
                           </map>
                         </option>
                       </PersistentState>
