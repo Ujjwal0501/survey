@@ -6,9 +6,12 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -42,7 +45,9 @@ public class Part_a_a extends Fragment {
     private View.OnClickListener nextStep, saveStep, backStep;
     private CardView step0, step1, one, two;
     private ImageView next, prev;
+    private RadioGroup marital;
     private Context context;
+    private boolean MARRIED = true;
     private View v;
 
 
@@ -58,6 +63,7 @@ public class Part_a_a extends Fragment {
         v = inflater.inflate(R.layout.fragment_part_a_a, container, false);
         context = v.getContext();
         getActivity().setTitle("Social Details");
+        marital = v.findViewById(R.id.marital);
 
         selfAge = v.findViewById(R.id.self_age);
         spouseAge = v.findViewById(R.id.spouse_age);
@@ -72,6 +78,19 @@ public class Part_a_a extends Fragment {
         prev = v.findViewById(R.id.prev);
         one = v.findViewById(R.id.one);
         two = v.findViewById(R.id.two);
+
+        marital.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                if (i == R.id.married) {
+                    MARRIED = true;
+                    ((LinearLayout) v.findViewById(R.id.spouse)).setVisibility(View.VISIBLE);
+                } else if (i == R.id.unmarried) {
+                    MARRIED = false;
+                    ((LinearLayout) v.findViewById(R.id.spouse)).setVisibility(View.GONE);
+                }
+            }
+        });
 
         nextStep = new View.OnClickListener() {
             @Override
@@ -224,7 +243,7 @@ public class Part_a_a extends Fragment {
             return false;
         }
 
-        if (boyCount > 0 || girlCount > 0) {
+        if (boyCount > 0 || girlCount > 0 || MARRIED) {
 
             if (spouseAge.getText().toString().equals("")) {
                 spouseAge.setError("Age required.");

@@ -65,6 +65,27 @@
                         android:layout_height="wrap_content"
                         android:text="You" />
 
+                    <RadioGroup
+                        android:id="@+id/marital"
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RadioButton
+                            android:id="@+id/married"
+                            android:checked="true"
+                            android:text="Married"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                        <RadioButton
+                            android:id="@+id/unmarried"
+                            android:text="Unmarried"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
+                    </RadioGroup>
+
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -87,31 +108,39 @@
 
                     </LinearLayout>
 
-                    <TextView
-                        android:layout_marginTop="12dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Spouse" />
-
                     <LinearLayout
+                        android:id="@+id/spouse"
+                        android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content">
 
-                        <EditText
-                            android:id="@+id/spouse_age"
-                            android:inputType="number"
-                            android:layout_weight="1"
-                            android:hint="Age"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content" />
-
-                        <Spinner
-                            android:id="@+id/spouse_ocu"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
+                        <TextView
+                            android:layout_marginTop="12dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:entries="@array/occupation" />
+                            android:text="Spouse" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/spouse_age"
+                                android:inputType="number"
+                                android:layout_weight="1"
+                                android:hint="Age"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content" />
+
+                            <Spinner
+                                android:id="@+id/spouse_ocu"
+                                android:layout_weight="1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:entries="@array/occupation" />
+
+                        </LinearLayout>
 
                     </LinearLayout>
 
@@ -136,7 +165,7 @@
                             android:entries="@array/girl_child"
                             android:minWidth="24dp"
                             android:minHeight="24dp" />
-                        
+
                         <Spinner
                             android:id="@+id/sons"
                             android:layout_margin="4dp"
