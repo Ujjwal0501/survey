@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.RouteSurvey">
+    tools:context="com.tep.sustainability.survey.fragments.RouteSurvey">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -117,7 +117,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_self"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -128,7 +128,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_self"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -147,7 +147,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_self"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -159,7 +159,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_self"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -299,7 +299,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_spouse"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -310,7 +310,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_spouse"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -329,7 +329,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_spouse"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -341,7 +341,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_spouse"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -481,7 +481,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_sd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -492,7 +492,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_sd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -511,7 +511,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_sd"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -523,7 +523,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_sd"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -663,7 +663,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_recreation"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -674,7 +674,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_recreation"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -693,7 +693,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_recreation"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -705,7 +705,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_recreation"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -845,7 +845,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_social"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -856,7 +856,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_social"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -875,7 +875,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_social"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -887,7 +887,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_social"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -1027,7 +1027,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_shopping"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -1038,7 +1038,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.PlaceButton
+                        <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_shopping"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
@@ -1057,7 +1057,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/start_time_shopping"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"
@@ -1069,7 +1069,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.TimeButton
+                        <com.tep.sustainability.survey.helpers.TimeButton
                             android:id="@+id/end_time_shopping"
                             android:drawableStart="@drawable/time"
                             android:drawablePadding="8dp"

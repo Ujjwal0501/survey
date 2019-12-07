@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Brief">
+    tools:context="com.tep.sustainability.survey.fragments.Brief">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -14,13 +14,13 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
+                android:layout_margin="12dp"
                 android:orientation="vertical">
 
                 <RelativeLayout
@@ -186,18 +186,20 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_height="108dp"
                 android:layout_marginTop="16dp"
                 android:onClick="part"
                 android:padding="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="3dp">
 
                 <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
+                        android:clickable="false"
                         android:background="@drawable/fam"
                         android:alpha="0.2"
                         android:gravity="center"
@@ -218,20 +220,23 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:background="?selectableItemBackgroundBorderless"
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_height="108dp"
                 android:layout_marginTop="16dp"
                 android:onClick="partab"
                 android:padding="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="3dp">
 
                 <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                         android:background="@drawable/mon"
+                        android:clickable="false"
                         android:gravity="center"
                         android:alpha="0.2"
                         android:layout_width="match_parent"
@@ -251,20 +256,60 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/loc_survey"
+                android:background="?selectableItemBackgroundBorderless"
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="16dp"
+                android:onClick="startService"
+                android:padding="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="3dp">
+
+                <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:background="@drawable/rout"
+                        android:clickable="false"
+                        android:alpha="0.2"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:textSize="20sp"
+                        android:textColor="#000"
+                        android:text="Travel Characteristics"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:background="?selectableItemBackgroundBorderless"
+                android:layout_width="match_parent"
+                android:layout_height="108dp"
                 android:layout_marginTop="16dp"
                 android:onClick="partac"
                 android:padding="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="3dp">
 
                 <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                     android:background="@drawable/pub"
+                        android:clickable="false"
                     android:alpha="0.2"
                     android:gravity="center"
                     android:layout_width="match_parent"
@@ -284,20 +329,23 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:background="?selectableItemBackgroundBorderless"
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_height="108dp"
                 android:layout_marginTop="16dp"
                 android:onClick="partba"
                 android:padding="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="3dp">
 
                 <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                         android:background="@drawable/pref"
+                        android:clickable="false"
                         android:alpha="0.2"
                         android:gravity="center"
                         android:layout_width="match_parent"
@@ -317,20 +365,24 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:background="?selectableItemBackgroundBorderless"
                 android:layout_width="match_parent"
-                android:layout_height="148dp"
+                android:layout_height="108dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
                 android:onClick="partbb"
                 android:padding="16dp"
                 app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="3dp">
 
                 <RelativeLayout
+                    android:background="?selectableItemBackgroundBorderless"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <LinearLayout
                         android:background="@drawable/rpref"
+                        android:clickable="false"
                         android:alpha="0.2"
                         android:gravity="center"
                         android:layout_width="match_parent"
@@ -342,40 +394,6 @@
                         android:textSize="20sp"
                         android:textColor="#000"
                         android:text="Rated Preference Survey"
-                        android:textAlignment="center" />
-
-                </RelativeLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/loc_survey"
-                android:layout_width="match_parent"
-                android:layout_height="148dp"
-                android:layout_marginTop="16dp"
-                android:onClick="startService"
-                android:padding="16dp"
-                app:cardBackgroundColor="#FFFFFF"
-                app:cardCornerRadius="6dp">
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <LinearLayout
-                        android:background="@drawable/rout"
-                        android:alpha="0.2"
-                        android:gravity="center"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="16dp"
-                        android:textSize="20sp"
-                        android:textColor="#000"
-                        android:text="Start Journey Survey"
                         android:textAlignment="center" />
 
                 </RelativeLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.Part_a_b">
+    tools:context="com.tep.sustainability.survey.fragments.Part_a_b">
 
     <ScrollView
         android:scrollbars="none"

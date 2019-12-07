@@ -43,7 +43,7 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MapLocation" />
+        tools:context="com.tep.sustainability.survey.MapLocation" />
 
     <androidx.cardview.widget.CardView
         map:cardBackgroundColor="@color/colorAccent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.Part_b_b">
+    tools:context="com.tep.sustainability.survey.fragments.Part_b_b">
 
     <ScrollView
         android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/congestion"
                             android:hint="Rate"
                             android:layout_weight="1"
@@ -112,7 +112,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety"
                             android:hint="Rate"
                             android:nextFocusUp="@id/congestion"
@@ -139,7 +139,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/air_pollution"
                             android:hint="Rate"
                             android:nextFocusUp="@id/safety"
@@ -166,7 +166,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"/>
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/noise_pollution"
                             android:hint="Rate"
                             android:nextFocusUp="@id/air_pollution"
@@ -218,7 +218,7 @@
                             android:layout_weight="2"
                             android:text="Fare (travel cost)" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -230,7 +230,7 @@
                             android:nextFocusDown="@id/fare_education"
                             android:nextFocusForward="@id/fare_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -242,7 +242,7 @@
                             android:nextFocusDown="@id/fare_social"
                             android:nextFocusForward="@id/fare_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -268,7 +268,7 @@
                             android:layout_weight="2"
                             android:text="Speed" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -281,7 +281,7 @@
                             android:nextFocusDown="@id/speed_education"
                             android:nextFocusForward="@id/speed_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -294,7 +294,7 @@
                             android:nextFocusDown="@id/speed_social"
                             android:nextFocusForward="@id/speed_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -321,7 +321,7 @@
                             android:layout_weight="2"
                             android:text="Comfort (door to door)" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -334,7 +334,7 @@
                             android:nextFocusDown="@id/comfort_education"
                             android:nextFocusForward="@id/comfort_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -346,7 +346,7 @@
                             android:nextFocusUp="@id/speed_education"
                             android:nextFocusDown="@id/comfort_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -372,7 +372,7 @@
                             android:layout_weight="2"
                             android:text="Safety" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -384,7 +384,7 @@
                             android:nextFocusUp="@id/comfort_home"
                             android:nextFocusDown="@id/safety_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -396,7 +396,7 @@
                             android:nextFocusUp="@id/comfort_education"
                             android:nextFocusDown="@id/safety_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -422,7 +422,7 @@
                             android:layout_weight="2"
                             android:text="Parking Cost" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -434,7 +434,7 @@
                             android:nextFocusUp="@id/safety_home"
                             android:nextFocusDown="@id/parking_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -446,7 +446,7 @@
                             android:nextFocusUp="@id/safety_education"
                             android:nextFocusDown="@id/parking_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -472,7 +472,7 @@
                             android:layout_weight="2"
                             android:text="Other cost" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_home"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -484,7 +484,7 @@
                             android:nextFocusUp="@id/parking_home"
                             android:nextFocusDown="@id/other_education" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_education"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -496,7 +496,7 @@
                             android:nextFocusUp="@id/parking_education"
                             android:nextFocusDown="@id/other_social" />
 
-                        <com.svnit.civil.survey.helpers.WatchedEditText
+                        <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_social"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"

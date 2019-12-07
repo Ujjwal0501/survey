@@ -4,7 +4,7 @@
 
     To get one, follow this link, follow the directions and press "Create" at the end:
 
-    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=A1:A2:E6:52:1A:9E:85:66:E1:AC:51:82:41:4A:D0:9C:93:49:17:31%3Bcom.svnit.civil.survey
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=A1:A2:E6:52:1A:9E:85:66:E1:AC:51:82:41:4A:D0:9C:93:49:17:31%3Bcom.tep.sustainability.survey
 
     You can also add your credentials to an existing key, using these values:
 

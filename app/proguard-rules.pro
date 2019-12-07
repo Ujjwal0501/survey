@@ -20,6 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 -keepattributes Signature
--keepclassmembers class com.svnit.civil.survey.models.** {
+-keepclassmembers class com.tep.sustainability.survey.models.** {
       *;
     }

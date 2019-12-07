@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Survey</string>
+    <string name="app_name">Sustainability Index For Urban Transport TEP</string>
     <string name="title_activity_main">MainActivity</string>
 
     <!--drawer menu options-->
@@ -27,7 +27,7 @@
     <string name="unknown_error">Unknown error. Please try again.</string>
     <string name="email_updated">E-mail successfully update. Kindly verify your email using the verification link sent on your mail id.</string>
     <string name="login_to_phoneverify_error">Something went wrong. If your registration was successful, you can are good to login here.</string>
-    <string name="getidtoken">678857064843-a1c521kdtfnam4oo9ehcgc7pmujvgo82.apps.googleusercontent.com</string>
+    <string name="getidtoken">190636756951-of5mm7c6u6hkc15sea1b4pt7apmig0d9.apps.googleusercontent.com</string>
     <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyCMk4LKfv17pVGoTcUVTTPHI_jgCxyytd8</string>
 
     <string name="policy1">Integrated network of Bus ana Metro with Integrated Ticket System</string>
