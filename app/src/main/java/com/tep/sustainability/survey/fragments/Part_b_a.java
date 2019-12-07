@@ -42,9 +42,10 @@ public class Part_b_a extends Fragment {
     private Preference preference = new Preference();
     private Spinner modeChangeSelf, modeChangeSpouse, modeChangeSD, modeChangeOther;
     private CheckBox publicWaitTime, publicDistance, publicTravel, publicReliability, publicFare,
-             privateTravel, privateCost, privateParking, vehicleSharing;
-    private EditText publicWaitTimeValue, publicDistanceValue, publicTravelValue, publicReliabilityValue, publicFareValue,
-             privateTravelValue, privateCostValue, privateParkingValue;
+            privateCost, privateParking;
+    private RadioButton vehicleSharing;
+    private EditText publicWaitTimeValue, publicDistanceValue, publicTravelValue, publicReliabilityValue,
+            publicFareValue, privateCostValue, privateParkingValue;
     private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne, threeToFour, fourToThree;
     private static RadioButton currentService, serviceA, serviceB;
     private CardView step0, step1, step2, step3, one, two, three, four;
@@ -78,11 +79,9 @@ public class Part_b_a extends Fragment {
         publicFareValue = v.findViewById(R.id.public_fare_edittext);
         privateCost = v.findViewById(R.id.private_cost_checkbox);
         privateCostValue = v.findViewById(R.id.private_cost_edittext);
-        privateTravel = v.findViewById(R.id.private_travel_time_checkbox);
-        privateTravelValue = v.findViewById(R.id.private_travel_time_edittext);
         privateParking = v.findViewById(R.id.private_parking_checkbox);
         privateParkingValue = v.findViewById(R.id.private_parking_edittext);
-        vehicleSharing = v.findViewById(R.id.private_sharing_checkbox);
+        vehicleSharing = v.findViewById(R.id.share_yes);
         modeChangeSelf = v.findViewById(R.id.mode_change_self);
         modeChangeSpouse = v.findViewById(R.id.mode_change_spouse);
         modeChangeSD = v.findViewById(R.id.mode_change_son);
@@ -149,13 +148,6 @@ public class Part_b_a extends Fragment {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 privateParkingValue.setEnabled(b);
-            }
-        });
-
-        privateTravel.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                privateTravelValue.setEnabled(b);
             }
         });
 
@@ -248,8 +240,8 @@ public class Part_b_a extends Fragment {
                 if (Home.STEP<1) return;
                 step3.setVisibility(View.GONE);
                 step2.setVisibility(View.VISIBLE);
-                next.setOnClickListener(twoToThree);
-                prev.setOnClickListener(twoToOne);
+                next.setOnClickListener(threeToFour);
+                prev.setOnClickListener(threeToTwo);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
                 three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
                 four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
@@ -368,16 +360,16 @@ public class Part_b_a extends Fragment {
     }
 
     private boolean verifyStep2() {
-        if (privateTravel.isChecked() && privateTravelValue.getText().toString().equals("")) { privateTravelValue.setError("Required"); return false;}
+        // if (privateTravel.isChecked() && privateTravelValue.getText().toString().equals("")) { privateTravelValue.setError("Required"); return false;}
         if (privateCost.isChecked() && privateCostValue.getText().toString().equals("")) { privateCostValue.setError("Required"); return false;}
         if (privateParking.isChecked() && privateParkingValue.getText().toString().equals("")) { privateParkingValue.setError("Required"); return false;}
 
         preference.setChange_when_first_mode_not_available(modeChangeSelf.getSelectedItem().toString());
         Map<String, String> temp = new HashMap<String, String>();
 
-        if (privateTravel.isChecked()) {
-            temp.put("acceptable travel time", privateTravelValue.getText().toString());
-        } else temp.put("acceptable travel time", "No");
+//        if (privateTravel.isChecked()) {
+//            temp.put("acceptable travel time", privateTravelValue.getText().toString());
+//        } else temp.put("acceptable travel time", "No");
 
         if (privateCost.isChecked()) {
             temp.put("affordable travel cost", privateCostValue.getText().toString());

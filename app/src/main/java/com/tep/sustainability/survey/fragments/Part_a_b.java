@@ -209,7 +209,7 @@ public class Part_a_b extends Fragment {
         if (monthlyEMI.getText() == null || monthlyEMI.getText().toString().equals("")) { monthlyEMI.setError("Age required."); return false; }
         if (monthlyFuelCost.getText() == null || monthlyFuelCost.getText().toString().equals("")) { monthlyFuelCost.setError("Age required."); return false; }
         if (monthlyMaintenance.getText() == null || monthlyMaintenance.getText().toString().equals("")) { monthlyMaintenance.setError("Age required."); return false; }
-        if (registration.getText() == null || registration.getText().toString().equals("")) { registration.setError("Age required."); return false; }
+//        if (registration.getText() == null || registration.getText().toString().equals("")) { registration.setError("Age required."); return false; }
         if (monthlyParkingCost.getText() == null || monthlyParkingCost.getText().toString().equals("")) { monthlyParkingCost.setError("Age required."); return false; }
 
         economic.setMonthly_emi(monthlyEMI.getText().toString());

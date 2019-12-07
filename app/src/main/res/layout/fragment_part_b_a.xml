@@ -319,7 +319,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Affordable fare" />
+                                android:text="Fare per Kilometer" />
 
                             <EditText
                                 android:id="@+id/public_fare_edittext"
@@ -369,29 +369,6 @@
                             android:layout_height="wrap_content">
 
                             <CheckBox
-                                android:id="@+id/private_travel_time_checkbox"
-                                android:checked="true"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Acceptable travel time" />
-
-                            <EditText
-                                android:id="@+id/private_travel_time_edittext"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:inputType="number"
-                                android:hint="Minutes" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <CheckBox
                                 android:id="@+id/private_cost_checkbox"
                                 android:checked="true"
                                 android:layout_width="0dp"
@@ -433,22 +410,42 @@
 
                         </LinearLayout>
 
+                        <TextView
+                            android:text="Vehicle Sharing"
+                            android:layout_marginTop="24dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
                         <LinearLayout
+                            android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
-                            <CheckBox
-                                android:id="@+id/private_sharing_checkbox"
-                                android:checked="true"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Vehicle sharing" />
+                            <RadioGroup
+                                android:orientation="horizontal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <RadioButton
+                                    android:id="@+id/share_yes"
+                                    android:text="Yes"
+                                    android:checked="true"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content" />
+
+                                <RadioButton
+                                    android:id="@+id/share_no"
+                                    android:text="No"
+                                    android:layout_weight="1"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content" />
+
+                            </RadioGroup>
 
                         </LinearLayout>
 
                     </com.google.android.material.chip.ChipGroup>
-
 
                 </LinearLayout>
 
@@ -505,6 +502,7 @@
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="6dp"
+                                            android:textColor="#000000"
                                             android:text="Current Service"
                                             android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -632,6 +630,7 @@
 
                                         <TextView
                                             android:text="Service Bus A"
+                                            android:textColor="#000000"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_marginBottom="6dp"
@@ -761,6 +760,7 @@
 
                                     <TextView
                                         android:text="Service Bus B"
+                                        android:textColor="#000000"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="6dp"

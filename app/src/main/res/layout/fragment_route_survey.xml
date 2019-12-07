@@ -201,16 +201,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_self"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_self"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -223,16 +223,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/distance_self"
-                            android:entries="@array/distance"
+                            android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_self"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -383,16 +383,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_spouse"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_spouse"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -405,16 +405,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/distance_spouse"
-                            android:entries="@array/distance"
+                            android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_spouse"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -565,16 +565,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_sd"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_sd"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -587,16 +587,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
+                            android:hint="Distance"
                             android:id="@+id/distance_sd"
-                            android:entries="@array/distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_sd"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -747,16 +747,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_recreation"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_recreation"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -769,16 +769,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/distance_recreation"
-                            android:entries="@array/distance"
+                            android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_recreation"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -929,16 +929,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_social"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_social"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -951,16 +951,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/distance_social"
-                            android:entries="@array/distance"
+                            android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_social"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -1111,16 +1111,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/wait_time_shopping"
-                            android:entries="@array/wait_time"
+                            android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/travel_time_shopping"
-                            android:entries="@array/travel_time"
+                            android:hint="Travel time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
@@ -1133,16 +1133,16 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/distance_shopping"
-                            android:entries="@array/distance"
+                            android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>
 
-                        <Spinner
+                        <EditText
                             android:id="@+id/cost_shopping"
-                            android:entries="@array/cost"
+                            android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="36dp"/>

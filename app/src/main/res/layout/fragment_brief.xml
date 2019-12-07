@@ -248,7 +248,7 @@
                         android:layout_margin="16dp"
                         android:textSize="20sp"
                         android:textColor="#000"
-                        android:text="Economic Details"
+                        android:text="Vehicle Ownership"
                         android:textAlignment="center" />
 
                 </RelativeLayout>

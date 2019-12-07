@@ -477,7 +477,7 @@
                             android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Nearest Stop Distance (meters)" />
+                            android:text="Nearest Stand Distance (meters)" />
 
                         <EditText
                             android:id="@+id/auto_distance"
