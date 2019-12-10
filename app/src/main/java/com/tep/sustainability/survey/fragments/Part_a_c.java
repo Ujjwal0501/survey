@@ -106,8 +106,8 @@ public class Part_a_c extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(twoToThree);
                     prev.setOnClickListener(twoToOne);
-                    one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -124,13 +124,9 @@ public class Part_a_c extends Fragment {
                     next.setOnClickListener(saveStep);
                     prev.setOnClickListener(threeToTwo);
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                    Home.STEP += 1;;
-;
-;
-;
-;
+                    two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                    Home.STEP += 1;
                 }
             }
         };
@@ -144,8 +140,8 @@ public class Part_a_c extends Fragment {
                 ((CardView) prev.getParent()).setVisibility(View.GONE);
                 next.setOnClickListener(oneToTwo);
                 prev.setOnClickListener(null);
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                one.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -159,8 +155,8 @@ public class Part_a_c extends Fragment {
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };

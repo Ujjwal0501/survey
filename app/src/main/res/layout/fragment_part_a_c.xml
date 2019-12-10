@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/windowBackground"
     tools:context="com.tep.sustainability.survey.fragments.Part_a_c">
 
     <ScrollView
-        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,64 +19,80 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/secondaryDark"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/two"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/three"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step0"
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_margin="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_margin="12dp"
+                android:padding="4dp"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_marginTop="12dp"
-                        android:textSize="20sp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="City Bus" />
+                        android:layout_marginTop="12dp"
+                        android:text="City Bus"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -82,18 +100,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Nearest Stop Distance (meters)" />
+                            android:layout_weight="1"
+                            android:text="Nearest Stop Distance (meters)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/bus_distance"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Distance"
                             android:inputType="number"
-                            android:hint="Distance" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -103,18 +124,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Time to reach Bus stop (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Time to reach Bus stop (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/bus_time_to_reach"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Time"
                             android:inputType="number"
-                            android:hint="Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -124,18 +148,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Average waiting time (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Average waiting time (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/bus_wait_time"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Wait Time"
                             android:inputType="number"
-                            android:hint="Wait Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -145,19 +172,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Usage Frequency (weekly)" />
+                            android:layout_weight="1"
+                            android:text="Usage Frequency (weekly)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/bus_frequency"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:hint="Frequency"
                             android:inputType="number"
-                            android:hint="Frequency" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -167,18 +197,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Service Reliability" />
+                            android:layout_weight="1"
+                            android:text="Service Reliability"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/bus_reliability"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -188,18 +219,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Safety" />
+                            android:layout_weight="1"
+                            android:text="Safety"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/bus_safety"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -209,18 +241,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Fare" />
+                            android:layout_weight="1"
+                            android:text="Fare"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/bus_fare"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/fare" />
+                            android:layout_weight="1"
+                            android:entries="@array/fare"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -230,18 +263,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Cleanliness and Comfort" />
+                            android:layout_weight="1"
+                            android:text="Cleanliness and Comfort"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/bus_comfort"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -251,26 +285,27 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step1"
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_margin="12dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:layout_margin="12dp"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_marginTop="12dp"
-                        android:textSize="20sp"
-                        android:text="BRT"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="BRT"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -278,18 +313,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Nearest Stop Distance (meters)" />
+                            android:layout_weight="1"
+                            android:text="Nearest Stop Distance (meters)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/brt_distance"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Distance"
                             android:inputType="number"
-                            android:hint="Distance" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -299,18 +337,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Time to reach Bus stop (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Time to reach Bus stop (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/brt_time_to_reach"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Time"
                             android:inputType="number"
-                            android:hint="Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -320,18 +361,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Average waiting time (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Average waiting time (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/brt_wait_time"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Wait Time"
                             android:inputType="number"
-                            android:hint="Wait Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -341,19 +385,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Usage Frequency (weekly)" />
+                            android:layout_weight="1"
+                            android:text="Usage Frequency (weekly)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/brt_frequency"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:hint="Frequency"
                             android:inputType="number"
-                            android:hint="Frequency" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -363,18 +410,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Service Reliability" />
+                            android:layout_weight="1"
+                            android:text="Service Reliability"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/brt_reliability"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -384,18 +432,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Safety" />
+                            android:layout_weight="1"
+                            android:text="Safety"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/brt_safety"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -405,18 +454,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Fare" />
+                            android:layout_weight="1"
+                            android:text="Fare"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/brt_fare"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/fare" />
+                            android:layout_weight="1"
+                            android:entries="@array/fare"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -426,18 +476,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Cleanliness and Comfort" />
+                            android:layout_weight="1"
+                            android:text="Cleanliness and Comfort"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/brt_comfort"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -447,26 +498,27 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step2"
-                app:cardCornerRadius="6dp"
-                android:layout_margin="12dp"
-                android:padding="4dp"
-                app:cardElevation="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone">
+                android:layout_margin="12dp"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:padding="8dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:padding="8dp">
 
                     <TextView
-                        android:layout_marginTop="12dp"
-                        android:textSize="20sp"
-                        android:text="Auto"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Auto"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -474,18 +526,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Nearest Stand Distance (meters)" />
+                            android:layout_weight="1"
+                            android:text="Nearest Stand Distance (meters)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/auto_distance"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Distance"
                             android:inputType="number"
-                            android:hint="Distance" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -495,18 +550,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Time to reach Bus stop (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Time to reach Bus stop (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/auto_time_to_reach"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Time"
                             android:inputType="number"
-                            android:hint="Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -516,18 +574,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Average waiting time (minutes)" />
+                            android:layout_weight="1"
+                            android:text="Average waiting time (minutes)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/auto_wait_time"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Wait Time"
                             android:inputType="number"
-                            android:hint="Wait Time" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -537,19 +598,22 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Usage Frequency (weekly)" />
+                            android:layout_weight="1"
+                            android:text="Usage Frequency (weekly)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/auto_frequency"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_marginBottom="16dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:layout_weight="1"
+                            android:hint="Frequency"
                             android:inputType="number"
-                            android:hint="Frequency" />
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -559,18 +623,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Service Reliability" />
+                            android:layout_weight="1"
+                            android:text="Service Reliability"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/auto_reliability"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -580,18 +645,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Safety" />
+                            android:layout_weight="1"
+                            android:text="Safety"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/auto_safety"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -601,18 +667,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Fare" />
+                            android:layout_weight="1"
+                            android:text="Fare"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/auto_fare"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/fare" />
+                            android:layout_weight="1"
+                            android:entries="@array/fare"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -622,18 +689,19 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Cleanliness and Comfort" />
+                            android:layout_weight="1"
+                            android:text="Cleanliness and Comfort"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/auto_comfort"
-                            android:padding="8dp"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:entries="@array/gbo" />
+                            android:layout_weight="1"
+                            android:entries="@array/gbo"
+                            android:padding="8dp" />
 
                     </LinearLayout>
 
@@ -651,8 +719,9 @@
         android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
-        app:cardCornerRadius="32dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/secondaryLight"
+        app:cardCornerRadius="32dp">
 
         <ImageView
             android:id="@+id/prev"
@@ -669,6 +738,7 @@
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
+        app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
         <ImageView

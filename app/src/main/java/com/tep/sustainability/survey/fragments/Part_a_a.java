@@ -107,8 +107,8 @@ public class Part_a_a extends Fragment {
                     next.setOnClickListener(saveStep);
                     prev.setOnClickListener(backStep);
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                    one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
 
 //                    Toast.makeText(context, "boys: "+boyCount+"\ngirls: "+girlCount, Toast.LENGTH_LONG).show();
 
@@ -149,8 +149,8 @@ public class Part_a_a extends Fragment {
                 next.setOnClickListener(nextStep);
                 prev.setOnClickListener(null);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                 Home.STEP -= 1;
             }
         };

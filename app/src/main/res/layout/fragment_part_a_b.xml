@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowBackground"
     tools:context="com.tep.sustainability.survey.fragments.Part_a_b">
 
     <ScrollView
-        android:scrollbars="none"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -17,66 +18,79 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:layout_gravity="center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_gravity="center"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/secondaryDark"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/two"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
             </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step0"
-                app:cardCornerRadius="6dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="12dp"
                 android:padding="4dp"
-                app:cardElevation="4dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:textSize="20sp"
-                        android:layout_marginTop="12dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Assets" />
+                        android:layout_marginTop="12dp"
+                        android:text="Assets"
+                        android:textColor="@color/textSecondary"
+                        android:textColorHint="@color/textHint"
+                        android:textSize="20sp" />
 
                     <LinearLayout
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
 
                         <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:text="Monthly Income"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/m_income"
@@ -89,17 +103,18 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_marginTop="12dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:orientation="horizontal">
 
                         <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
                             android:layout_margin="4dp"
                             android:layout_weight="1"
                             android:text="Residence type"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/res_type"
@@ -112,19 +127,20 @@
                     </LinearLayout>
 
                     <TextView
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="4dp"
-                        android:text="Car"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Car"
+                        android:textColor="@color/textSecondary" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="-8dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-8dp"
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/car_count"
@@ -145,9 +161,9 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/car_mileage"
@@ -168,27 +184,29 @@
                     </LinearLayout>
 
                     <TextView
-                        android:textSize="10dp"
-                        android:layout_marginTop="-8dp"
-                        android:layout_marginStart="20dp"
-                        android:text="(Optional)"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="-8dp"
+                        android:text="(Optional)"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="10dp" />
 
                     <TextView
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="4dp"
-                        android:text="2 Wheeler"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="2 Wheeler"
+                        android:textColor="@color/textSecondary" />
 
                     <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_marginTop="-8dp"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-8dp"
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/twow_count"
@@ -209,9 +227,9 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/twow_milage"
@@ -232,28 +250,30 @@
                     </LinearLayout>
 
                     <TextView
-                        android:textSize="10dp"
-                        android:layout_marginTop="-8dp"
-                        android:layout_marginStart="20dp"
-                        android:text="(Optional)"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="-8dp"
+                        android:text="(Optional)"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="10dp" />
 
 
                     <TextView
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="4dp"
-                        android:layout_marginLeft="12dp"
-                        android:layout_marginRight="4dp"
-                        android:text="Bicycle"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="12dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="Bicycle"
+                        android:textColor="@color/textSecondary" />
 
                     <LinearLayout
-                        android:layout_marginTop="-8dp"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="-8dp"
+                        android:orientation="horizontal">
 
                         <Spinner
                             android:id="@+id/bicylce_count"
@@ -279,25 +299,26 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step1"
-                app:cardCornerRadius="6dp"
-                android:padding="4dp"
-                android:layout_margin="12dp"
-                app:cardElevation="4dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="visible">
+                android:layout_margin="12dp"
+                android:padding="4dp"
+                android:visibility="gone"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
-                    android:orientation="vertical"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <TextView
-                        android:layout_marginTop="12dp"
-                        android:textSize="20sp"
-                        android:text="Monthly on Vehicle"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Monthly on Vehicle"
+                        android:textColor="@color/textSecondary"
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -305,16 +326,17 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="EMI (Rs. per month)" />
+                            android:layout_weight="1"
+                            android:text="EMI (Rs. per month)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/m_emi"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Amount"
                             android:inputType="number" />
 
@@ -326,18 +348,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Fuel Cost (Rs. per month)" />
+                            android:layout_weight="1"
+                            android:text="Fuel Cost (Rs. per month)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/mfuel_cost"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Amount"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -347,18 +372,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Maintenance Cost (Rs. per month)" />
+                            android:layout_weight="1"
+                            android:text="Maintenance Cost (Rs. per month)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/m_maint"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Amount"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -368,18 +396,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Vehicle Registration (Rs.)" />
+                            android:layout_weight="1"
+                            android:text="Vehicle Registration (Rs.)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/reg_charge"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Optional"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -389,18 +420,21 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Parking Charge (Rs. per month)" />
+                            android:layout_weight="1"
+                            android:text="Parking Charge (Rs. per month)"
+                            android:textColor="@color/textPrimary" />
 
                         <EditText
                             android:id="@+id/mpark_cost"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Optional"
-                            android:inputType="number" />
+                            android:inputType="number"
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -417,8 +451,9 @@
         android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
-        app:cardCornerRadius="32dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/secondaryLight"
+        app:cardCornerRadius="32dp">
 
         <ImageView
             android:id="@+id/prev"
@@ -435,6 +470,7 @@
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
+        app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
         <ImageView

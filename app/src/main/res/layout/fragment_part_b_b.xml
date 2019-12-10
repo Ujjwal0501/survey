@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
 
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/windowBackground"
     tools:context="com.tep.sustainability.survey.fragments.Part_b_b">
 
     <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/windowBackground"
         android:scrollbars="none">
 
         <LinearLayout
@@ -18,40 +20,55 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/secondaryDark"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/two"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/three"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="8dp" />
 
             </LinearLayout>
 
@@ -60,8 +77,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="6dp"
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -73,111 +90,124 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Which is the major issue of transport system in the city? Rank the issues on the scale 1 to 5 (1= high; 5= low)"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Traffic Congestion"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Traffic Congestion"
+                            android:textColor="@color/textPrimary" />
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/congestion"
-                            android:hint="Rate"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:hint="Rate"
+                            android:inputType="number"
+                            android:nextFocusRight="@id/safety"
                             android:nextFocusDown="@id/safety"
                             android:nextFocusForward="@id/safety"
-                            android:nextFocusRight="@id/safety"
-                            android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Safety and security"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Safety and security"
+                            android:textColor="@color/textPrimary" />
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Rate"
-                            android:nextFocusUp="@id/congestion"
+                            android:inputType="number"
                             android:nextFocusLeft="@id/congestion"
+                            android:nextFocusRight="@id/air_pollution"
+                            android:nextFocusUp="@id/congestion"
                             android:nextFocusDown="@id/air_pollution"
                             android:nextFocusForward="@id/air_pollution"
-                            android:nextFocusRight="@id/air_pollution"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Air Pollution"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Air Pollution"
+                            android:textColor="@color/textPrimary" />
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/air_pollution"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Rate"
-                            android:nextFocusUp="@id/safety"
+                            android:inputType="number"
                             android:nextFocusLeft="@id/safety"
+                            android:nextFocusRight="@id/noise_pollution"
+                            android:nextFocusUp="@id/safety"
                             android:nextFocusDown="@id/noise_pollution"
                             android:nextFocusForward="@id/noise_pollution"
-                            android:nextFocusRight="@id/noise_pollution"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center"
-                        android:orientation="horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="Noise Pollution"
-                            android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Noise Pollution"
+                            android:textColor="@color/textPrimary" />
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/noise_pollution"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:hint="Rate"
-                            android:nextFocusUp="@id/air_pollution"
+                            android:inputType="number"
                             android:nextFocusLeft="@id/air_pollution"
+                            android:nextFocusRight="@id/next"
+                            android:nextFocusUp="@id/air_pollution"
                             android:nextFocusDown="@id/next"
                             android:nextFocusForward="@id/next"
-                            android:nextFocusRight="@id/next"
-                            android:layout_weight="1"
-                            android:layout_width="0dp"
-                            android:inputType="number"
-                            android:layout_height="wrap_content"/>
+                            android:textColor="@color/textPrimary"
+                            android:textColorHint="@color/textHint" />
 
                     </LinearLayout>
 
@@ -190,7 +220,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:cardCornerRadius="6dp"
                 app:contentPadding="6dp">
 
@@ -204,7 +234,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Which is more important to you for choosing a mode of Transport? Rate on the scale of 1 (Least Important) to 5 (Most Important)."
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -513,8 +544,10 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
                         android:layout_marginTop="16dp"
-                        android:text="H = Home\nE = Education\nO = Social/Recreational/Other" />
+                        android:text="H = Home\nE = Education\nO = Social/Recreational/Other"
+                        android:textColor="@color/secondaryLight" />
 
                 </LinearLayout>
 
@@ -525,10 +558,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
                 android:layout_marginBottom="32dp"
+                android:visibility="gone"
                 app:cardCornerRadius="6dp"
-                android:visibility="gone">
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -540,159 +573,167 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Which is appropriate policy option for better transport system in your city? Please give rank."
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy1"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy1"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_1"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy2"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy2"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_2"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy3"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy3"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_3"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy4"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy4"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_4"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy5"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy5"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_5"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy6"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy6"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_6"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
                     <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:gravity="bottom"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:text="@string/policy7"
-                            android:layout_weight="5"
                             android:layout_width="0dp"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_weight="5"
+                            android:text="@string/policy7"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/rank_7"
-                            android:entries="@array/ranking"
-                            android:layout_marginTop="12dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:entries="@array/ranking" />
 
                     </LinearLayout>
 
@@ -711,8 +752,9 @@
         android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
-        app:cardCornerRadius="32dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/secondaryLight"
+        app:cardCornerRadius="32dp">
 
         <ImageView
             android:id="@+id/prev"
@@ -729,6 +771,7 @@
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
+        app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
         <ImageView

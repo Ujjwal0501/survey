@@ -275,7 +275,6 @@ public class Home extends AppCompatActivity {
                         public void onClick(View v) {
                             snackbar.dismiss();
                             startActivity(new Intent(Home.this, ProcessedRoutes.class));
-//                            Toast.makeText(Home.this, "hi", Toast.LENGTH_SHORT).show();
                         }
                     });
                     snackbar.show();

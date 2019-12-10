@@ -76,7 +76,8 @@ public class RouteSurvey extends Fragment {
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_route_survey, container, false);
         context = v.getContext();
-        getActivity().setTitle("Preference");
+        getActivity().setTitle("Travel");
+        if (getActivity().getActionBar() != null) getActivity().getActionBar().setSubtitle("Characteristics");
 
 
         step0 = v.findViewById(R.id.step0);
@@ -183,8 +184,8 @@ public class RouteSurvey extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(twoToThree);
                     prev.setOnClickListener(twoToOne);
-                    one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -200,8 +201,8 @@ public class RouteSurvey extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(threeToFour);
                     prev.setOnClickListener(threeToTwo);
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -217,8 +218,8 @@ public class RouteSurvey extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(fourToFive);
                     prev.setOnClickListener(fourToThree);
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    four.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -234,8 +235,8 @@ public class RouteSurvey extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(fiveToSix);
                     prev.setOnClickListener(fiveToFour);
-                    four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    five.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    four.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    five.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -252,8 +253,8 @@ public class RouteSurvey extends Fragment {
                     next.setOnClickListener(saveStep);
                     prev.setOnClickListener(sixToFive);
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                    five.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    six.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    five.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    six.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -268,8 +269,8 @@ public class RouteSurvey extends Fragment {
                 ((CardView) prev.getParent()).setVisibility(View.GONE);
                 next.setOnClickListener(oneToTwo);
                 prev.setOnClickListener(null);
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                one.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -283,8 +284,8 @@ public class RouteSurvey extends Fragment {
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -298,8 +299,8 @@ public class RouteSurvey extends Fragment {
                 next.setOnClickListener(threeToFour);
                 prev.setOnClickListener(threeToTwo);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                four.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -313,8 +314,8 @@ public class RouteSurvey extends Fragment {
                 next.setOnClickListener(fourToFive);
                 prev.setOnClickListener(fourToThree);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                five.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                four.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                five.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -328,8 +329,8 @@ public class RouteSurvey extends Fragment {
                 next.setOnClickListener(saveStep);
                 prev.setOnClickListener(fiveToFour);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                five.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                six.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                five.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                six.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -601,14 +602,12 @@ public class RouteSurvey extends Fragment {
     }
 
     public void setStart(View v) {
-        Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show();
         arr[0] = latLng.latitude;
         arr[1] = latLng.longitude;
         START_END = 1;
     }
 
     public void setEnd(View v) {
-        Toast.makeText(context, "hi", Toast.LENGTH_SHORT).show();
         arr[2] = latLng.latitude;
         arr[3] = latLng.longitude;
         START_END = 2;

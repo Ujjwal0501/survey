@@ -66,6 +66,7 @@ public class Part_b_a extends Fragment {
         v = inflater.inflate(R.layout.fragment_part_b_a, container, false);
         context = v.getContext();
         getActivity().setTitle("Preference");
+        if (getActivity().getActionBar() != null) getActivity().getActionBar().setSubtitle("Opinion");
 
         publicWaitTime = v.findViewById(R.id.public_wait_time_checkbox);
         publicWaitTimeValue = v.findViewById(R.id.public_wait_time_edittext);
@@ -162,8 +163,8 @@ public class Part_b_a extends Fragment {
                 ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                 Home.STEP += 1;
             }
             }
@@ -179,8 +180,8 @@ public class Part_b_a extends Fragment {
                     ((CardView) prev.getParent()).setVisibility(View.VISIBLE);
                     next.setOnClickListener(threeToFour);
                     prev.setOnClickListener(threeToTwo);
-                    two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -197,8 +198,8 @@ public class Part_b_a extends Fragment {
                     next.setOnClickListener(saveStep);
                     prev.setOnClickListener(fourToThree);
                     next.setImageDrawable(getResources().getDrawable(R.drawable.save));
-                    three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
-                    four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
+                    three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
+                    four.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
                 }
             }
@@ -213,8 +214,8 @@ public class Part_b_a extends Fragment {
                 ((CardView) prev.getParent()).setVisibility(View.GONE);
                 next.setOnClickListener(oneToTwo);
                 prev.setOnClickListener(null);
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                one.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -228,8 +229,8 @@ public class Part_b_a extends Fragment {
                 next.setOnClickListener(twoToThree);
                 prev.setOnClickListener(twoToOne);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };
@@ -243,8 +244,8 @@ public class Part_b_a extends Fragment {
                 next.setOnClickListener(threeToFour);
                 prev.setOnClickListener(threeToTwo);
                 next.setImageDrawable(getResources().getDrawable(R.drawable.next));
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-                four.setCardBackgroundColor(getResources().getColor(R.color.colorPrimary));
+                three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
+                four.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
             }
         };

@@ -73,18 +73,18 @@ public class Brief extends Fragment {
         switch(n) {
             case 5:
                 progress.incrementProgressBy(25);
-                five.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+                five.setCardBackgroundColor(getResources().getColor(R.color.secondaryMain));
             case 4:
                 progress.incrementProgressBy(25);
-                four.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+                four.setCardBackgroundColor(getResources().getColor(R.color.secondaryMain));
             case 3:
                 progress.incrementProgressBy(25);
-                three.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+                three.setCardBackgroundColor(getResources().getColor(R.color.secondaryMain));
             case 2:
                 progress.incrementProgressBy(25);
-                two.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+                two.setCardBackgroundColor(getResources().getColor(R.color.secondaryMain));
             case 1:
-                one.setCardBackgroundColor(getResources().getColor(R.color.colorGray));
+                one.setCardBackgroundColor(getResources().getColor(R.color.secondaryMain));
             default:
         }
 

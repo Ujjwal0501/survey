@@ -4,11 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/windowBackground"
     tools:context="com.tep.sustainability.survey.fragments.Part_b_a">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/windowBackground"
         android:scrollbars="none">
 
         <LinearLayout
@@ -17,50 +19,70 @@
             android:orientation="vertical">
 
             <LinearLayout
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/one"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimaryDark"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/secondaryDark"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/two"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/three"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/four"
-                    android:layout_marginLeft="12dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
                     android:minWidth="8dp"
                     android:minHeight="8dp"
-                    app:cardBackgroundColor="@color/colorPrimary"
-                    app:cardCornerRadius="16dp"/>
+                    app:cardBackgroundColor="@color/primaryMain"
+                    app:cardCornerRadius="16dp" />
 
             </LinearLayout>
 
@@ -69,8 +91,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="6dp"
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -81,22 +103,24 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="State the mode which you will shift if 1st mode is not available"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <LinearLayout
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Self"
                             android:paddingLeft="16dp"
-                            android:textAlignment="viewStart" />
+                            android:text="Self"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/mode_change_self"
@@ -109,19 +133,20 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Spouse"
                             android:paddingLeft="16dp"
-                            android:textAlignment="viewStart" />
+                            android:text="Spouse"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/mode_change_spouse"
@@ -134,19 +159,20 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Son/Daughter"
                             android:paddingLeft="16dp"
-                            android:textAlignment="viewStart" />
+                            android:text="Son/Daughter"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/mode_change_son"
@@ -159,19 +185,20 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal">
 
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Other"
                             android:paddingLeft="16dp"
-                            android:textAlignment="viewStart" />
+                            android:text="Other"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/textPrimary" />
 
                         <Spinner
                             android:id="@+id/mode_change_other"
@@ -192,9 +219,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
                 android:visibility="gone"
-                app:cardCornerRadius="6dp">
+                app:cardCornerRadius="6dp"
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -206,24 +233,26 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Important attributes to Shift to Public Transport"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <com.google.android.material.chip.ChipGroup
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
-                            android:gravity="center"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
 
                             <CheckBox
                                 android:id="@+id/public_wait_time_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Acceptable waiting time" />
+                                android:checked="true"
+                                android:text="Acceptable waiting time"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/public_wait_time_edittext"
@@ -231,23 +260,26 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="Minutes"
                                 android:inputType="number"
-                                android:hint="Minutes" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:gravity="center"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
 
                             <CheckBox
                                 android:id="@+id/public_distance_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Walking distance to bus stop" />
+                                android:checked="true"
+                                android:text="Walking distance to bus stop"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/public_distance_edittext"
@@ -255,23 +287,26 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="Meters"
                                 android:inputType="number"
-                                android:hint="Meters" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:gravity="center"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
 
                             <CheckBox
                                 android:id="@+id/public_reliability_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Schedule reliability" />
+                                android:checked="true"
+                                android:text="Schedule reliability"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/public_reliability_edittext"
@@ -279,23 +314,26 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="(%) Percentage"
                                 android:inputType="number"
-                                android:hint="(%) Percentage" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
                         <LinearLayout
-                            android:gravity="center"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
 
                             <CheckBox
                                 android:id="@+id/public_fare_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Fare per Kilometer" />
+                                android:checked="true"
+                                android:text="Fare per Kilometer"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/public_fare_edittext"
@@ -303,8 +341,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="Rupees"
                                 android:inputType="number"
-                                android:hint="Rupees" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
@@ -320,9 +360,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                app:contentPadding="6dp"
+                android:visibility="gone"
                 app:cardCornerRadius="6dp"
-                android:visibility="gone">
+                app:contentPadding="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -334,7 +374,8 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Important attributes for Private Vehicle"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <com.google.android.material.chip.ChipGroup
                         android:layout_width="match_parent"
@@ -346,11 +387,12 @@
 
                             <CheckBox
                                 android:id="@+id/private_cost_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Affordable travel cost" />
+                                android:checked="true"
+                                android:text="Affordable travel cost"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/private_cost_edittext"
@@ -358,8 +400,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="Rupees"
                                 android:inputType="number"
-                                android:hint="Rupees" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
@@ -369,11 +413,12 @@
 
                             <CheckBox
                                 android:id="@+id/private_parking_checkbox"
-                                android:checked="true"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Acceptable parking charges" />
+                                android:checked="true"
+                                android:text="Acceptable parking charges"
+                                android:textColor="@color/textPrimary" />
 
                             <EditText
                                 android:id="@+id/private_parking_edittext"
@@ -381,41 +426,46 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
+                                android:hint="Rupees"
                                 android:inputType="number"
-                                android:hint="Rupees" />
+                                android:textColor="@color/textPrimary"
+                                android:textColorHint="@color/textHint" />
 
                         </LinearLayout>
 
                         <TextView
-                            android:text="Vehicle Sharing"
-                            android:layout_marginTop="24dp"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="24dp"
+                            android:text="Vehicle Sharing"
+                            android:textColor="@color/textPrimary" />
 
                         <LinearLayout
-                            android:orientation="vertical"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
 
                             <RadioGroup
-                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
 
                                 <RadioButton
                                     android:id="@+id/share_yes"
-                                    android:text="Yes"
-                                    android:checked="true"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:checked="true"
+                                    android:text="Yes"
+                                    android:textColor="@color/textPrimary" />
 
                                 <RadioButton
                                     android:id="@+id/share_no"
-                                    android:text="No"
-                                    android:layout_weight="1"
                                     android:layout_width="0dp"
-                                    android:layout_height="wrap_content" />
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="No"
+                                    android:textColor="@color/textPrimary" />
 
                             </RadioGroup>
 
@@ -429,13 +479,13 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/step3"
-                android:layout_marginBottom="32dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
+                android:layout_marginBottom="32dp"
                 android:padding="4dp"
-                app:cardCornerRadius="6dp"
-                android:visibility="gone">
+                android:visibility="gone"
+                app:cardCornerRadius="6dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -447,300 +497,301 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:text="Under which situation you will shift to Public Transport?"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textColor="@color/secondaryLight" />
 
                     <HorizontalScrollView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <LinearLayout
-                            android:orientation="horizontal"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
 
-                                <androidx.cardview.widget.CardView
-                                    app:contentPadding="6dp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
-                                    app:cardCornerRadius="6dp"
-                                    app:cardElevation="8dp">
-
-                                    <LinearLayout
-                                        android:id="@+id/current_service"
-                                        android:onClick="mark"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center"
-                                        android:orientation="vertical">
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginBottom="6dp"
-                                            android:textColor="#000000"
-                                            android:text="Current Service"
-                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing walking distance" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing frequency" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing reliability" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="No shelter, seat, lighting at bus stop" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Crowded" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Not fully cleaned" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing fare" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="No timetable, map or delay info" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <RadioButton
-                                            android:id="@+id/radio_current"
-                                            android:onClick="markself"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"/>
-
-                                    </LinearLayout>
-
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                    app:contentPadding="6dp"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_margin="16dp"
-                                    app:cardCornerRadius="6dp"
-                                    app:cardElevation="6dp">
-
-                                    <LinearLayout
-                                        android:id="@+id/service_a"
-                                        android:onClick="mark"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center"
-                                        android:orientation="vertical">
-
-                                        <TextView
-                                            android:text="Service Bus A"
-                                            android:textColor="#000000"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:layout_marginBottom="6dp"
-                                            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="10 minutes more" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing frequency" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="On time" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Bus shelter, seats and lighting available" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Crowded" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Clean enough" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Existing fare" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <TextView
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content"
-                                            android:text="Timetable, map or delay info available" />
-
-                                        <View
-                                            android:layout_width="match_parent"
-                                            android:layout_height="1dp"
-                                            android:layout_margin="2dp"
-                                            android:background="?android:attr/listDivider"
-                                            android:backgroundTint="#080808" />
-
-                                        <RadioButton
-                                            android:id="@+id/radio_bus_a"
-                                            android:onClick="markself"
-                                            android:layout_width="wrap_content"
-                                            android:layout_height="wrap_content" />
-
-                                    </LinearLayout>
-
-                                </androidx.cardview.widget.CardView>
-
-                                <androidx.cardview.widget.CardView
-                                app:contentPadding="6dp"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_margin="16dp"
                                 app:cardCornerRadius="6dp"
-                                app:cardElevation="6dp">
+                                app:cardElevation="8dp"
+                                app:contentPadding="6dp">
 
-                                    <LinearLayout
-                                        android:id="@+id/service_b"
-                                        android:onClick="mark"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center"
-                                        android:orientation="vertical">
+                                <LinearLayout
+                                    android:id="@+id/current_service"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:onClick="mark"
+                                    android:orientation="vertical">
 
                                     <TextView
-                                        android:text="Service Bus B"
-                                        android:textColor="#000000"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_marginBottom="6dp"
-                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+                                        android:text="Current Service"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="#000000" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing walking distance" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing frequency" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing reliability" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="No shelter, seat, lighting at bus stop" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Crowded" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Not fully cleaned" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing fare" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="No timetable, map or delay info" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <RadioButton
+                                        android:id="@+id/radio_current"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:onClick="markself" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="6dp"
+                                app:contentPadding="6dp">
+
+                                <LinearLayout
+                                    android:id="@+id/service_a"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:onClick="mark"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="6dp"
+                                        android:text="Service Bus A"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="#000000" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="10 minutes more" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing frequency" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="On time" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Bus shelter, seats and lighting available" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Crowded" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Clean enough" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Existing fare" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Timetable, map or delay info available" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="1dp"
+                                        android:layout_margin="2dp"
+                                        android:background="?android:attr/listDivider"
+                                        android:backgroundTint="#080808" />
+
+                                    <RadioButton
+                                        android:id="@+id/radio_bus_a"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:onClick="markself" />
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                app:cardCornerRadius="6dp"
+                                app:cardElevation="6dp"
+                                app:contentPadding="6dp">
+
+                                <LinearLayout
+                                    android:id="@+id/service_b"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:onClick="mark"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="6dp"
+                                        android:text="Service Bus B"
+                                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                                        android:textColor="#000000" />
 
                                     <TextView
                                         android:layout_width="wrap_content"
@@ -840,9 +891,9 @@
 
                                     <RadioButton
                                         android:id="@+id/radio_bus_b"
-                                        android:onClick="markself"
                                         android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content" />
+                                        android:layout_height="wrap_content"
+                                        android:onClick="markself" />
 
                                 </LinearLayout>
 
@@ -866,8 +917,9 @@
         android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
-        app:cardCornerRadius="32dp"
-        android:visibility="gone">
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/secondaryLight"
+        app:cardCornerRadius="32dp">
 
         <ImageView
             android:id="@+id/prev"
@@ -884,6 +936,7 @@
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
         android:onClick="partab"
+        app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
         <ImageView

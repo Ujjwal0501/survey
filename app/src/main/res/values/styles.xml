@@ -3,9 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primaryMain</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/secondaryMain</item>
         <item name="android:fontFamily">@font/mail</item>
     </style>
 
@@ -25,10 +25,10 @@
 
     <!--home activity theme-->
     <style name="DrawerTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#19C71E</item>
-        <item name="colorPrimaryDark">#19C71E</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:windowBackground">@color/white</item>
+        <item name="colorPrimary">@color/primaryMain</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/secondaryMain</item>
+        <item name="android:windowBackground">@color/windowBackground</item>
         <item name="android:fontFamily">@font/mail</item>
     </style>
     <!--Font for all the app here-->
