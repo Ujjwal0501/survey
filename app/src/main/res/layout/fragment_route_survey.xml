@@ -119,6 +119,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_self"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -130,6 +131,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_self"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -206,14 +208,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_self"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -228,14 +230,14 @@
                             android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_self"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -257,7 +259,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 
@@ -301,6 +304,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_spouse"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -312,6 +316,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_spouse"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -388,14 +393,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_spouse"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -410,14 +415,14 @@
                             android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_spouse"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -439,7 +444,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 
@@ -483,6 +489,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_sd"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -494,6 +501,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_sd"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -570,14 +578,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_sd"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -592,14 +600,14 @@
                             android:id="@+id/distance_sd"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_sd"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -621,7 +629,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 
@@ -665,6 +674,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_recreation"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -676,6 +686,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_recreation"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -752,14 +763,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_recreation"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -774,14 +785,14 @@
                             android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_recreation"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -803,7 +814,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 
@@ -847,6 +859,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_social"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -858,6 +871,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_social"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -934,14 +948,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_social"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -956,14 +970,14 @@
                             android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_social"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -985,7 +999,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 
@@ -1029,6 +1044,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/start_shopping"
+                            android:onClick="setStart"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -1040,6 +1056,7 @@
 
                         <com.tep.sustainability.survey.helpers.PlaceButton
                             android:id="@+id/end_shopping"
+                            android:onClick="setEnd"
                             android:drawableStart="@drawable/location"
                             android:drawablePadding="8dp"
                             android:textAlignment="viewStart"
@@ -1116,14 +1133,14 @@
                             android:hint="Wait time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/travel_time_shopping"
-                            android:hint="Travel time"
+                            android:hint="Vehicle time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -1138,14 +1155,14 @@
                             android:hint="Distance"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                         <EditText
                             android:id="@+id/cost_shopping"
                             android:hint="Parking cost"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="wrap_content"/>
 
                     </LinearLayout>
 
@@ -1167,7 +1184,8 @@
                             android:entries="@array/vehicle_time"
                             android:layout_weight="1"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"/>
+                            android:layout_height="36dp"
+                            android:visibility="invisible"/>
 
                     </LinearLayout>
 

@@ -11,6 +11,8 @@ import android.widget.Button;
 import com.tep.sustainability.survey.MapLocation;
 
 public class PlaceButton extends Button {
+    public static View who;
+
     public PlaceButton(final Context context) {
         super(context);
 
@@ -21,6 +23,8 @@ public class PlaceButton extends Button {
             public void onClick(View view) {
 //                SupportMapFragment mapFragment = getSu
 //                GoogleMap map =
+                who = view;
+                ((Button) view).setError(null);
                 context.startActivity(new Intent(context, MapLocation.class));
             }
         });
@@ -36,6 +40,8 @@ public class PlaceButton extends Button {
             public void onClick(View view) {
 //                SupportMapFragment mapFragment = getSu
 //                GoogleMap map =
+                who = view;
+                ((Button) view).setError(null);
                 context.startActivity(new Intent(context, MapLocation.class));
             }
         });
@@ -51,6 +57,8 @@ public class PlaceButton extends Button {
             public void onClick(View view) {
 //                SupportMapFragment mapFragment = getSu
 //                GoogleMap map =
+                who = view;
+                ((Button) view).setError(null);
                 context.startActivity(new Intent(context, MapLocation.class));
             }
         });
@@ -67,6 +75,8 @@ public class PlaceButton extends Button {
             public void onClick(View view) {
 //                SupportMapFragment mapFragment = getSu
 //                GoogleMap map =
+                who = view;
+                ((Button) view).setError(null);
                 context.startActivity(new Intent(context, MapLocation.class));
             }
         });

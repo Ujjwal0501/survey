@@ -41,10 +41,10 @@ import java.util.Map;
 public class Part_b_a extends Fragment {
     private Preference preference = new Preference();
     private Spinner modeChangeSelf, modeChangeSpouse, modeChangeSD, modeChangeOther;
-    private CheckBox publicWaitTime, publicDistance, publicTravel, publicReliability, publicFare,
+    private CheckBox publicWaitTime, publicDistance,  publicReliability, publicFare,
             privateCost, privateParking;
     private RadioButton vehicleSharing;
-    private EditText publicWaitTimeValue, publicDistanceValue, publicTravelValue, publicReliabilityValue,
+    private EditText publicWaitTimeValue, publicDistanceValue,  publicReliabilityValue,
             publicFareValue, privateCostValue, privateParkingValue;
     private View.OnClickListener oneToTwo, saveStep, threeToTwo, twoToThree, twoToOne, threeToFour, fourToThree;
     private static RadioButton currentService, serviceA, serviceB;
@@ -71,8 +71,8 @@ public class Part_b_a extends Fragment {
         publicWaitTimeValue = v.findViewById(R.id.public_wait_time_edittext);
         publicDistance = v.findViewById(R.id.public_distance_checkbox);
         publicDistanceValue = v.findViewById(R.id.public_distance_edittext);
-        publicTravel = v.findViewById(R.id.public_travel_time_checkbox);
-        publicTravelValue = v.findViewById(R.id.public_travel_time_edittext);
+//        publicTravel = v.findViewById(R.id.public_travel_time_checkbox);
+//        publicTravelValue = v.findViewById(R.id.public_travel_time_edittext);
         publicReliability = v.findViewById(R.id.public_reliability_checkbox);
         publicReliabilityValue = v.findViewById(R.id.public_reliability_edittext);
         publicFare = v.findViewById(R.id.public_fare_checkbox);
@@ -123,12 +123,12 @@ public class Part_b_a extends Fragment {
             }
         });
 
-        publicTravel.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                publicTravelValue.setEnabled(b);
-            }
-        });
+//        publicTravel.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+//                publicTravelValue.setEnabled(b);
+//            }
+//        });
 
         publicWaitTime.setOnCheckedChangeListener(new CheckBox.OnCheckedChangeListener() {
             @Override
@@ -328,7 +328,7 @@ public class Part_b_a extends Fragment {
     private boolean verifyStep1() {
         if (publicWaitTime.isChecked() && publicWaitTimeValue.getText().toString().equals("")) { publicWaitTimeValue.setError("Required"); return false;}
         if (publicDistance.isChecked() && publicDistanceValue.getText().toString().equals("")) { publicDistanceValue.setError("Required"); return false;}
-        if (publicTravel.isChecked() && publicTravelValue.getText().toString().equals("")) { publicTravelValue.setError("Required"); return false;}
+//        if (publicTravel.isChecked() && publicTravelValue.getText().toString().equals("")) { publicTravelValue.setError("Required"); return false;}
         if (publicReliability.isChecked() && publicReliabilityValue.getText().toString().equals("")) { publicReliabilityValue.setError("Required"); return false;}
         if (publicFare.isChecked() && publicFareValue.getText().toString().equals("")) { publicFareValue.setError("Required"); return false;}
 
@@ -342,9 +342,9 @@ public class Part_b_a extends Fragment {
             temp.put("wait time at stoppage", publicWaitTimeValue.getText().toString());
         } else temp.put("wait time at stoppage", "No");
 
-        if (publicTravel.isChecked()) {
-            temp.put("acceptable travel time", publicTravelValue.getText().toString());
-        } else temp.put("acceptable travel time", "No");
+//        if (publicTravel.isChecked()) {
+//            temp.put("acceptable travel time", publicTravelValue.getText().toString());
+//        } else temp.put("acceptable travel time", "No");
 
         if (publicReliability.isChecked()) {
             temp.put("schedule reliability", publicReliabilityValue.getText().toString());

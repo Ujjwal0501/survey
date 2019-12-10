@@ -62,6 +62,13 @@
         <item>Bad</item>
     </array>
 
+    <array name="fare">
+        <item>Select</item>
+        <item>Cheap</item>
+        <item>Economic</item>
+        <item>Costly</item>
+    </array>
+
     <array name="mode">
         <item>Select</item>
         <item>Walk</item>

@@ -266,30 +266,6 @@
                             android:layout_height="wrap_content">
 
                             <CheckBox
-                                android:id="@+id/public_travel_time_checkbox"
-                                android:checked="true"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:text="Acceptable travel time" />
-
-                            <EditText
-                                android:id="@+id/public_travel_time_edittext"
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_weight="1"
-                                android:inputType="number"
-                                android:hint="Minutes" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:gravity="center"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <CheckBox
                                 android:id="@+id/public_reliability_checkbox"
                                 android:checked="true"
                                 android:layout_width="0dp"

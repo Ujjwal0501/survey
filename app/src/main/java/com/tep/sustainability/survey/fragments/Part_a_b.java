@@ -167,7 +167,7 @@ public class Part_a_b extends Fragment {
         if (carCount.getSelectedItemPosition() == 0) {
             ( (TextView) carCount.getSelectedView()).setError("Select choice"); return false;
         } else if (carCount.getSelectedItemPosition() > 1) {
-            if (carMileage.getSelectedItemPosition() == 0) { ( (TextView) carMileage.getSelectedView()).setError("Select choice"); return false;}
+//            if (carMileage.getSelectedItemPosition() == 0) { ( (TextView) carMileage.getSelectedView()).setError("Select choice"); return false;}
             if (carAge.getSelectedItemPosition() == 0) { ( (TextView) carAge.getSelectedView()).setError("Select choice"); return false;}
             if (carFuel.getSelectedItemPosition() == 0) { ( (TextView) carFuel.getSelectedView()).setError("Select choice"); return false;}
 
@@ -181,7 +181,7 @@ public class Part_a_b extends Fragment {
         } else if (twoWheelerCount.getSelectedItemPosition() > 1) {
             if (twoWheelerAge.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerAge.getSelectedView()).setError("Select choice"); return false;}
             if (twoWheelerFuel.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerFuel.getSelectedView()).setError("Select choice"); return false;}
-            if (twoWheelerMileage.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerMileage.getSelectedView()).setError("Select choice"); return false;}
+//            if (twoWheelerMileage.getSelectedItemPosition() == 0) { ( (TextView) twoWheelerMileage.getSelectedView()).setError("Select choice"); return false;}
 
             economic.setTwow_age(twoWheelerAge.getSelectedItem().toString());
             economic.setTwow_fuel(twoWheelerFuel.getSelectedItem().toString());
@@ -210,7 +210,7 @@ public class Part_a_b extends Fragment {
         if (monthlyFuelCost.getText() == null || monthlyFuelCost.getText().toString().equals("")) { monthlyFuelCost.setError("Age required."); return false; }
         if (monthlyMaintenance.getText() == null || monthlyMaintenance.getText().toString().equals("")) { monthlyMaintenance.setError("Age required."); return false; }
 //        if (registration.getText() == null || registration.getText().toString().equals("")) { registration.setError("Age required."); return false; }
-        if (monthlyParkingCost.getText() == null || monthlyParkingCost.getText().toString().equals("")) { monthlyParkingCost.setError("Age required."); return false; }
+//        if (monthlyParkingCost.getText() == null || monthlyParkingCost.getText().toString().equals("")) { monthlyParkingCost.setError("Age required."); return false; }
 
         economic.setMonthly_emi(monthlyEMI.getText().toString());
         economic.setMonthly_fuel_cost(monthlyFuelCost.getText().toString());

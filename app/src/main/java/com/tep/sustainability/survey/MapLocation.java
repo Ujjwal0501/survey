@@ -17,6 +17,7 @@ import com.google.android.libraries.places.api.model.Place;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
 import com.tep.sustainability.survey.R;
+import com.tep.sustainability.survey.fragments.RouteSurvey;
 
 import java.util.Arrays;
 
@@ -75,14 +76,15 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
             @Override
             public void onMapClick(LatLng latLng) {
                 mMap.clear();
+                RouteSurvey.latLng = latLng;
                 mMap.addMarker(new MarkerOptions().position(latLng).draggable(false));
                 Toast.makeText(MapLocation.this, latLng.toString(), Toast.LENGTH_LONG).show();
             }
         });
 
         // Add a marker in Delhi and move the camera
-        LatLng delhi = new LatLng(26.6 , 77.2);
-        mMap.addMarker(new MarkerOptions().position(delhi).title("Marker in Sydney").draggable(false));
+        LatLng delhi = RouteSurvey.latLng;
+        mMap.addMarker(new MarkerOptions().position(delhi).title("Marker in Delhi").draggable(false));
         mMap.setMinZoomPreference(6);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(delhi));
     }

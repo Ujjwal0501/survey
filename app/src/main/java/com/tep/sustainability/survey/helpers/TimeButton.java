@@ -25,13 +25,14 @@ public class TimeButton extends Button {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         Log.d("Button", i+""+i1);
-                        TimeButton.this.setText(i+" Hours\n"+i1+" Minutes");
+                        TimeButton.this.setText(i+" : "+i1);
                         TimeButton.this.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
                     }
                 }, 9, 10, true);
                 testDialog.setCancelable(false);
 
                 testDialog.show();
+                ((Button) view).setError(null);
             }
         });
     }
@@ -49,13 +50,14 @@ public class TimeButton extends Button {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         Log.d("Button", i+""+i1);
-                        TimeButton.this.setText(i+" Hours\n"+i1+" Minutes");
+                        TimeButton.this.setText(i+" : "+i1);
                         TimeButton.this.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
                     }
                 }, 9, 10, true);
                 testDialog.setCancelable(false);
 
                 testDialog.show();
+                ((Button) view).setError(null);
             }
         });
     }
@@ -73,7 +75,7 @@ public class TimeButton extends Button {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         Log.d("Button", i+""+i1);
-                        TimeButton.this.setText(i+" Hours\n"+i1+" Minutes");
+                        TimeButton.this.setText(i+" : "+i1);
                         TimeButton.this.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
                     }
                 }, 9, 10, true);
@@ -98,13 +100,14 @@ public class TimeButton extends Button {
                     @Override
                     public void onTimeSet(TimePicker timePicker, int i, int i1) {
                         Log.d("Button", i+""+i1);
-                        TimeButton.this.setText(i+" Hours\n"+i1+" Minutes");
+                        TimeButton.this.setText(i+" : "+i1);
                         TimeButton.this.setTextSize(TypedValue.COMPLEX_UNIT_SP, 14);
                     }
                 }, 9, 10, true);
                 testDialog.setCancelable(false);
 
                 testDialog.show();
+                ((Button) view).setError(null);
             }
         });
     }

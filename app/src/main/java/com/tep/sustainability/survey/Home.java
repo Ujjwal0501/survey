@@ -215,7 +215,7 @@ public class Home extends AppCompatActivity {
     protected void onRestart() {
         super.onRestart();
 
-        if (!locationHelper.checkPermission(this)) locationHelper.reqPermission(Home.this, this);
+//        if (!locationHelper.checkPermission(this)) locationHelper.reqPermission(Home.this, this);
     }
 
     @Override
@@ -414,6 +414,18 @@ public class Home extends AppCompatActivity {
             }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    public void setStart(View v) {
+        RouteSurvey.arr[0] = RouteSurvey.latLng.latitude;
+        RouteSurvey.arr[1] = RouteSurvey.latLng.longitude;
+        RouteSurvey.START_END = 1;
+    }
+
+    public void setEnd(View v) {
+        RouteSurvey.arr[2] = RouteSurvey.latLng.latitude;
+        RouteSurvey.arr[3] = RouteSurvey.latLng.longitude;
+        RouteSurvey.START_END = 2;
     }
 }
 
