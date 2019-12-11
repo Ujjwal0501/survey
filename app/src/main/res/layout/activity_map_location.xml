@@ -55,6 +55,7 @@
         android:layout_height="wrap_content">
 
         <Button
+            android:id="@+id/fetch"
             android:background="@color/colorAccent"
             android:textColor="@color/white"
             android:minHeight="24dp"

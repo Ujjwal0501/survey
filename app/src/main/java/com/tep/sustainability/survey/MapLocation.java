@@ -1,9 +1,15 @@
 package com.tep.sustainability.survey;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 
+import android.location.Address;
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.Status;
@@ -13,18 +19,25 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.libraries.places.api.Places;
 import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.api.net.FetchPlaceRequest;
+import com.google.android.libraries.places.api.net.PlacesClient;
 import com.google.android.libraries.places.widget.AutocompleteSupportFragment;
 import com.google.android.libraries.places.widget.listener.PlaceSelectionListener;
-import com.tep.sustainability.survey.R;
 import com.tep.sustainability.survey.fragments.RouteSurvey;
 
+import org.w3c.dom.Text;
+
 import java.util.Arrays;
+import java.util.List;
+import java.util.Locale;
 
 public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
 
     private GoogleMap mMap;
     private String TAG = "Map";
+    AutocompleteSupportFragment autocompleteFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,24 +49,39 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
         mapFragment.getMapAsync(this);
 
         // Initialize the AutocompleteSupportFragment.
-        AutocompleteSupportFragment autocompleteFragment = (AutocompleteSupportFragment)
+        autocompleteFragment = (AutocompleteSupportFragment)
                 getSupportFragmentManager().findFragmentById(R.id.autocomplete_fragment);
 
         // Specify the types of place data to return.
-        autocompleteFragment.setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
+        autocompleteFragment.setHint("Search place name")
+                .setCountry("IN")
+                .setPlaceFields(Arrays.asList(Place.Field.ID, Place.Field.NAME));
 
         // Set up a PlaceSelectionListener to handle the response.
         autocompleteFragment.setOnPlaceSelectedListener(new PlaceSelectionListener() {
             @Override
-            public void onPlaceSelected(Place place) {
+            public void onPlaceSelected(@NonNull Place place) {
                 // TODO: Get info about the selected place.
+                mMap.clear();
+                RouteSurvey.latLng = place.getLatLng();
+                if (place.getLatLng() != null) mMap.addMarker(new MarkerOptions().position(place.getLatLng()).draggable(false));
+                RouteSurvey.latLng = place.getLatLng();
+                RouteSurvey.placeName = place.getName() + "(" + place.getAddress() + ")";
                 Log.i(TAG, "Place: " + place.getName() + ", " + place.getId());
             }
 
             @Override
-            public void onError(Status status) {
+            public void onError(@NonNull Status status) {
                 // TODO: Handle the error.
+                Toast.makeText(MapLocation.this, "" + status, Toast.LENGTH_LONG).show();
                 Log.i(TAG, "An error occurred: " + status);
+            }
+        });
+
+        ((Button) findViewById(R.id.fetch)).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
         });
     }
@@ -77,8 +105,16 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
             public void onMapClick(LatLng latLng) {
                 mMap.clear();
                 RouteSurvey.latLng = latLng;
-                mMap.addMarker(new MarkerOptions().position(latLng).draggable(false));
-                Toast.makeText(MapLocation.this, latLng.toString(), Toast.LENGTH_LONG).show();
+                try {
+                    Geocoder gcd = new Geocoder(MapLocation.this, Locale.getDefault());
+                    List<Address> addresses = gcd.getFromLocation(latLng.latitude, latLng.longitude, 1);
+                    autocompleteFragment.setText(addresses.toString());
+                    mMap.addMarker(new MarkerOptions().position(latLng).draggable(false));
+//                Toast.makeText(MapLocation.this, latLng.toString(), Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    Toast.makeText(MapLocation.this, "Could not retrieve place.", Toast.LENGTH_LONG).show();
+                    Log.d(TAG, "onMapClick: "+e.getLocalizedMessage());
+                }
             }
         });
 

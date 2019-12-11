@@ -214,6 +214,7 @@ public class Splash extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Toast.makeText(Splash.this, "Something went wrong.", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "onCancelled: detail - " + databaseError.getMessage() + "\nerror_code - " + databaseError.getCode());
             }
         });
     }

@@ -62,6 +62,7 @@ public class RouteSurvey extends Fragment {
     public static double[] arr = {0f, 0f, 0f, 0f};
     public static int START_END = 1;
     public static LatLng latLng = new LatLng(26.6 , 77.2);
+    public static String placeName = "";
     private TravelChar self = new TravelChar(), spouse = new TravelChar(), children = new TravelChar(),
             recreation = new TravelChar(), social = new TravelChar(), shopping = new TravelChar();
 
@@ -362,7 +363,7 @@ public class RouteSurvey extends Fragment {
     public void onResume() {
         super.onResume();
         if (PlaceButton.who == null) return;
-        ((PlaceButton) PlaceButton.who).setText(latLng.toString());
+        ((PlaceButton) PlaceButton.who).setText(placeName);
 
         if (START_END == 1) {
             setStart(null);
