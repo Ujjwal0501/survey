@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,7 +38,9 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ThrowOnExtraProperties;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 import com.tep.sustainability.survey.fragments.Brief;
 import com.tep.sustainability.survey.fragments.Part_a_a;
 import com.tep.sustainability.survey.fragments.Part_a_b;
@@ -51,6 +54,7 @@ import com.tep.sustainability.survey.services.ReminderService;
 import com.tep.sustainability.survey.R;
 import com.tep.sustainability.survey.receivers.ReminderReceiver;
 
+import java.io.IOException;
 import java.util.Date;
 
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
@@ -114,26 +118,27 @@ public class Home extends AppCompatActivity {
                 // Add code here to update the UI based on the item selected
                 // For example, swap UI fragments here
                 String title = menuItem.getTitle().toString();
-                if (title.equals(getString(R.string.about_us))) {
+                if (title.equals("App Info")) {
                     // set item as selected to persist highlight
-                    menuItem.setChecked(true);
-//                    fragmentManager.popBackStack();
-//                    fragmentManager.beginTransaction().replace(R.id.container, new About()).addToBackStack(null).commit();
-                } else if (title.equals(getString(R.string.core_team))) {
+                    startActivity(new Intent(Home.this, About.class));
+                } else if (title.equals("Play Store")) {
                     // set item as selected to persist highlight
-                    menuItem.setChecked(true);
-//                    fragmentManager.popBackStack();
-//                    fragmentManager.beginTransaction().replace(R.id.container, new Team()).addToBackStack(null).commit();
-                } else if (title.equals(getString(R.string.donate))) {
+                    final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                    try {// Toast.makeText(Home.this, appPackageName, Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                    } catch (android.content.ActivityNotFoundException anfe) {// Toast.makeText(Home.this, "play"+appPackageName, Toast.LENGTH_LONG).show();
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                    }
+                } else if (title.equals("Feedback & Help")) {
                     // set item as selected to persist highlight
-                    menuItem.setChecked(true);
-//                    fragmentManager.popBackStack();
-//                    fragmentManager.beginTransaction().replace(R.id.container, new Donate()).addToBackStack(null).commit();
-                } else if (title.equals(getString(R.string.gallery))) {
+                    startActivity(new Intent(Home.this, Feedback.class));
+                } else if (title.equals("Share App")) {
                     // set item as selected to persist highlight
-                    menuItem.setChecked(true);
-//                    fragmentManager.popBackStack();
-//                    fragmentManager.beginTransaction().replace(R.id.container, new DonationHistory()).addToBackStack(null).commit();
+                    final String appPackageName = getPackageName();
+                    startActivity(Intent.createChooser(new Intent(Intent.ACTION_SEND)
+                            .setType("text/plain")
+                            .putExtra(android.content.Intent.EXTRA_TEXT, "Hey, I found this application interesting. Install it using the link. \nhttps://play.google.com/store/apps/details?id=" + appPackageName),
+                            "Share via"));
                 } else if (title.equals(getString(R.string.user_profile))) {
                     // set item as selected to persist highlight
                     menuItem.setChecked(false);
@@ -141,6 +146,11 @@ public class Home extends AppCompatActivity {
                 } else if (title.equals("Logout")) {
                     // set item as selected to persist highlight
                     FirebaseAuth.getInstance().signOut();
+                    try {
+                        FirebaseInstanceId.getInstance().deleteInstanceId();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     startActivity(new Intent(Home.this, Splash.class));
                     finish();
 //                    startActivity(new Intent(getApplicationContext(), Userinfo.class));

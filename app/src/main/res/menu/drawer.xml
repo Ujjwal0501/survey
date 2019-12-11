@@ -29,11 +29,8 @@
     <group
         android:id="@+id/you"
         android:checkableBehavior="none">
-        <!--        <item-->
-        <!--            android:id="@+id/nav_profile"-->
-        <!--            android:icon="@drawable/user_profile"-->
-        <!--            android:title="@string/user_profile" />-->
         <item
+            android:checked="true"
             android:id="@+id/nav_logout"
             android:icon="@drawable/log_off"
             android:title="Logout" />
@@ -43,8 +40,35 @@
         android:id="@+id/none"
         android:checkableBehavior="none">
         <item
+            android:checked="true"
             android:id="@+id/nav_about"
             android:icon="@drawable/about_us"
-            android:title="About" />
+            android:title="App Info" />
+    </group>
+
+    <group
+        android:id="@+id/app"
+        android:checkableBehavior="none">
+        <item
+            android:checked="true"
+            android:id="@+id/nav_share"
+            android:icon="@drawable/share"
+            android:title="Share App" />
+
+        <item
+            android:checked="true"
+            android:id="@+id/nav_view"
+            android:icon="@drawable/play_store"
+            android:title="Play Store" />
+    </group>
+
+    <group
+        android:id="@+id/feedback"
+        android:checkableBehavior="none">
+        <item
+            android:checked="true"
+            android:id="@+id/nav_feedback"
+            android:icon="@drawable/feedback"
+            android:title="Feedback &amp; Help" />
     </group>
 </menu>

@@ -118,7 +118,7 @@ public class Splash extends AppCompatActivity {
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
             // Please refer to the GoogleSignInStatusCodes class reference for more information.
-            Log.w(TAG, "signInResult:failed code=" + e.getStatusCode());
+            Log.d(TAG, "signInResult:failed code=" + e.getStatusCode());
             Toast.makeText(this, "Sign-In is required to access the app.", Toast.LENGTH_LONG).show();
             finish();
         }
