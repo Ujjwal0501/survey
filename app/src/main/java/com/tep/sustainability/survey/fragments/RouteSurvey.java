@@ -363,7 +363,8 @@ public class RouteSurvey extends Fragment {
     public void onResume() {
         super.onResume();
         if (PlaceButton.who == null) return;
-        ((PlaceButton) PlaceButton.who).setText(placeName);
+        if (!placeName.equals("")) ((PlaceButton) PlaceButton.who).setText(placeName);
+        else ((PlaceButton) PlaceButton.who).setText(latLng.latitude + ", " + latLng.longitude);
 
         if (START_END == 1) {
             setStart(null);
@@ -373,17 +374,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep0() {
-        if (selfStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { selfStartLocation.setError(""); return false;}
-        if (selfEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { selfEndLocation.setError(""); return false;}
-        if (selfStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { selfStartTime.setError(""); return false;}
-        if (selfEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { selfEndTime.setError(""); return false;}
+        if (selfStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { selfStartLocation.setError("Required"); return false;}
+        if (selfEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { selfEndLocation.setError("Required"); return false;}
+        if (selfStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { selfStartTime.setError("Required"); return false;}
+        if (selfEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { selfEndTime.setError("Required"); return false;}
 
-        if (selfPurpose.getSelectedItemPosition() == 0) { ((TextView) selfPurpose.getSelectedView()).setError(""); return false; }
-        if (selfMode.getSelectedItemPosition() == 0) { ((TextView) selfMode.getSelectedView()).setError(""); return false; }
-        if (selfVehicle.getText().toString().equals("")) { selfVehicle.setError(""); return false; }
-        if (selfDistance.getText().toString().equals("")) { selfDistance.setError(""); return false; }
-        if (selfParking.getText().toString().equals("")) { selfParking.setError(""); return false; }
-        if (selfFrequency.getSelectedItemPosition() == 0) { ((TextView) selfFrequency.getSelectedView()).setError(""); return false; }
+        if (selfPurpose.getSelectedItemPosition() == 0) { ((TextView) selfPurpose.getSelectedView()).setError("Required"); return false; }
+        if (selfMode.getSelectedItemPosition() == 0) { ((TextView) selfMode.getSelectedView()).setError("Required"); return false; }
+        if (selfVehicle.getText().toString().equals("")) { selfVehicle.setError("Required"); return false; }
+        if (selfDistance.getText().toString().equals("")) { selfDistance.setError("Required"); return false; }
+        if (selfParking.getText().toString().equals("")) { selfParking.setError("Required"); return false; }
+        if (selfFrequency.getSelectedItemPosition() == 0) { ((TextView) selfFrequency.getSelectedView()).setError("Required"); return false; }
 
         self.setStartLocation(new LatLng(arr[0], arr[1]));
         self.setEndLocation(new LatLng(arr[0], arr[1]));
@@ -406,17 +407,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep1() {
-        if (spouseStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { spouseStartLocation.setError(""); return false;}
-        if (spouseEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { spouseEndLocation.setError(""); return false;}
-        if (spouseStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { spouseStartTime.setError(""); return false;}
-        if (spouseEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { spouseEndTime.setError(""); return false;}
+        if (spouseStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { spouseStartLocation.setError("Required"); return false;}
+        if (spouseEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { spouseEndLocation.setError("Required"); return false;}
+        if (spouseStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { spouseStartTime.setError("Required"); return false;}
+        if (spouseEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { spouseEndTime.setError("Required"); return false;}
 
-        if (spousePurpose.getSelectedItemPosition() == 0) { ((TextView) spousePurpose.getSelectedView()).setError(""); return false; }
-        if (spouseMode.getSelectedItemPosition() == 0) { ((TextView) spouseMode.getSelectedView()).setError(""); return false; }
-        if (spouseVehicle.getText().toString().equals("")) { spouseVehicle.setError(""); return false; }
-        if (spouseDistance.getText().toString().equals("")) { spouseDistance.setError(""); return false; }
-        if (spouseParking.getText().toString().equals("")) { spouseParking.setError(""); return false; }
-        if (spouseFrequency.getSelectedItemPosition() == 0) { ((TextView) spouseFrequency.getSelectedView()).setError(""); return false; }
+        if (spousePurpose.getSelectedItemPosition() == 0) { ((TextView) spousePurpose.getSelectedView()).setError("Required"); return false; }
+        if (spouseMode.getSelectedItemPosition() == 0) { ((TextView) spouseMode.getSelectedView()).setError("Required"); return false; }
+        if (spouseVehicle.getText().toString().equals("")) { spouseVehicle.setError("Required"); return false; }
+        if (spouseDistance.getText().toString().equals("")) { spouseDistance.setError("Required"); return false; }
+        if (spouseParking.getText().toString().equals("")) { spouseParking.setError("Required"); return false; }
+        if (spouseFrequency.getSelectedItemPosition() == 0) { ((TextView) spouseFrequency.getSelectedView()).setError("Required"); return false; }
 
         spouse.setStartLocation(new LatLng(arr[0], arr[1]));
         spouse.setEndLocation(new LatLng(arr[0], arr[1]));
@@ -439,17 +440,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep2() {
-        if (childrenStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { childrenStartLocation.setError(""); return false;}
-        if (childrenEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { childrenEndLocation.setError(""); return false;}
-        if (childrenStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { childrenStartTime.setError(""); return false;}
-        if (childrenEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { childrenEndTime.setError(""); return false;}
+        if (childrenStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { childrenStartLocation.setError("Required"); return false;}
+        if (childrenEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { childrenEndLocation.setError("Required"); return false;}
+        if (childrenStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { childrenStartTime.setError("Required"); return false;}
+        if (childrenEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { childrenEndTime.setError("Required"); return false;}
 
-        if (childrenPurpose.getSelectedItemPosition() == 0) { ((TextView) childrenPurpose.getSelectedView()).setError(""); return false; }
-        if (childrenMode.getSelectedItemPosition() == 0) { ((TextView) childrenMode.getSelectedView()).setError(""); return false; }
-        if (childrenVehicle.getText().toString().equals("")) { childrenVehicle.setError(""); return false; }
-        if (childrenDistance.getText().toString().equals("")) { childrenDistance.setError(""); return false; }
-        if (childrenParking.getText().toString().equals("")) { childrenParking.setError(""); return false; }
-        if (childrenFrequency.getSelectedItemPosition() == 0) { ((TextView) childrenFrequency.getSelectedView()).setError(""); return false; }
+        if (childrenPurpose.getSelectedItemPosition() == 0) { ((TextView) childrenPurpose.getSelectedView()).setError("Required"); return false; }
+        if (childrenMode.getSelectedItemPosition() == 0) { ((TextView) childrenMode.getSelectedView()).setError("Required"); return false; }
+        if (childrenVehicle.getText().toString().equals("")) { childrenVehicle.setError("Required"); return false; }
+        if (childrenDistance.getText().toString().equals("")) { childrenDistance.setError("Required"); return false; }
+        if (childrenParking.getText().toString().equals("")) { childrenParking.setError("Required"); return false; }
+        if (childrenFrequency.getSelectedItemPosition() == 0) { ((TextView) childrenFrequency.getSelectedView()).setError("Required"); return false; }
 
         children.setStartLocation(new LatLng(arr[0], arr[1]));
         children.setEndLocation(new LatLng(arr[0], arr[1]));
@@ -472,17 +473,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep3() {
-        if (recreationStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { recreationStartLocation.setError(""); return false;}
-        if (recreationEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { recreationEndLocation.setError(""); return false;}
-        if (recreationStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { recreationStartTime.setError(""); return false;}
-        if (recreationEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { recreationEndTime.setError(""); return false;}
+        if (recreationStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { recreationStartLocation.setError("Required"); return false;}
+        if (recreationEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { recreationEndLocation.setError("Required"); return false;}
+        if (recreationStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { recreationStartTime.setError("Required"); return false;}
+        if (recreationEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { recreationEndTime.setError("Required"); return false;}
 
-        if (recreationPurpose.getSelectedItemPosition() == 0) { ((TextView) recreationPurpose.getSelectedView()).setError(""); return false; }
-        if (recreationMode.getSelectedItemPosition() == 0) { ((TextView) recreationMode.getSelectedView()).setError(""); return false; }
-        if (recreationVehicle.getText().toString().equals("")) { recreationVehicle.setError(""); return false; }
-        if (recreationDistance.getText().toString().equals("")) { recreationDistance.setError(""); return false; }
-        if (recreationParking.getText().toString().equals("")) { recreationParking.setError(""); return false; }
-        if (recreationFrequency.getSelectedItemPosition() == 0) { ((TextView) recreationFrequency.getSelectedView()).setError(""); return false; }
+        if (recreationPurpose.getSelectedItemPosition() == 0) { ((TextView) recreationPurpose.getSelectedView()).setError("Required"); return false; }
+        if (recreationMode.getSelectedItemPosition() == 0) { ((TextView) recreationMode.getSelectedView()).setError("Required"); return false; }
+        if (recreationVehicle.getText().toString().equals("")) { recreationVehicle.setError("Required"); return false; }
+        if (recreationDistance.getText().toString().equals("")) { recreationDistance.setError("Required"); return false; }
+        if (recreationParking.getText().toString().equals("")) { recreationParking.setError("Required"); return false; }
+        if (recreationFrequency.getSelectedItemPosition() == 0) { ((TextView) recreationFrequency.getSelectedView()).setError("Required"); return false; }
 
         recreation.setStartLocation(new LatLng(arr[0], arr[1]));
         recreation.setEndLocation(new LatLng(arr[0], arr[1]));
@@ -505,17 +506,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep4() {
-        if (socialStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { socialStartLocation.setError(""); return false;}
-        if (socialEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { socialEndLocation.setError(""); return false;}
-        if (socialStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { socialStartTime.setError(""); return false;}
-        if (socialEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { socialEndTime.setError(""); return false;}
+        if (socialStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { socialStartLocation.setError("Required"); return false;}
+        if (socialEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { socialEndLocation.setError("Required"); return false;}
+        if (socialStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { socialStartTime.setError("Required"); return false;}
+        if (socialEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { socialEndTime.setError("Required"); return false;}
 
-        if (socialPurpose.getSelectedItemPosition() == 0) { ((TextView) socialPurpose.getSelectedView()).setError(""); return false; }
-        if (socialMode.getSelectedItemPosition() == 0) { ((TextView) socialMode.getSelectedView()).setError(""); return false; }
-        if (socialVehicle.getText().toString().equals("")) { socialVehicle.setError(""); return false; }
-        if (socialDistance.getText().toString().equals("")) { socialDistance.setError(""); return false; }
-        if (socialParking.getText().toString().equals("")) { socialParking.setError(""); return false; }
-        if (socialFrequency.getSelectedItemPosition() == 0) { ((TextView) socialFrequency.getSelectedView()).setError(""); return false; }
+        if (socialPurpose.getSelectedItemPosition() == 0) { ((TextView) socialPurpose.getSelectedView()).setError("Required"); return false; }
+        if (socialMode.getSelectedItemPosition() == 0) { ((TextView) socialMode.getSelectedView()).setError("Required"); return false; }
+        if (socialVehicle.getText().toString().equals("")) { socialVehicle.setError("Required"); return false; }
+        if (socialDistance.getText().toString().equals("")) { socialDistance.setError("Required"); return false; }
+        if (socialParking.getText().toString().equals("")) { socialParking.setError("Required"); return false; }
+        if (socialFrequency.getSelectedItemPosition() == 0) { ((TextView) socialFrequency.getSelectedView()).setError("Required"); return false; }
 
         social.setStartLocation(new LatLng(arr[0], arr[1]));
         social.setEndLocation(new LatLng(arr[0], arr[1]));
@@ -538,17 +539,17 @@ public class RouteSurvey extends Fragment {
     }
 
     private boolean verifyStep5() {
-        if (shoppingStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { shoppingStartLocation.setError(""); return false;}
-        if (shoppingEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { shoppingEndLocation.setError(""); return false;}
-        if (shoppingStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { shoppingStartTime.setError(""); return false;}
-        if (shoppingEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { shoppingEndTime.setError(""); return false;}
+        if (shoppingStartLocation.getText().toString().equalsIgnoreCase("START\nLOCATION")) { shoppingStartLocation.setError("Required"); return false;}
+        if (shoppingEndLocation.getText().toString().equalsIgnoreCase("END\nLOCATION")) { shoppingEndLocation.setError("Required"); return false;}
+        if (shoppingStartTime.getText().toString().equalsIgnoreCase("START\nTIME")) { shoppingStartTime.setError("Required"); return false;}
+        if (shoppingEndTime.getText().toString().equalsIgnoreCase("END\nTIME")) { shoppingEndTime.setError("Required"); return false;}
 
-        if (shoppingPurpose.getSelectedItemPosition() == 0) { ((TextView) shoppingPurpose.getSelectedView()).setError(""); return false; }
-        if (shoppingMode.getSelectedItemPosition() == 0) { ((TextView) shoppingMode.getSelectedView()).setError(""); return false; }
-        if (shoppingVehicle.getText().toString().equals("")) { shoppingVehicle.setError(""); return false; }
-        if (shoppingDistance.getText().toString().equals("")) { shoppingDistance.setError(""); return false; }
-        if (shoppingParking.getText().toString().equals("")) { shoppingParking.setError(""); return false; }
-        if (shoppingFrequency.getSelectedItemPosition() == 0) { ((TextView) shoppingFrequency.getSelectedView()).setError(""); return false; }
+        if (shoppingPurpose.getSelectedItemPosition() == 0) { ((TextView) shoppingPurpose.getSelectedView()).setError("Required"); return false; }
+        if (shoppingMode.getSelectedItemPosition() == 0) { ((TextView) shoppingMode.getSelectedView()).setError("Required"); return false; }
+        if (shoppingVehicle.getText().toString().equals("")) { shoppingVehicle.setError("Required"); return false; }
+        if (shoppingDistance.getText().toString().equals("")) { shoppingDistance.setError("Required"); return false; }
+        if (shoppingParking.getText().toString().equals("")) { shoppingParking.setError("Required"); return false; }
+        if (shoppingFrequency.getSelectedItemPosition() == 0) { ((TextView) shoppingFrequency.getSelectedView()).setError("Required"); return false; }
 
         shopping.setStartLocation(new LatLng(arr[0], arr[1]));
         shopping.setEndLocation(new LatLng(arr[0], arr[1]));

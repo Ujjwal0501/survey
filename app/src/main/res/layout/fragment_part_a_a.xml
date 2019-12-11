@@ -228,8 +228,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="left|bottom"
         android:layout_margin="16dp"
-        android:onClick="partab"
         android:visibility="gone"
+        app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
         <ImageView
@@ -246,7 +246,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right|bottom"
         android:layout_margin="16dp"
-        android:onClick="partab"
         app:cardBackgroundColor="@color/secondaryLight"
         app:cardCornerRadius="32dp">
 
