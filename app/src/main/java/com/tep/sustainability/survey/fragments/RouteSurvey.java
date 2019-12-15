@@ -61,7 +61,7 @@ public class RouteSurvey extends Fragment {
     private ImageView next, prev;
     public static double[] arr = {0f, 0f, 0f, 0f};
     public static int START_END = 1;
-    public static LatLng latLng = new LatLng(26.6 , 77.2);
+    public static LatLng latLng = new LatLng(28.7041 , 77.1025);
     public static String placeName = "";
     private TravelChar self = new TravelChar(), spouse = new TravelChar(), children = new TravelChar(),
             recreation = new TravelChar(), social = new TravelChar(), shopping = new TravelChar();

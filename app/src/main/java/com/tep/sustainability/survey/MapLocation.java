@@ -108,7 +108,12 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
                 try {
                     Geocoder gcd = new Geocoder(MapLocation.this, Locale.getDefault());
                     List<Address> addresses = gcd.getFromLocation(latLng.latitude, latLng.longitude, 1);
-                    autocompleteFragment.setText(addresses.toString());
+                    Address address = addresses.get(0);
+                    if (address.getSubLocality() != null) RouteSurvey.placeName += address.getSubLocality();
+                    if (address.getLocality() != null) RouteSurvey.placeName += ", " + address.getLocality();
+                    if (address.getSubAdminArea() != null) RouteSurvey.placeName += ", " + address.getSubAdminArea();
+
+                    autocompleteFragment.setText(RouteSurvey.placeName);
                     mMap.addMarker(new MarkerOptions().position(latLng).draggable(false));
 //                Toast.makeText(MapLocation.this, latLng.toString(), Toast.LENGTH_LONG).show();
                 } catch (Exception e) {
@@ -120,7 +125,7 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
 
         // Add a marker in Delhi and move the camera
         LatLng delhi = RouteSurvey.latLng;
-        mMap.addMarker(new MarkerOptions().position(delhi).title("Marker in Delhi").draggable(false));
+        mMap.addMarker(new MarkerOptions().position(delhi).draggable(false));
         mMap.setMinZoomPreference(6);
         mMap.moveCamera(CameraUpdateFactory.newLatLng(delhi));
     }
