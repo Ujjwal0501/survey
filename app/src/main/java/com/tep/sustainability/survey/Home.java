@@ -30,6 +30,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
@@ -74,6 +78,7 @@ public class Home extends AppCompatActivity {
     private NavigationView navigationView;
     private DrawerLayout mDrawerLayout;
     public static SharedPreferences sharedPref;
+    GoogleSignInClient mGoogleSignInClient;
     private String TAG = "Home";
 
     @Override
@@ -97,6 +102,11 @@ public class Home extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         preferences = getSharedPreferences("formLocal", Context.MODE_PRIVATE);
+        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                .requestIdToken(getResources().getString(R.string.getidtoken))
+                .requestEmail()
+                .build();
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
         user = mAuth.getCurrentUser();
         if (user == null) {
@@ -146,13 +156,14 @@ public class Home extends AppCompatActivity {
                 } else if (title.equals("Logout")) {
                     // set item as selected to persist highlight
                     FirebaseAuth.getInstance().signOut();
-                    try {
-                        FirebaseInstanceId.getInstance().deleteInstanceId();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    startActivity(new Intent(Home.this, Splash.class));
-                    finish();
+                    mGoogleSignInClient.signOut().addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                            startActivity(new Intent(Home.this, Splash.class));
+                            finish();
+                        }
+                    });
 //                    startActivity(new Intent(getApplicationContext(), Userinfo.class));
                 }
 
