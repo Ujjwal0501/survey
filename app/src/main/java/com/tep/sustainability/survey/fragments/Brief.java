@@ -54,7 +54,9 @@ public class Brief extends Fragment {
         locSurvey.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                Home.showPrompt("Choose between manually filling the travel survey or we can use your location to do it for you.", context);
+                Home.showPrompt("Choose between manually filling the travel characteristic form or we can use your location to do it for you.\n" +
+                        "\n" +
+                        "This will require your location service to be turned on.", context);
                 return false;
             }
         });
