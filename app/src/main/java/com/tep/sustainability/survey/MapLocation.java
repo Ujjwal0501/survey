@@ -109,6 +109,8 @@ public class MapLocation extends FragmentActivity implements OnMapReadyCallback{
                     Geocoder gcd = new Geocoder(MapLocation.this, Locale.getDefault());
                     List<Address> addresses = gcd.getFromLocation(latLng.latitude, latLng.longitude, 1);
                     Address address = addresses.get(0);
+
+                    RouteSurvey.placeName = "";         // clear previous place name
                     if (address.getSubLocality() != null) RouteSurvey.placeName += address.getSubLocality();
                     if (address.getLocality() != null) RouteSurvey.placeName += ", " + address.getLocality();
                     if (address.getSubAdminArea() != null) RouteSurvey.placeName += ", " + address.getSubAdminArea();
