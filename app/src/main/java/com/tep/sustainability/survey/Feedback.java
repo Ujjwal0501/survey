@@ -39,11 +39,11 @@ public class Feedback extends AppCompatActivity {
         String feedback = ((EditText) findViewById(R.id.feedback)).getText().toString();
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("feedback/" + Home.user.getUid());
 
-        Map<String, String> data = new HashMap<>();
+        Map<String, Object> data = new HashMap<>();
         data.put("email", email);
         data.put((new Date()).toLocaleString(), feedback);
 
-        dbRef.setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+        dbRef.updateChildren(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
