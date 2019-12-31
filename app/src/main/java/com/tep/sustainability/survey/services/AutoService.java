@@ -70,7 +70,7 @@ public class AutoService extends Service {
         super.onCreate();
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null) {Toast.makeText(context, "unexpected logout", Toast.LENGTH_LONG).show(); stopSelf();}
+        if (user == null) {Log.d(TAG, "Unexpected logout / never signed in"); stopSelf();}
         rawRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/raw");
         processRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes");
         confirmRef = FirebaseDatabase.getInstance().getReference("location/" + user.getUid()+"/travel_details/routes_confirmed");
@@ -152,6 +152,7 @@ public class AutoService extends Service {
     public void onDestroy() {
         super.onDestroy();
         stopLocationUpdate();
+        sendLocations();
         Toast.makeText(context, "Survey closed unexpectedly.", Toast.LENGTH_SHORT).show();
     }
 
