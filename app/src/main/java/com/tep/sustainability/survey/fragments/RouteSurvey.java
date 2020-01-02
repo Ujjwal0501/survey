@@ -65,6 +65,9 @@ public class RouteSurvey extends Fragment {
     public static String placeName = "";
     private TravelChar self = new TravelChar(), spouse = new TravelChar(), children = new TravelChar(),
             recreation = new TravelChar(), social = new TravelChar(), shopping = new TravelChar();
+    private boolean CHILD = Home.preferences.getInt("children", 0) > 0,
+            SPOUSE = Home.preferences.getString("spouseAge", "").equals("");;
+
 
     public RouteSurvey() {
         // Required empty public constructor
@@ -188,6 +191,9 @@ public class RouteSurvey extends Fragment {
                     one.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                     two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
+
+                    // skip sopuse info
+                    if (SPOUSE) next.performClick();
                 }
             }
         };
@@ -195,7 +201,9 @@ public class RouteSurvey extends Fragment {
         twoToThree = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (verifyStep1() && Home.STEP<Home.MAX) {
+                // true - not has spouse
+                // false - had a spouse
+                if (SPOUSE || (verifyStep1() && Home.STEP<Home.MAX)) {
                     // proceed to save
                     step1.setVisibility(View.GONE);
                     step2.setVisibility(View.VISIBLE);
@@ -205,6 +213,8 @@ public class RouteSurvey extends Fragment {
                     two.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                     three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
+
+                    if (!CHILD) next.performClick();
                 }
             }
         };
@@ -212,7 +222,9 @@ public class RouteSurvey extends Fragment {
         threeToFour = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (verifyStep2() && Home.STEP<Home.MAX) {
+                // true - has child/children
+                // false - not has child/children
+                if (!CHILD || (verifyStep2() && Home.STEP<Home.MAX)) {
                     // proceed to save
                     step2.setVisibility(View.GONE);
                     step3.setVisibility(View.VISIBLE);
@@ -288,6 +300,9 @@ public class RouteSurvey extends Fragment {
                 two.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                 three.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
+
+                // skip info for spouse
+                if (SPOUSE) prev.performClick();
             }
         };
 
@@ -303,6 +318,9 @@ public class RouteSurvey extends Fragment {
                 three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                 four.setCardBackgroundColor(getResources().getColor(R.color.primaryMain));
                 Home.STEP -= 1;
+
+                // skip info for children
+                if (!CHILD) prev.performClick();
             }
         };
 
@@ -599,7 +617,7 @@ public class RouteSurvey extends Fragment {
                     Toast.makeText(context, task.getException().getLocalizedMessage(), Toast.LENGTH_LONG).show();
                 }
             }
-        });;
+        });
 
     }
 
