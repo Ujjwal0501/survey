@@ -37,6 +37,12 @@ public class Feedback extends AppCompatActivity {
 
         String email = ((TextView) findViewById(R.id.mail)).getText().toString();
         String feedback = ((EditText) findViewById(R.id.feedback)).getText().toString();
+
+        if (feedback.equals("")) {
+            ((EditText) findViewById(R.id.feedback)).setError("You are forgetting the feedback!");
+            return;
+        }
+        
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("feedback/" + Home.user.getUid());
 
         Map<String, Object> data = new HashMap<>();
