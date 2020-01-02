@@ -4,9 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +25,8 @@ import java.util.Map;
 public class Feedback extends AppCompatActivity {
 
     private static final String TAG = "Feedback";
+    private TextView charCount;
+    private EditText feedback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,24 +35,50 @@ public class Feedback extends AppCompatActivity {
         if (getActionBar() != null) getActionBar().setTitle("Feedback &amp; Support");
 
         ((TextView) findViewById(R.id.mail)).setText(Home.user.getEmail());
+        charCount = (TextView) findViewById(R.id.char_count);
+        feedback = (EditText) findViewById(R.id.feedback);
+
+        feedback.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                int l = s.length();
+                charCount.setText("" + l);
+                if (l > 400) ((LinearLayout) feedback.getParent()).setBackgroundResource(R.drawable.border_error);
+                else ((LinearLayout) feedback.getParent()).setBackgroundResource(R.drawable.border_normal);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     public void sendFeedback(View v) {
-
-
+        
         String email = ((TextView) findViewById(R.id.mail)).getText().toString();
-        String feedback = ((EditText) findViewById(R.id.feedback)).getText().toString();
+        String feed = feedback.getText().toString();
 
-        if (feedback.equals("")) {
+        if (feed.equals("")) {
             ((EditText) findViewById(R.id.feedback)).setError("You are forgetting the feedback!");
             return;
         }
-        
+
+        if (feed.length() > 400) {
+            feedback.setError("You feedback is large. Remove some text");
+            return;
+        }
+
         DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("feedback/" + Home.user.getUid());
 
         Map<String, Object> data = new HashMap<>();
         data.put("email", email);
-        data.put((new Date()).toLocaleString(), feedback);
+        data.put((new Date()).toLocaleString(), feed);
 
         dbRef.updateChildren(data).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
