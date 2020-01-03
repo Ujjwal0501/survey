@@ -193,7 +193,10 @@ public class RouteSurvey extends Fragment {
                     Home.STEP += 1;
 
                     // skip sopuse info
-                    if (SPOUSE) next.performClick();
+                    if (SPOUSE) {
+                        next.performClick();
+                        Toast.makeText(context, "Skipped spouse section.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         };
@@ -214,7 +217,10 @@ public class RouteSurvey extends Fragment {
                     three.setCardBackgroundColor(getResources().getColor(R.color.secondaryDark));
                     Home.STEP += 1;
 
-                    if (!CHILD) next.performClick();
+                    if (!CHILD) {
+                        next.performClick();
+                        Toast.makeText(context, "Skipped children section.", Toast.LENGTH_SHORT).show();
+                    }
                 }
             }
         };
