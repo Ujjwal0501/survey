@@ -109,7 +109,7 @@ public class AutoService extends Service {
 
                 // rawRef.child(""+ location.getTime()).setValue(locationInfo);
                 locationList.put(location.getTime()+"", locationInfo);
-                if (locationList.size() > 14) {
+                if (locationList.size() > 10) {
                     sendLocations();
                 }
                 if (locationResult.getLastLocation().getSpeed() > 3.0) {
