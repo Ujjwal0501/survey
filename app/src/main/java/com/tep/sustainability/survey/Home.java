@@ -309,7 +309,7 @@ public class Home extends AppCompatActivity {
         });
     }
 
-    public static void showPrompt(String msg, Context context) {
+    public static void showPrompt(String msg, final Context context) {
         sharedPref.edit().putInt("firstrun", 0).apply();
         FIRST_RUN = 0;
         AlertDialog.Builder testDialog = new AlertDialog.Builder(context);
@@ -324,6 +324,7 @@ public class Home extends AppCompatActivity {
 //                        startActivity(new Intent(getApplicationContext(), Userinfo.class).putExtra(key, "show"));
                         sharedPref.edit().putInt("manual", 1).apply();
                         MANUAL = 1;
+                        context.stopService(new Intent(context, AutoService.class));
                         dialog.dismiss();
                     }
                 });
@@ -334,6 +335,7 @@ public class Home extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         sharedPref.edit().putInt("manual", 0).apply();
                         MANUAL = 0;
+                        context.startService(new Intent(context, AutoService.class));
                         dialog.cancel();
                     }
                 });
