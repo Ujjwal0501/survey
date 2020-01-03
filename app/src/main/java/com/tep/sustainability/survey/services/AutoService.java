@@ -101,7 +101,7 @@ public class AutoService extends Service {
             @Override
             public void onLocationResult(LocationResult locationResult) {
                 super.onLocationResult(locationResult);
-                // Toast.makeText(context, locationResult.getLastLocation().getSpeed()+"", Toast.LENGTH_LONG).show();
+                Log.d(TAG, "" + locationResult.getLastLocation().getSpeed() + " - " + locationList.size());
 
                 Location location = locationResult.getLastLocation();
                 LocationInfo locationInfo = new LocationInfo();
@@ -109,7 +109,7 @@ public class AutoService extends Service {
 
                 // rawRef.child(""+ location.getTime()).setValue(locationInfo);
                 locationList.put(location.getTime()+"", locationInfo);
-                if (locationList.size() > 100) {
+                if (locationList.size() > 14) {
                     sendLocations();
                 }
                 if (locationResult.getLastLocation().getSpeed() > 3.0) {
@@ -117,7 +117,7 @@ public class AutoService extends Service {
                     if (handlerFlag) { handler.removeCallbacks(runnable); handlerFlag = false; }
                 } else {
                     if (!handlerFlag && FACTOR == 10) {
-                        handler.postDelayed(runnable, 140*1000);
+                        handler.postDelayed(runnable, 60*1000);
                         handlerFlag = true;
                     }
                 }
