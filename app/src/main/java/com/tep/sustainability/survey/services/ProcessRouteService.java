@@ -155,7 +155,7 @@ public class ProcessRouteService extends JobService {
     private void notifyUser() {
         NotificationHelper.createNotificationChannel(this); // create channel on Oreo and later
         NotificationCompat.Builder builder = new NotificationCompat
-                .Builder(this, "SurveyNotificationChannel")
+                .Builder(this, "TEP Sustainability")
                 .setContentTitle("Submit your routes")
                 .setContentText("Confirm your routes and submit them.")
                 .setSmallIcon(R.mipmap.logo)

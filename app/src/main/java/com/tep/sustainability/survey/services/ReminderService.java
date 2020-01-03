@@ -48,11 +48,12 @@ public class ReminderService extends JobService {
             // Notify the user
             Log.d(TAG, "Survey incomplete!");
             NotificationHelper.createNotificationChannel(this);
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "SurveyNotificationChannel")
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(this,  "TEP Sustainability")
                     .setContentTitle("Survey Reminder")
                     .setSmallIcon(R.mipmap.logo)
-                    .setContentText("You have left the survey incomplete.\nTap here to complete.")
-                    .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, Home.class), 0))
+                    .setContentText("You have left the survey incomplete.\nTap here to continue.")
+                    .setContentIntent(PendingIntent.getActivity(this, 0, new Intent(this, Home.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0))
                     .setAutoCancel(true);
             NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
             notificationManager.notify(66666, builder.build());

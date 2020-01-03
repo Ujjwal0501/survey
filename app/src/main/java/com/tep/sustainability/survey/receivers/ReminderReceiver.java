@@ -6,16 +6,20 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import androidx.core.app.NotificationCompat;
 
 import com.tep.sustainability.survey.Home;
 import com.tep.sustainability.survey.R;
+import com.tep.sustainability.survey.helpers.NotificationHelper;
 
 import static android.content.Context.NOTIFICATION_SERVICE;
 import static android.preference.PreferenceManager.getDefaultSharedPreferences;
 
 public class ReminderReceiver extends BroadcastReceiver {
+    private String TAG = "Reminder";
+
     @Override
     public void onReceive(Context context, Intent intent) {
         int PARTAA = 0, PARTAB = 0, PARTAC = 0, PARTBA = 0, PARTBB = 0, SUM = 0;
@@ -29,11 +33,14 @@ public class ReminderReceiver extends BroadcastReceiver {
 
         if (SUM < 5) {
             // Notify the user
-            NotificationCompat.Builder builder = new NotificationCompat.Builder(context,  "SurveyNotificationChannel")
+            Log.d(TAG, "Survey incomplete!");
+            NotificationHelper.createNotificationChannel(context);
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(context,  "TEP Sustainability")
                     .setContentTitle("Survey Reminder")
-                    .setContentText("You have left the survey incomplete. Tap here to complete.")
                     .setSmallIcon(R.mipmap.logo)
-                    .setContentIntent(PendingIntent.getService(context, 0, new Intent(context, Home.class), 0))
+                    .setContentText("You have left the survey incomplete.\nTap here to continue.")
+                    .setContentIntent(PendingIntent.getActivity(context, 0, new Intent(context, Home.class)
+                            .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK), 0))
                     .setAutoCancel(true);
             NotificationManager notificationManager = (NotificationManager) context.getSystemService(NOTIFICATION_SERVICE);
             notificationManager.notify(66666, builder.build());

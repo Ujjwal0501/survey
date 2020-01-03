@@ -13,7 +13,7 @@ import com.tep.sustainability.survey.Home;
 import com.tep.sustainability.survey.R;
 
 public class NotificationHelper {
-    private static String CHANNEL_ID = "SurveyNotificationChannel", CHANNEL_NAME = "Automatic Journey Survey", CHANNEL_DESCRIPTION = "This channel sends notification for the location info used by the app's service.";
+    private static String CHANNEL_ID = "TEP Sustainability", CHANNEL_NAME = "TEP Sustainability", CHANNEL_DESCRIPTION = "Get update on your survey completion status.";
 
     public static NotificationCompat.Builder build(Context context) {
         return init(context);
