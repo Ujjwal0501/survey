@@ -18,6 +18,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="4dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:animationResolution="@android:integer/config_shortAnimTime"
+            android:background="@color/primaryMain"
+            android:drawingCacheQuality="auto"
+            android:progress="0" />
+
             <!--             5% , 30% , 55% , 80% , 100% -->
 
             <ProgressBar
@@ -29,7 +41,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:animationResolution="@android:integer/config_shortAnimTime"
-                android:background="@color/windowBackground"
+                android:background="#00ffffff"
                 android:drawingCacheQuality="auto"
                 android:progress="0" />
 
