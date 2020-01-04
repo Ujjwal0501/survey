@@ -256,6 +256,7 @@
 
                             <EditText
                                 android:id="@+id/public_wait_time_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -283,6 +284,7 @@
 
                             <EditText
                                 android:id="@+id/public_distance_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -310,6 +312,7 @@
 
                             <EditText
                                 android:id="@+id/public_reliability_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -337,6 +340,7 @@
 
                             <EditText
                                 android:id="@+id/public_fare_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -396,6 +400,7 @@
 
                             <EditText
                                 android:id="@+id/private_cost_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
@@ -422,6 +427,7 @@
 
                             <EditText
                                 android:id="@+id/private_parking_edittext"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"

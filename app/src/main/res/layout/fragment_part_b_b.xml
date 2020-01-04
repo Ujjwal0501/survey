@@ -108,6 +108,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/congestion"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -136,6 +137,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -166,6 +168,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/air_pollution"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -196,6 +199,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/noise_pollution"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -251,6 +255,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -263,6 +268,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -275,6 +281,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/fare_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -301,6 +308,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -314,6 +322,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -327,6 +336,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/speed_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -354,6 +364,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -367,6 +378,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -379,6 +391,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/comfort_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -405,6 +418,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -417,6 +431,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -429,6 +444,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/safety_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -455,6 +471,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -467,6 +484,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -479,6 +497,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/parking_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -505,6 +524,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_home"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -517,6 +537,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_education"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -529,6 +550,7 @@
 
                         <com.tep.sustainability.survey.helpers.WatchedEditText
                             android:id="@+id/other_social"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

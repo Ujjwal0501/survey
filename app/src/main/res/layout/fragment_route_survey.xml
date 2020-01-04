@@ -228,15 +228,19 @@
 
                         <Spinner
                             android:id="@+id/purpose_self"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/purpose_hw" />
 
                         <Spinner
                             android:id="@+id/mode_self"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -250,6 +254,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_self"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -259,6 +265,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_self"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -276,6 +284,8 @@
 
                         <EditText
                             android:id="@+id/distance_self"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -285,6 +295,8 @@
 
                         <EditText
                             android:id="@+id/cost_self"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -302,15 +314,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_self"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_self"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
@@ -434,15 +450,19 @@
 
                         <Spinner
                             android:id="@+id/purpose_spouse"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/purpose_hw" />
 
                         <Spinner
                             android:id="@+id/mode_spouse"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -456,6 +476,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_spouse"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -465,6 +487,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_spouse"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -482,6 +506,8 @@
 
                         <EditText
                             android:id="@+id/distance_spouse"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -491,6 +517,8 @@
 
                         <EditText
                             android:id="@+id/cost_spouse"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -508,15 +536,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_spouse"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_spouse"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
@@ -640,15 +672,19 @@
 
                         <Spinner
                             android:id="@+id/purpose_sd"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/purpose_hw" />
 
                         <Spinner
                             android:id="@+id/mode_sd"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -662,6 +698,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_sd"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -671,6 +709,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_sd"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -688,6 +728,8 @@
 
                         <EditText
                             android:id="@+id/distance_sd"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -697,6 +739,8 @@
 
                         <EditText
                             android:id="@+id/cost_sd"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -714,15 +758,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_sd"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_sd"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
@@ -846,15 +894,19 @@
 
                         <Spinner
                             android:id="@+id/member_recreation"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/member" />
 
                         <Spinner
                             android:id="@+id/mode_recreation"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -868,6 +920,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_recreation"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -877,6 +931,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_recreation"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -894,6 +950,8 @@
 
                         <EditText
                             android:id="@+id/distance_recreation"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -903,6 +961,8 @@
 
                         <EditText
                             android:id="@+id/cost_recreation"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -920,15 +980,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_recreation"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_recreation"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
@@ -1052,15 +1116,19 @@
 
                         <Spinner
                             android:id="@+id/member_social"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/member" />
 
                         <Spinner
                             android:id="@+id/mode_social"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -1074,6 +1142,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_social"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1083,6 +1153,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_social"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1100,6 +1172,8 @@
 
                         <EditText
                             android:id="@+id/distance_social"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1109,6 +1183,8 @@
 
                         <EditText
                             android:id="@+id/cost_social"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1126,15 +1202,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_social"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_social"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
@@ -1258,15 +1338,19 @@
 
                         <Spinner
                             android:id="@+id/member_shopping"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/member" />
 
                         <Spinner
                             android:id="@+id/mode_shopping"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/mode_hw" />
 
@@ -1280,6 +1364,8 @@
 
                         <EditText
                             android:id="@+id/wait_time_shopping"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1289,6 +1375,8 @@
 
                         <EditText
                             android:id="@+id/travel_time_shopping"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1306,6 +1394,8 @@
 
                         <EditText
                             android:id="@+id/distance_shopping"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1315,6 +1405,8 @@
 
                         <EditText
                             android:id="@+id/cost_shopping"
+                            android:maxLines="1"
+                            android:inputType="number"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -1332,15 +1424,19 @@
 
                         <Spinner
                             android:id="@+id/frequency_shopping"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/frequency" />
 
                         <Spinner
                             android:id="@+id/vehicle_time_shopping"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="10dp"
                             android:layout_width="0dp"
-                            android:layout_height="36dp"
+                            android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:entries="@array/vehicle_time"
                             android:visibility="invisible" />
