@@ -107,6 +107,7 @@
 
                         <EditText
                             android:id="@+id/self_age"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -143,6 +144,7 @@
 
                             <EditText
                                 android:id="@+id/spouse_age"
+                                android:maxLines="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"

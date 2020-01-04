@@ -107,6 +107,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/bus_distance"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -131,6 +132,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/bus_time_to_reach"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -155,6 +157,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/bus_wait_time"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -180,6 +183,7 @@
 
                         <EditText
                             android:id="@+id/bus_frequency"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
@@ -320,6 +324,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/brt_distance"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -344,6 +349,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/brt_time_to_reach"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -368,6 +374,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/brt_wait_time"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -393,6 +400,7 @@
 
                         <EditText
                             android:id="@+id/brt_frequency"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"
@@ -533,6 +541,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/auto_distance"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -557,6 +566,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/auto_time_to_reach"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -581,6 +591,7 @@
                             android:textColor="@color/textPrimary" />
 
                         <EditText
+                            android:maxLines="1"
                             android:id="@+id/auto_wait_time"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
@@ -606,6 +617,7 @@
 
                         <EditText
                             android:id="@+id/auto_frequency"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="16dp"

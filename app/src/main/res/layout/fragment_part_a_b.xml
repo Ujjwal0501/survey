@@ -334,6 +334,7 @@
 
                         <EditText
                             android:id="@+id/m_emi"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -356,6 +357,7 @@
 
                         <EditText
                             android:id="@+id/mfuel_cost"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -380,6 +382,7 @@
 
                         <EditText
                             android:id="@+id/m_maint"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -404,6 +407,7 @@
 
                         <EditText
                             android:id="@+id/reg_charge"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -428,6 +432,7 @@
 
                         <EditText
                             android:id="@+id/mpark_cost"
+                            android:maxLines="1"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
