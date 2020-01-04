@@ -3,6 +3,7 @@ package com.tep.sustainability.survey.helpers;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
@@ -10,6 +11,7 @@ import android.os.Build;
 import android.provider.Settings;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.app.ActivityCompat;
 
 import com.tep.sustainability.survey.PermissionActivity;
@@ -52,21 +54,21 @@ public class LocationHelper {
     public boolean reqEnable(@Nullable final Context context) {
 
         try {
-//            final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//            builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
-//                    .setCancelable(false)
-//                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                        public void onClick(final DialogInterface dialog, final int id) {
-//                            context.startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-//                        }
-//                    })
-//                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                        public void onClick(final DialogInterface dialog, final int id) {
-//                            dialog.cancel();
-//                        }
-//                    });
-//            final AlertDialog alert = builder.create();
-//            alert.show();
+            final AlertDialog.Builder builder = new AlertDialog.Builder(context);
+            builder.setMessage("Your GPS seems to be disabled, do you want to enable it?\n\nIt is required that you enable your GPS for the app to function correctly.")
+                    .setCancelable(false)
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        public void onClick(final DialogInterface dialog, final int id) {
+                            context.startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                        }
+                    })
+                    .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                        public void onClick(final DialogInterface dialog, final int id) {
+                            dialog.cancel();
+                        }
+                    });
+            final AlertDialog alert = builder.create();
+            alert.show();
         } catch (Exception e) {
             e.printStackTrace();
 

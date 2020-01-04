@@ -126,9 +126,6 @@ public class AutoService extends Service {
             @Override
             public void onLocationAvailability(LocationAvailability locationAvailability) {
                 super.onLocationAvailability(locationAvailability);
-                if (!locationAvailability.isLocationAvailable()) {
-                    locationHelper.reqEnable(context);
-                }
             }
         };
 
@@ -168,7 +165,8 @@ public class AutoService extends Service {
 
         if (!locationHelper.isEnabled(context)) {
             // request enabling location service
-            locationHelper.reqEnable(context);
+            if (!locationHelper.reqEnable(context))
+                stopSelf();
             // Toast.makeText(context, "Location disabled.", Toast.LENGTH_SHORT).show();
 
             // TODO: schedule the request for later`
