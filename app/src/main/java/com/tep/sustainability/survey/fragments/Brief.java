@@ -2,6 +2,7 @@ package com.tep.sustainability.survey.fragments;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.cardview.widget.CardView;
@@ -12,9 +13,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.tep.sustainability.survey.Home;
 import com.tep.sustainability.survey.R;
+import com.tep.sustainability.survey.services.AutoService;
 
 import static com.tep.sustainability.survey.Home.PARTAA;
 import static com.tep.sustainability.survey.Home.PARTAB;
@@ -29,6 +33,7 @@ public class Brief extends Fragment {
     CardView one, two, three, four, five, locSurvey;
     ProgressBar progress;
     Context context;
+    public static Snackbar snackbar;
     View v;
 
 
@@ -60,6 +65,15 @@ public class Brief extends Fragment {
                 return false;
             }
         });
+
+        snackbar = Snackbar.make(v, "Background service is running.", Snackbar.LENGTH_INDEFINITE)
+                .setAction("STOP", new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        context.stopService(new Intent(context, AutoService.class));
+                        snackbar.dismiss();
+                    }
+                });
         return v;
     }
 
@@ -69,6 +83,7 @@ public class Brief extends Fragment {
         Home.backBtn = null;
         updateProgress(PARTAA+PARTAB+PARTAC+PARTBA+PARTBB);
         updateSectionStatus();
+        if (Home.isMyServiceRunning(AutoService.class, context)) snackbar.show();
     }
 
     private void updateProgress(int n) {

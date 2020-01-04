@@ -320,6 +320,7 @@ public class Home extends AppCompatActivity {
                         sharedPref.edit().putInt("manual", 1).apply();
                         MANUAL = 1;
                         context.stopService(new Intent(context, AutoService.class));
+                        Brief.snackbar.dismiss();
                         dialog.dismiss();
                     }
                 });
@@ -393,7 +394,7 @@ public class Home extends AppCompatActivity {
         }
 
         System.out.println(Thread.currentThread().getId());
-        if (!isMyServiceRunning(AutoService.class)) {
+        if (!isMyServiceRunning(AutoService.class, this)) {
             new Thread() {
                 @Override
                 public void run() {
@@ -404,10 +405,12 @@ public class Home extends AppCompatActivity {
         } else {
             Snackbar.make(navigationView, "Started.", Snackbar.LENGTH_SHORT).show();
         }
+
+        Brief.snackbar.show();
     }
 
-    private boolean isMyServiceRunning(Class<?> serviceClass) {
-        ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
+    public static boolean isMyServiceRunning(Class<?> serviceClass, Context context) {
+        ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(service.service.getClassName())) {
                 return true;
@@ -482,6 +485,7 @@ public class Home extends AppCompatActivity {
         } else {
             // stop service
             stopService(new Intent(this, AutoService.class));
+            Brief.snackbar.dismiss();
             sharedPref.edit().putInt("manual", 1).apply();
             MANUAL = 1;
         }
