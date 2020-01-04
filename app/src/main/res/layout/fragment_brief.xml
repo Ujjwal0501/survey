@@ -41,11 +41,12 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:animationResolution="@android:integer/config_shortAnimTime"
-                android:background="#00ffffff"
                 android:drawingCacheQuality="auto"
+                android:progressBackgroundTint="@color/transparent"
                 android:progress="0" />
 
             <LinearLayout
+                android:background="#00FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
@@ -259,15 +260,16 @@
                         android:id="@+id/info_s"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 
@@ -321,15 +323,16 @@
                         android:id="@+id/info_v"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 
@@ -384,15 +387,16 @@
                         android:id="@+id/info_t"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 
@@ -446,15 +450,16 @@
                         android:id="@+id/info_p"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 
@@ -508,15 +513,16 @@
                         android:id="@+id/info_pr"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 
@@ -571,15 +577,16 @@
                         android:id="@+id/info_r"
                         android:tooltipText="Explain about this section of form"
                         android:onClick="showSnackbar"
+                        android:foregroundGravity="center"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_alignParentEnd="true"
-                        android:layout_margin="16dp"
-                        android:padding="4dp"
+                        android:layout_margin="10dp"
+                        android:padding="6dp"
                         android:src="@drawable/info"
-                        android:layout_width="28dp"
-                        android:layout_height="28dp" />
+                        android:layout_width="32dp"
+                        android:layout_height="32dp" />
 
                 </RelativeLayout>
 

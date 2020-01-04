@@ -27,4 +27,6 @@
     <color name="logoSecondary">#121D19</color>
     <color name="white">#FDFDFD</color>
     <color name="colorGray">#333333</color>
+    
+    <color name="transparent">#00FFFFFF</color>
 </resources>
