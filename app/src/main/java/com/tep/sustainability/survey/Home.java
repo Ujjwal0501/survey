@@ -449,6 +449,33 @@ public class Home extends AppCompatActivity {
         RouteSurvey.arr[3] = RouteSurvey.latLng.longitude;
         RouteSurvey.START_END = 2;
     }
+
+    public void showSnackbar(View v) {
+        int id = v.getId();
+        String msg = "";
+
+        switch (id) {
+            case R.id.info_s:
+                msg = "Age and occupation of family members";
+                break;
+            case R.id.info_p:
+                msg = "Details about bus stop and auto stands near you.";
+                break;
+            case R.id.info_r:
+                msg = "Rate current traffic related problems and initiatives.";
+                break;
+            case R.id.info_pr:
+                msg = "Your preferences for mode of travel and change.";
+                break;
+            case R.id.info_t:
+                msg = "Your route details for work, home, recreational travels, etc.";
+                break;
+            case R.id.info_v:
+                msg = "Details about vehicles you own and income-expenditure.";
+        }
+
+        Snackbar.make(v, msg, Snackbar.LENGTH_LONG).setAnimationMode(Snackbar.ANIMATION_MODE_FADE).show();
+    }
 }
 
 

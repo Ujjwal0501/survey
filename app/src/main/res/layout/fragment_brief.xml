@@ -258,6 +258,7 @@
                     <ImageView
                         android:id="@+id/info_s"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
@@ -319,6 +320,7 @@
                     <ImageView
                         android:id="@+id/info_v"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
@@ -381,6 +383,7 @@
                     <ImageView
                         android:id="@+id/info_t"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
@@ -442,6 +445,7 @@
                     <ImageView
                         android:id="@+id/info_p"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
@@ -503,6 +507,7 @@
                     <ImageView
                         android:id="@+id/info_pr"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
@@ -565,6 +570,7 @@
                     <ImageView
                         android:id="@+id/info_r"
                         android:tooltipText="Explain about this section of form"
+                        android:onClick="showSnackbar"
                         android:clickable="true"
                         android:focusable="true"
                         android:background="?selectableItemBackgroundBorderless"
