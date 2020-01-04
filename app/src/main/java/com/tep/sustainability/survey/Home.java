@@ -18,6 +18,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -469,6 +470,19 @@ public class Home extends AppCompatActivity {
         }
 
         Snackbar.make(v, msg, Snackbar.LENGTH_LONG).setAnimationMode(Snackbar.ANIMATION_MODE_FADE).show();
+    }
+
+    public void toggleAutomatic(View view) {
+        Switch v = (Switch) view;
+        if (v.isChecked()) {
+            // start service
+            run();
+            sharedPref.edit().putInt("manual", 0).apply();
+        } else {
+            // stop service
+            stopService(new Intent(this, AutoService.class));
+            sharedPref.edit().putInt("manual", 1).apply();
+        }
     }
 }
 

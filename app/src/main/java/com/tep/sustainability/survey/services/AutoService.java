@@ -147,10 +147,11 @@ public class AutoService extends Service {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         stopLocationUpdate();
         sendLocations();
-        Toast.makeText(context, "Survey closed unexpectedly.", Toast.LENGTH_SHORT).show();
+        Log.d(TAG, "Survey closed unexpectedly.");
+//        Toast.makeText(context, "Survey closed unexpectedly.", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
     }
 
     @Override
