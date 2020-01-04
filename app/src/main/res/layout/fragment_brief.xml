@@ -488,14 +488,14 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_margin="16dp"
-                        android:layout_toEndOf="@id/status_transport"
+                        android:layout_toEndOf="@id/status_preference"
                         android:text="Preference Survey"
                         android:textAlignment="center"
                         android:textColor="#000"
                         android:textSize="20sp" />
 
                     <ImageView
-                        android:id="@+id/status_transport"
+                        android:id="@+id/status_preference"
                         android:clickable="true"
                         android:background="?selectableItemBackgroundBorderless"
                         android:layout_marginStart="16dp"

@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 
 import com.tep.sustainability.survey.Home;
@@ -28,6 +29,7 @@ public class Brief extends Fragment {
     CardView one, two, three, four, five, locSurvey;
     ProgressBar progress;
     Context context;
+    View v;
 
 
     public Brief() {
@@ -39,7 +41,7 @@ public class Brief extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_brief, container, false);
+        v = inflater.inflate(R.layout.fragment_brief, container, false);
         getActivity().setTitle("Transport survey");
         context = v.getContext();
 
@@ -68,6 +70,7 @@ public class Brief extends Fragment {
         super.onResume();
         Home.backBtn = null;
         updateProgress(PARTAA+PARTAB+PARTAC+PARTBA+PARTBB);
+        updateSectionStatus();
     }
 
     private void updateProgress(int n) {
@@ -91,5 +94,24 @@ public class Brief extends Fragment {
         }
 
         return;
+    }
+
+
+    private void updateSectionStatus() {
+        if (PARTAA != 0) ((ImageView) v.findViewById(R.id.status_social)).setImageResource(R.drawable.check);
+        else ((ImageView) v.findViewById(R.id.status_social)).setImageResource(R.drawable.cross);
+
+        if (PARTAB != 0) ((ImageView) v.findViewById(R.id.status_vehicle)).setImageResource(R.drawable.check);
+        else ((ImageView) v.findViewById(R.id.status_vehicle)).setImageResource(R.drawable.cross);
+
+        if (PARTAC != 0) ((ImageView) v.findViewById(R.id.status_public)).setImageResource(R.drawable.check);
+        else ((ImageView) v.findViewById(R.id.status_public)).setImageResource(R.drawable.cross);
+
+        if (PARTBA != 0) ((ImageView) v.findViewById(R.id.status_preference)).setImageResource(R.drawable.check);
+        else ((ImageView) v.findViewById(R.id.status_preference)).setImageResource(R.drawable.cross);
+
+        if (PARTBB != 0) ((ImageView) v.findViewById(R.id.status_rated)).setImageResource(R.drawable.check);
+        else ((ImageView) v.findViewById(R.id.status_rated)).setImageResource(R.drawable.cross);
+
     }
 }

@@ -76,6 +76,7 @@ public class Home extends AppCompatActivity {
     // private DatabaseReference dbRef;
     public static FragmentManager fragmentManager;
     private NavigationView navigationView;
+
     private DrawerLayout mDrawerLayout;
     public static SharedPreferences sharedPref;
     GoogleSignInClient mGoogleSignInClient;
@@ -230,13 +231,6 @@ public class Home extends AppCompatActivity {
 
         // prompt if route are processed
         checkForProcessedRoute();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-
-//        if (!locationHelper.checkPermission(this)) locationHelper.reqPermission(Home.this, this);
     }
 
     @Override
