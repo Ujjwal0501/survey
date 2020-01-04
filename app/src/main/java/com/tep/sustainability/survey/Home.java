@@ -470,7 +470,7 @@ public class Home extends AppCompatActivity {
                 msg = "Details about vehicles you own and income-expenditure.";
         }
 
-        Snackbar.make(v, msg, Snackbar.LENGTH_LONG).setAnimationMode(Snackbar.ANIMATION_MODE_FADE).show();
+        Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
     }
 
     public void toggleAutomatic(View view) {
