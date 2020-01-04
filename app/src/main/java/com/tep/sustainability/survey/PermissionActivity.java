@@ -29,7 +29,7 @@ public class PermissionActivity extends AppCompatActivity {
                 locationHelper.reqPermission(PermissionActivity.this, this);
             } else if (reason != null && reason.equals("activate")) {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                builder.setMessage("Your GPS seems to be disabled, do you want to enable it?\n\nIt is required that you enable your GPS for the app to function correctly.")
                         .setCancelable(false)
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             public void onClick(final DialogInterface dialog, final int id) {
@@ -62,7 +62,7 @@ public class PermissionActivity extends AppCompatActivity {
                 } else {
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
-
+                    stopService(new Intent(getApplicationContext(), AutoService.class));
                 }
                 finish();
                 return;
