@@ -401,9 +401,6 @@ public class Home extends AppCompatActivity {
                     startService(new Intent(getApplicationContext(), AutoService.class));
                 }
             }.start();
-            Snackbar.make(navigationView, "Starting.", Snackbar.LENGTH_SHORT).show();
-        } else {
-            Snackbar.make(navigationView, "Started.", Snackbar.LENGTH_SHORT).show();
         }
 
         Brief.snackbar.show();
@@ -413,6 +410,7 @@ public class Home extends AppCompatActivity {
         ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
             if (serviceClass.getName().equals(service.service.getClassName())) {
+                Brief.snackbar.show();
                 return true;
             }
         }
@@ -482,12 +480,14 @@ public class Home extends AppCompatActivity {
             run();
             sharedPref.edit().putInt("manual", 0).apply();
             MANUAL = 0;
+            Toast.makeText(this, "Your location will be fetched to automatically generate form data.", Toast.LENGTH_LONG).show();
         } else {
             // stop service
             stopService(new Intent(this, AutoService.class));
             Brief.snackbar.dismiss();
             sharedPref.edit().putInt("manual", 1).apply();
             MANUAL = 1;
+            Snackbar.make(v, "You will have to manually fill the form. Tap the section to open.", Snackbar.LENGTH_LONG).show();
         }
     }
 }
