@@ -137,7 +137,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/home/ujjwal/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_feedback_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/home/ujjwal/android-studio/plugins/android/lib/android.jar!/images/material_design_icons/navigation/ic_check_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -147,8 +147,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="play_store" />
+                            <entry key="outputName" value="check" />
                             <entry key="sourceFile" value="$USER_HOME$/Desktop/cn_ppt/104122.svg" />
                           </map>
                         </option>
