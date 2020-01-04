@@ -478,10 +478,12 @@ public class Home extends AppCompatActivity {
             // start service
             run();
             sharedPref.edit().putInt("manual", 0).apply();
+            MANUAL = 0;
         } else {
             // stop service
             stopService(new Intent(this, AutoService.class));
             sharedPref.edit().putInt("manual", 1).apply();
+            MANUAL = 1;
         }
     }
 }
