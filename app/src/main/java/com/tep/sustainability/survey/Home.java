@@ -247,7 +247,7 @@ public class Home extends AppCompatActivity {
             }
         });
 
-        if (FIRST_RUN == 1) showPrompt("Choose between manually filling the travel characteristic form or we can use your location to do it for you.\n\nThis will require your location service to be turned on.", this);
+        if (FIRST_RUN == 1) showPrompt(getString(R.string.location_description), this);
     }
 
     @Override
@@ -382,7 +382,7 @@ public class Home extends AppCompatActivity {
                 fragmentManager.beginTransaction().replace(R.id.container, new RouteSurvey()).addToBackStack(null).commit();
             }
         else
-            showPrompt("Choose between manually filling the travel characteristic form or we can use your location to do it for you.\n\nThis will require your location service to be turned on.", this);
+            showPrompt(getString(R.string.location_description), this);
     }
 
     public void run() {

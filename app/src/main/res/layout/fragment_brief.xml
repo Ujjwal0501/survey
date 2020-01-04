@@ -399,6 +399,7 @@
                         android:layout_height="32dp" />
 
                     <Switch
+                        android:id="@+id/service_switch"
                         android:background="@color/white"
                         android:text="Using\nLocation  "
                         android:onClick="toggleAutomatic"
